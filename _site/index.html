@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Site description">
+  <meta name="author" content="Your Name">
+  <link rel="canonical" href="http://localhost:4000/">
+
+  <title>VoxBlink: A Large Scale Speaker Verification Dataset on Camera</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Custom fonts for this template -->
+  <link href="assets/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <script src="assets/js/marked.min.js"></script>
+
+  <!-- Custom styles for this theme -->
+  <!--<link href="assets/css/agency.min.css" rel="stylesheet">-->
+  <link href="assets/css/agency.css" rel="stylesheet" />
+
+  <!-- Page container change top padding when nav shrinks -->
+  
+</head>
+
+
+  <body id="page-top">
+
+        <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+	  <a class="navbar-brand js-scroll-trigger" href="#page-top">VoxBlink</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+        
+        
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">About</a></li>
+        
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Features</a></li>
+        
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Publications</a></li>
+        
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#timeline">Download</a></li>
+                
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#acknowledgement">Acknowledgement</a></li>
+                
+        
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navigation -->
+  
+  <!-- Header -->
+  
+  <header class="faces-mask masthead">
+    <div class="container">
+      <div class="intro-text"><div class="intro-lead-in">
+        <img src="assets/img/wordcloud.png" width="750" height="170">
+      </div><div class="intro-heading text-uppercase" style="font-size: 30pt;"><p>A Large Scale Speaker Verification Dataset on Camera</p>
+      </div><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Let's Start!</a></div>
+    </div>
+  </header>
+  
+  <!-- End Header -->
+
+<!-- Services -->
+
+  <section class="page-section" id="services">
+    <div class="container">
+	
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">About</h2>
+          
+		  <h3 class="section-subheading text-muted">Two versions are provided: VoxBlink and VoxBlink-clean</h3>
+		  
+        </div>
+      </div>
+	  
+      <div class="row text-center">
+	  
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-file-audio fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading"><p>1.4M/1M+ Utterances</p>
+</h4>
+          <div class="text-muted">
+            <p>
+              All utterances are extracted from short videos, encompassing various contexts including podcasts, lives, live streaming highlights, etc.
+            </p>
+</div>
+        </div>
+	  
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading"><p>38K/18K+ Speakers</p>
+</h4>
+          <div class="text-muted"><p>The speakers come from 130+ countries, spanning multiple families of languages. </p>
+</div>
+        </div>
+	  
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-clock fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading"><p>2100/1400+ Hours</p>
+</h4>
+          <div class="text-muted"><p>The scenarios covered are more in line with real-life situations since we use <strong>short videos</strong> as the data source.</p>
+</div>
+        </div>
+	  
+      </div>
+	  
+    </div>
+  </section>
+
+<!-- End Services -->
+<!-- Portfolio Grid -->
+
+<section class="bg-light page-section" id="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase"><p>Features</p>
+</h2>
+        <h3 class="section-subheading text-muted"><p>Some new features about the VoxBlink and VoxBlink-clean!</p>
+</h3>
+      </div>
+    </div>
+    <div class="row">
+	
+      <div class="col-md-4 col-sm-6 portfolio-item">
+        <a class="portfolio-link" data-toggle="modal" href="#p1">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-fluid" src="./assets/img/portfolio/gender.png" alt="">
+        </a>
+        <div class="portfolio-caption">
+          <h4>Gender</h4>
+          <!-- <p class="text-muted">subtitle</p> -->
+        </div>
+      </div>
+	
+      <div class="col-md-4 col-sm-6 portfolio-item">
+        <a class="portfolio-link" data-toggle="modal" href="#p2">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-fluid" src="./assets/img/portfolio/lingual.png" alt="">
+        </a>
+        <div class="portfolio-caption" >
+          <h4>Languages</h4>
+          <!-- <p class="text-muted">Illustration</p> -->
+        </div>
+      </div>
+	
+      <div class="col-md-4 col-sm-6 portfolio-item">
+        <a class="portfolio-link" data-toggle="modal" href="#p3">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-fluid" src="assets/img/portfolio/location.png" alt="">
+        </a>
+        <div class="portfolio-caption">
+          <h4>Location</h4>
+          <!-- <p class="text-muted">Graphic Design</p> -->
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 portfolio-item">
+        <a class="portfolio-link" data-toggle="modal" href="#p4">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-fluid" src="assets/img/portfolio/themes.png" alt="">
+        </a>
+        <div class="portfolio-caption">
+          <h4>Themes</h4>
+          <!-- <p class="text-muted">Graphic Design</p> -->
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 portfolio-item">
+        <a class="portfolio-link" data-toggle="modal" href="#p5">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-fluid" src="assets/img/portfolio/duration.png" alt="">
+        </a>
+        <div class="portfolio-caption">
+          <h4>Duration</h4>
+          <!-- <p class="text-muted">Duration histogram of VoxBlink</p> -->
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 portfolio-item">
+        <a class="portfolio-link" data-toggle="modal" href="#p6">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-fluid" src="assets/img/portfolio/time-varying.png" alt="">
+        </a>
+        <div class="portfolio-caption">
+          <h4>Time-Varying</h4>
+          <!-- <p class="text-muted">Graphic Design</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Portfolio Modals -->
+
+
+<div
+  class="portfolio-modal modal fade"
+  id="p1"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Gender</h2>
+              <p class="item-intro text-muted">Top:&nbsp;VoxBlink;&nbsp;Bottom:&nbsp;VoxBlink-clean.<br>The gender labels are obtained from a binary classifier by the users' multi-modal information.</p>
+              <img
+                class="img-fluid d-block mx-auto"
+                src="./assets/img/portfolio/gender_modal.jpg"
+                alt="image alt text"
+              />
+              <p>
+
+<!-- <p class="item-intro">The majority of speakers within the VoxBlink dataset are <b>female</b> (39% vs 61%), <br>and its cleaned version is relatively <b>gender-balanced</b>(44% vs 56%).</p> -->
+
+
+</p>
+              <button
+                class="btn btn-primary"
+                data-dismiss="modal"
+                type="button"
+              >
+                <i class="fas fa-times"></i>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div
+  class="portfolio-modal modal fade"
+  id="p2"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Languages</h2>
+              <p class="item-intro text-muted">The language labels are inferred by <a href="https://github.com/openai/whisper">Whisper</a>'s base model.</p>
+              <img
+                class="img-fluid d-block mx-auto"
+                src="./assets/img/portfolio/lingual.png"
+                alt="Shirts on a hanger"
+              />
+              <p>
+                <!-- <p class="item-intro">Most of the speakers are English speakers because the names used for retrieval are primarily in English.</p> -->
+
+              </p>
+              <button
+                class="btn btn-primary"
+                data-dismiss="modal"
+                type="button"
+              >
+                <i class="fas fa-times"></i>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div
+  class="portfolio-modal modal fade"
+  id="p3"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Location</h2>
+              <p class="item-intro text-muted">The colors transition from light to dark, indicating an increasing number of speakers. The gray color signifies regions without any speakers. 21487 speakers's locations have been involved.</p>
+              <img
+                class="img-fluid d-block mx-auto"
+                src="./assets/img/portfolio/geo_loc.png"
+                alt="Keep Exploring"
+              />
+              <p>
+                <!-- <p class="item-intro">Since some users do not upload their informations of location, <br>only 21487 speakers's locations have been recorded.</p> -->
+
+</p>
+              <button
+                class="btn btn-primary"
+                data-dismiss="modal"
+                type="button"
+              >
+                <i class="fas fa-times"></i>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="portfolio-modal modal fade"
+  id="p4"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Themes</h2>
+              <p class="item-intro text-muted">The theme labels are extracted from the tags of corresponding videos.</p>
+              <img
+                class="img-fluid d-block mx-auto"
+                src="./assets/img/portfolio/themes.png"
+                alt="Keep Exploring"
+              />
+              <p>
+                <!-- <p class="item-intro"></p> -->
+              </p>
+              <button
+                class="btn btn-primary"
+                data-dismiss="modal"
+                type="button"
+              >
+                <i class="fas fa-times"></i>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="portfolio-modal modal fade"
+  id="p5"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Duration</h2>
+              <p class="item-intro text-muted">The Duration distribution of the VoxBlink.</p>
+              <img
+                class="img-fluid d-block mx-auto"
+                src="./assets/img/portfolio/duration.png"
+                alt="Keep Exploring"
+              />
+              <p>
+                <!-- <p class="item-intro"></p> -->
+              </p>
+              <button
+                class="btn btn-primary"
+                data-dismiss="modal"
+                type="button"
+              >
+                <i class="fas fa-times"></i>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="portfolio-modal modal fade"
+  id="p6"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Time-Varying</h2>
+              <p class="item-intro text-muted">Time-varying feature of the VoxBlink-clean.(Unit: Day) <br>
+                Left: <strong> Average</strong> time interval for video uploading of speaker;<br>
+                Right: <strong> Maximum </strong> time interval for video uploading of speaker;</p>
+              <img
+                class="img-fluid d-block mx-auto"
+                src="./assets/img/portfolio/time-varying-modal.png"
+                alt="Keep Exploring"
+              />
+              <p>
+                <!-- <p class="item-intro"></p> -->
+              </p>
+              <button
+                class="btn btn-primary"
+                data-dismiss="modal"
+                type="button"
+              >
+                <i class="fas fa-times"></i>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Portfolio Modals -->
+
+
+<!-- About -->
+
+<section class="page-section" id="about">
+  <div class="container"  >
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Publications</h2>
+        <h3 class="section-subheading text-muted">Please cite the following if you make use of the dataset.</h3>
+        <h5 class="section-heading text-muted" style=" font-family: 'Times New Roman', Times, serif;">Yuke Lin, Xiaoyi Qin, Ming Cheng,
+          Ning Jiang, Guoqing Zhao,Haiying Wu,
+          Ming Li</h5>
+        <h4 class="section-heading" style="font-family: 'Times New Roman', Times, serif;">VoxBlink: A Large Scale Speaker Verification Dataset on Camera, arxiv</h4>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 0pt;">
+      <div class="col-lg-8 mx-auto text-center">
+        <div class="large text-muted">
+          <h5>
+            <a href="#p7" class="portfolio-link" data-toggle="modal">Bibtex</a>&nbsp;|&nbsp;
+            <a href="#p8" class="portfolio-link" data-toggle="modal">Abstract</a>&nbsp;|&nbsp;
+            <a href="https://arxiv.org/abs/2308.07056">PDF</a>&nbsp;&nbsp;
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div
+  class="portfolio-modal modal fade"
+  id="p7"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" style="margin: 10rem;">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-primary">Bibtex</h2>
+            <div class="modal-body">
+              <!-- <h2 class="text-uppercase">Duration</h2> -->
+              
+              <!-- Project Details Go Here -->
+              <textarea name="message" class="form-control" id="message" rows="10">
+@misc{lin2023voxblink,
+      title={VoxBlink: X-Large Speaker Verification Dataset on Camera}, 
+      author={Yuke Lin and Xiaoyi Qin and Ming Cheng and Ning Jiang and Guoqing Zhao and Ming Li},
+      year={2023},
+      eprint={2308.07056},
+      archivePrefix={arXiv},
+      primaryClass={eess.AS}
+}
+              </textarea>
+              <p>
+                <!-- <p class="item-intro"></p> -->
+              </p>
+  
+            </div>
+            <button
+            class="btn btn-primary"
+            data-dismiss="modal"
+            type="button"
+          >
+            <i class="fas fa-times"></i>
+            Close
+          </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="portfolio-modal modal fade"
+  id="p8"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" style="margin: 10rem;">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-uppercase">Abstract</h2>
+            <div class="modal-body" style="text-align: left;">
+              <!-- <h2 class="text-primary">Bibtex</h2> -->
+              <!-- Project Details Go Here -->
+              
+              <span >
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this paper, we introduce a novel and extensive audio-visual speaker verification dataset named <strong>VoxBlink</strong>. We propose an innovative and robust automatic audio-visual collection pipeline designed to curate this dataset. Finally, there are total 38k identities with 1.45M utterances are collected. Due to the inherent nature of automated data collection, the introduction of noisy data is inevitable. Therefore, we also provide a clean version of VoxBlink, named as VoxBlink-clean, comprising 18k identities and 1.02M utterances. In contrast to VoxCeleb, VoxBlink contains from YouTube ordinary person channels, that means the dataset scenarios covered are more in line with real-life situations. To our best knowledge, the VoxBlink dataset is one of the largest open speaker recognition datasets. Leveraging the VoxCeleb and VoxBlink dataset, we employ diverse speaker verification models with multiple architectural backbones to conduct comprehensive experimentation on the VoxCeleb test sets. Experimential results indicates that a substantial enhancement in performance—ranging from 12% to 30%—across various backbone architectures upon the incorporation of VoxBlink into the training process.
+              </span>
+              <p>
+                <!-- <p class="item-intro"></p> -->
+              </p>
+
+            </div>
+            <button
+            class="btn btn-primary"
+            data-dismiss="modal"
+            type="button"
+          >
+            <i class="fas fa-times"></i>
+            Close
+          </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End About -->
+<!-- About -->
+
+  <section class="bg-light page-section" id="timeline">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase"><p>DownLoad</p>
+</h2>
+          <h3 class="section-subheading text-muted">Download Guidance</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <h4 >Resource</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12" style="font-size: large;">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          All resources can be downloaded through <a href="https://drive.google.com/drive/folders/1vP8hyT_Zefj2d40JzHLAUJWy_dBjpA22?usp=drive_link"><strong>here</strong></a>. 
+          <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          1. The information of videos are stored in <code>./video_tags</code> folder.To get this, you need to decompress <code>video_tags.tar.gz</code> firstly. An example of these files can be referred in <a href="#p9" class="portfolio-link" data-toggle="modal">video_tag_example</a>.
+          <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          2. The timestamp files are stored in <code>./timestamp</code> folder. To get this, you need to decompress <code>timestamp.tar.gz</code> firstly. An example of timestamp file can be referred in <a href="#p10" class="portfolio-link" data-toggle="modal">timestamp_example</a>.
+          <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          3. Two version of the VoxBlink dataset can be found in <code>./data</code>. The utterances adhere to the following naming rules: <br><code>speaker_id-video_id-utterance_id</code>
+          <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          4. The video lists to be download are saved in <code>./video_list</code>. We provide three versions:
+          <ul style="margin-left: 20pt;">  
+            <li>
+              <i>spk2videos_full</i>: Download VoxBlink complete version(38K speakers).
+            </li>
+            <li>
+              <i>spk2videos_clean</i>: Download VoxBlink clean version(18K speakers).
+            </li>
+            <li>
+              <i>spk2videos_full</i>: Test if the scripts are runnable(One speakers).
+            </li>
+          </ul>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          5. Other meta information(duration, lingual, location, gender) are listed in <code>./meta</code>.
+          <br> 
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-12">
+          <h4 >Download</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12" style="font-size: large;">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          We provide simple scripts for you to download videos on Youtube with <code>./video_list</code> and extract audio/video segments with <code>./timestamp</code> in <a href="https://github.com/VoxBlink/ScriptsForVoxBlink.git"><strong>Repo</strong></a>.
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-12">
+          <h4 >License</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12" style="font-size: large;">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          The dataset is licensed under the <strong>CC BY-NC-SA 4.0</strong> license. This means that you can share and adapt the dataset for non-commercial purposes as long as you provide appropriate attribution and distribute your contributions under the same license. 
+          Detailed terms can be found on <a href="">LICENSE</a>.
+
+          The metadata provided is accurate as of June 2023. We cannot guarantee the availability of videos on the YouTube platform in the future. 
+          We recommend downloading the dataset promptly. For YouTube users with concerns regarding their videos' inclusion in our dataset, please contact us via E-mail:<strong> yuke.lin@dukekunshan.edu.cn </strong>or <strong>ming.li369@dukekunshan.edu.cn</strong>.
+
+          </div>
+      </div>
+      
+    </div>
+  </section>
+  <div
+  class="portfolio-modal modal fade"
+  id="p9"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" style="margin: 10rem;">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-uppercase">Example</h2>
+            <div class="modal-body" style="text-align: left;">
+                <!-- <h2 class="text-primary">The </h2> -->
+                <!-- Project Details Go Here -->
+                The documents are speaker-wised saved in <code>'./video_tags'</code> and the line is splited by <code>'\t'</code>.
+                <br>
+                
+                <pre style="background-color: rgb(243,245,250);">
+                  <code>
+  <span style="color: red;">video_id	user_name	upload_date	Theme	                Tags</span>
+  u66ruMnQQhU	Kesha Barrett	20111009	['Entertainment']	['JoJo', 'ATA', 'Power', 'Kick']
+  gP1iNTd4uwk	Kesha Barrett	20110516	['Entertainment']	['Jo', 'Barrett', 'Michael', 'Jackson', 'year', 'olds', 'dancing', 'Preschool']
+  9j6L7O8ztFM	Kesha Barrett	20110221	['Entertainment']	['Jo-Jo', 'Joseph', 'Breaking', 'boards', 'kids', 'in', 'karate', 'Lancaster', 'SC']
+                  </code>
+              </pre>
+            </div>
+            <button
+            class="btn btn-primary"
+            data-dismiss="modal"
+            type="button"
+          >
+            <i class="fas fa-times"></i>
+            Close
+          </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="portfolio-modal modal fade"
+  id="p10"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" style="margin: 10rem;">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-uppercase">Example</h2>
+            <div class="modal-body" style="text-align: left;">
+                <!-- <h2 class="text-primary">The </h2> -->
+                <!-- Project Details Go Here -->
+                The documents are utterance-wised saved in <code>'./time_stamp'</code> and the line is splited by <code>'\t'</code>.
+                <br>
+                
+                <pre style="background-color: rgb(243,245,250);">
+                  <code>
+    Identity:       id00000
+    Reference:      DwgYRqnQZHM
+    # 'X,Y' denote the top-left corner coordinates 
+    # 'W,H' denote the width and height of the face bounding box.
+
+    FRAME   X       Y       W       H
+
+    000014  84      164     164     225
+    000015  86      166     163     225
+    000016  87      164     163     226
+    000017  87      164     162     225
+    000018  85      167     164     223
+    000019  83      168     166     223
+    000020  84      163     165     224
+    000021  89      155     167     226
+    000022  94      157     165     222                  
+</code>
+              </pre>
+            </div>
+            <button
+            class="btn btn-primary"
+            data-dismiss="modal"
+            type="button"
+          >
+            <i class="fas fa-times"></i>
+            Close
+          </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End About -->
+
+<!-- Team -->
+<!-- 
+<section class="page-section" id="team">
+<div class="container">
+  <div class="row">
+	<div class="col-lg-12 text-center">
+	  <h2 class="section-heading text-uppercase">OUR AMAZING TEAM</h2>
+	  <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+	</div>
+  </div>
+  <div class="row d-flex justify-content-center">
+  
+	<div class="col-sm-4">
+	  <div class="team-member">
+		<img class="mx-auto rounded-circle" src="assets/img/team/500x500.jpg" alt="">
+		<h4>Kay Garland</h4>
+		<p class="text-muted">Lead Designer</p>
+		<ul class="list-inline social-buttons">
+		
+		  <li class="list-inline-item">
+			<a href="https://twitter.com">
+			  <i class="fab fa-twitter"></i>
+			</a>
+		  </li>
+		
+		  <li class="list-inline-item">
+			<a href="https://facebook.com">
+			  <i class="fab fa-facebook-f"></i>
+			</a>
+		  </li>
+		
+		  <li class="list-inline-item">
+			<a href="https://linkedin.com">
+			  <i class="fab fa-linkedin-in"></i>
+			</a>
+		  </li>
+		
+		</ul>
+	  </div>
+	</div>
+  
+	<div class="col-sm-4">
+	  <div class="team-member">
+		<img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="">
+		<h4>Larry Parker</h4>
+		<p class="text-muted">Lead Marketer</p>
+		<ul class="list-inline social-buttons">
+		
+		  <li class="list-inline-item">
+			<a href="https://twitter.com">
+			  <i class="fab fa-twitter"></i>
+			</a>
+		  </li>
+		
+		  <li class="list-inline-item">
+			<a href="https://facebook.com">
+			  <i class="fab fa-facebook-f"></i>
+			</a>
+		  </li>
+		
+		  <li class="list-inline-item">
+			<a href="https://linkedin.com">
+			  <i class="fab fa-linkedin-in"></i>
+			</a>
+		  </li>
+		
+		</ul>
+	  </div>
+	</div>
+  
+	<div class="col-sm-4">
+	  <div class="team-member">
+		<img class="mx-auto rounded-circle" src="assets/img/team/500x500.jpg" alt="">
+		<h4>Diana Perterson</h4>
+		<p class="text-muted">Lead Developer</p>
+		<ul class="list-inline social-buttons">
+		
+		  <li class="list-inline-item">
+			<a href="https://twitter.com">
+			  <i class="fab fa-twitter"></i>
+			</a>
+		  </li>
+		
+		  <li class="list-inline-item">
+			<a href="https://facebook.com">
+			  <i class="fab fa-facebook-f"></i>
+			</a>
+		  </li>
+		
+		  <li class="list-inline-item">
+			<a href="https://linkedin.com">
+			  <i class="fab fa-linkedin-in"></i>
+			</a>
+		  </li>
+		
+		</ul>
+	  </div>
+	</div>
+  
+  </div>
+  <div class="row">
+	<div class="col-lg-8 mx-auto text-center">
+	  <div class="large text-muted"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. <strong>Markdown</strong> supported.</p>
+</div>
+	</div>
+  </div>
+</div>
+</section> -->
+
+<!-- End Team -->
+
+<!-- Clients -->
+
+<!-- Contact -->
+
+<section class="page-section" id = 'acknowledgement'>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">
+          <p>Acknowledgement</p>
+</h2>
+        <!-- <h3 class="section-subheading text-muted">Feel free to contact us </h3> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        This research is funded in part by the National Natural Science Foundation of China (62171207), Science and Technology Program of Suzhou City(SYC2022051) and MaShang Consumer Finance Co.Ltd. Many thanks for the computational resource provided by the Advanced Computing East China Sub-Center.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End Contact -->
+
+
+	  <!-- Footer -->
+<footer class="footer" id="footer" style="background-color: white">
+  <div class="container">
+<!--     -->
+    <div class="row align-items-center">
+      <div class="col-md-4">
+        <span class="copyright"
+          >Copyright &copy; WHU and MSXF Co.Ltd</span
+        >
+      </div>
+      
+      <!-- Legal -->
+      
+    </div>
+    
+  </div>
+</footer>
+
+<!-- End Footer -->
+
+
+	  <!-- Bootstrap core JavaScript -->
+	  <script src="assets/js/jquery.min.js"></script>
+	  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+	  <!-- Plugin JavaScript -->
+	  <script src="assets/js/jquery.easing.min.js"></script>
+
+	  <!-- Contact form JavaScript -->
+	  <script src="assets/js/jqBootstrapValidation.js"></script>
+	  <script src="assets/js/contact_me.js"></script>
+
+	  <!-- Custom scripts for this template -->
+	  <script src="assets/js/agency.min.js"></script>
+
+  </body>
+</html>
