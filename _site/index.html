@@ -85,7 +85,13 @@
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">About</h2>
           
-		  <h3 class="section-subheading text-muted">Two versions are provided: VoxBlink and VoxBlink-clean</h3>
+          <h3 class="section-subheading text-muted">
+            Important Notice: Our released dataset only contains annotation data, 
+            including the YouTube links, time stamps and speaker labels. 
+            We do not release audio or visual data and 
+            it is the user's responsibility to decide whether and 
+            how to download the video data and whether their intended purpose with the downloaded data is legal in their country.
+          </h3>
 		  
         </div>
       </div>
@@ -101,7 +107,8 @@
 </h4>
           <div class="text-muted">
             <p>
-              All utterances are extracted from short videos, encompassing various contexts including podcasts, lives, live streaming highlights, etc.
+              We annotate over 1.4M/1M audio/video segments from short videos on YouTube, 
+              encompassing various contexts including podcasts, lives, live streaming highlights, etc.
             </p>
 </div>
         </div>
@@ -111,10 +118,11 @@
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
             <i class="fas fa-user fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading"><p>38K/18K+ Speakers</p>
-</h4>
-          <div class="text-muted"><p>The speakers come from 130+ countries, spanning multiple families of languages. </p>
-</div>
+          <h4 class="service-heading">
+            <p>38K/18K+ Speakers</p>
+          </h4>
+          <div class="text-muted"><p>The speakers in our dataset come from 130+ countries, spanning multiple families of languages. </p>
+        </div>
         </div>
 	  
         <div class="col-md-4">
@@ -125,7 +133,7 @@
           <h4 class="service-heading"><p>2100/1400+ Hours</p>
 </h4>
           <div class="text-muted"><p>The scenarios covered are more in line with real-life situations since we use <strong>short videos</strong> as the data source.</p>
-</div>
+        </div>
         </div>
 	  
       </div>
@@ -575,14 +583,12 @@
               
               <!-- Project Details Go Here -->
               <textarea name="message" class="form-control" id="message" rows="10">
-@misc{lin2023voxblink,
-      title={VoxBlink: X-Large Speaker Verification Dataset on Camera}, 
-      author={Yuke Lin and Xiaoyi Qin and Ming Cheng and Ning Jiang and Guoqing Zhao and Ming Li},
-      year={2023},
-      eprint={2308.07056},
-      archivePrefix={arXiv},
-      primaryClass={eess.AS}
-}
+                @article{lin2023voxblink,
+                  title={VoxBlink: A Large Scale Speaker Verification Dataset on Camera},
+                  author={Yuke Lin and Xiaoyi Qin and Guoqing Zhao and Ming Cheng and Ning Jiang and Haiyang Wu and Ming Li},
+                  journal={arXiv preprint arXiv:2308.07056},
+                  year={2023}
+                }
               </textarea>
               <p>
                 <!-- <p class="item-intro"></p> -->
@@ -655,9 +661,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase"><p>DownLoad</p>
+          <h2 class="section-heading text-uppercase"><p>Guidance</p>
 </h2>
-          <h3 class="section-subheading text-muted">Download Guidance</h3>
+          <h3 class="section-subheading text-muted">Build your VoxBlink</h3>
         </div>
       </div>
       <div class="row">
@@ -668,7 +674,8 @@
       <div class="row">
         <div class="col-lg-12" style="font-size: large;">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          All resources can be downloaded through <a href="https://drive.google.com/drive/folders/1vP8hyT_Zefj2d40JzHLAUJWy_dBjpA22?usp=drive_link"><strong>here</strong></a>. 
+          The annotation files and meta-resources can be downloaded through <a href="https://drive.google.com/drive/folders/1vP8hyT_Zefj2d40JzHLAUJWy_dBjpA22?usp=drive_link"><strong>here</strong></a>. 
+          Apply for the resource and we will soon deal with it. 
           <br>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           1. The information of videos are stored in <code>./video_tags</code> folder.To get this, you need to decompress <code>video_tags.tar.gz</code> firstly. An example of these files can be referred in <a href="#p9" class="portfolio-link" data-toggle="modal">video_tag_example</a>.
@@ -689,7 +696,7 @@
               <i>spk2videos_clean</i>: Download VoxBlink clean version(18K speakers).
             </li>
             <li>
-              <i>spk2videos_full</i>: Test if the scripts are runnable(One speakers).
+              <i>spk2videos_test</i>: Test if the scripts are runnable(One speakers).
             </li>
           </ul>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -700,13 +707,15 @@
       <br>
       <div class="row">
         <div class="col-lg-12">
-          <h4 >Download</h4>
+          <h4 >Execute</h4>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12" style="font-size: large;">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          We provide simple scripts for you to download videos on Youtube with <code>./video_list</code> and extract audio/video segments with <code>./timestamp</code> in <a href="https://github.com/VoxBlink/ScriptsForVoxBlink.git"><strong>Repo</strong></a>.
+          After you download the annotation files, you can follow the guidance in 
+          <a href="https://github.com/VoxBlink/ScriptsForVoxBlink.git"><strong>Repo</strong></a>
+          and build your database with <code>./video_list</code> and <code>./timestamp</code>
         </div>
       </div>
       <br>
@@ -718,11 +727,14 @@
       <div class="row">
         <div class="col-lg-12" style="font-size: large;">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          The dataset is licensed under the <strong>CC BY-NC-SA 4.0</strong> license. This means that you can share and adapt the dataset for non-commercial purposes as long as you provide appropriate attribution and distribute your contributions under the same license. 
-          Detailed terms can be found on <a href="">LICENSE</a>.
-
+          The open-source resources and the execution scripts are 
+          licensed under the <strong>CC BY-NC-SA 4.0</strong> for protection.
+          Detailed terms can be found on <a href="https://github.com/VoxBlink/ScriptsForVoxBlink/blob/main/LICENSE">LICENSE</a>. 
+          If you have some legal concerns of the privacy confliction to use the data, 
+          please consult the lawyer in your local region. 
+          
           The metadata provided is accurate as of June 2023. We cannot guarantee the availability of videos on the YouTube platform in the future. 
-          We recommend downloading the dataset promptly. For YouTube users with concerns regarding their videos' inclusion in our dataset, please contact us via E-mail:<strong> yuke.lin@dukekunshan.edu.cn </strong>or <strong>ming.li369@dukekunshan.edu.cn</strong>.
+          For YouTube users with concerns regarding their videos' inclusion in our dataset, please contact us via E-mail:<strong> yuke.lin@dukekunshan.edu.cn </strong>or <strong>ming.li369@dukekunshan.edu.cn</strong>.
 
           </div>
       </div>
