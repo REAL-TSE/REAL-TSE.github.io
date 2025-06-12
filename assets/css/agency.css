@@ -643,8 +643,8 @@ header.faces-mask {
   position: relative;  
   width: 100%;  /* 根据需要调整宽度 */
   height: 100%;  /* 根据需要调整高度 */
-  background-image: url('../img/faces.jpg');  /* 设置背景图片 */
-  background-size: cover;  /* 使背景图片完全覆盖容器 */
+  background-image: url('../img/pipeline.svg');  /* 设置背景图片 */
+  background-size: contain;  /* 使背景图片完全覆盖容器 */
   background-repeat: no-repeat;  /* 避免背景图片重复 */
 }
 .code-block {
