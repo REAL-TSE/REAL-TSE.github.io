@@ -785,15 +785,20 @@ cd REAL-T</code></pre>
           data-clipboard-target="#code-step0-2">Copy</button>
         <pre><code id="code-step0-2" class="language-bash">conda create -n REAL-T python=3.9
 conda activate REAL-T
-pip install -r requirements.txt</code></pre>
+pip install -r requirements.txt
+
+# install wesep
+git submodule init
+git submodule update</code></pre>
       </div>
 
       <p class="mb-2 fw-semibold">③ Set up environment variables</p>
+      <p class="mb-2"><em>Please replace <strong>$PWD</strong> below with the absolute path to this project.</em></p>
       <div class="position-relative">
         <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-2 copy-btn"
           data-clipboard-target="#code-step0-3">Copy</button>
-        <pre><code id="code-step0-3" class="language-bash">export PATH=$PWD/fireredasr/:$PWD/fireredasr/utils/:$PATH
-export PYTHONPATH=$PWD/:$PYTHONPATH
+        <pre><code id="code-step0-3" class="language-bash">export PATH=$PWD/FireRedASR/fireredasr/:$PWD/FireRedASR/fireredasr/utils/:$PATH
+export PYTHONPATH=$PWD/FireRedASR/:$PYTHONPATH
 export PYTHONPATH=$PWD/wesep:$PYTHONPATH</code></pre>
       </div>
 
