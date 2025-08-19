@@ -626,9 +626,9 @@
       <div class="col-lg-8 mx-auto text-center">
         <div class="large text-muted">
           <h5>
-            <a href="xxx" class="portfolio-link" data-toggle="modal">Bibtex</a>&nbsp;|&nbsp;
-            <a href="xxxx" class="portfolio-link" data-toggle="modal">Abstract</a>&nbsp;|&nbsp;
-            <a href="xxxxx">PDF</a>&nbsp;&nbsp;
+            <a href="#p7" class="portfolio-link" data-toggle="modal">Bibtex</a>&nbsp;|&nbsp;
+            <a href="#p8" class="portfolio-link" data-toggle="modal">Abstract</a>&nbsp;|&nbsp;
+            <a href="https://www.isca-archive.org/interspeech_2025/li25da_interspeech.pdf">PDF</a>&nbsp;&nbsp;
           </h5>
         </div>
       </div>
@@ -659,17 +659,15 @@
               
               <!-- Project Details Go Here -->
               <textarea name="message" class="form-control" id="message" rows="10">
-                @INPROCEEDINGS{10446780,
-                  author={Lin, Yuke and Qin, Xiaoyi and Zhao, Guoqing and Cheng, Ming and Jiang, Ning and Wu, Haiying and Li, Ming},
-                  booktitle={ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
-                  title={Voxblink: A Large Scale Speaker Verification Dataset on Camera}, 
-                  year={2024},
-                  volume={},
-                  number={},
-                  pages={10271-10275},
-                  keywords={Training;Video on demand;Purification;Pipelines;Signal processing;Web sites;Noise measurement;Speaker Verification;Dataset;Large-scale;Multi-modal},
-                  doi={10.1109/ICASSP48485.2024.10446780
-                  }}
+                @inproceedings{li25da_interspeech,
+                title = {{REAL-T: Real Conversational Mixtures for Target Speaker Extraction}},
+                author = {{Shaole Li and Shuai Wang and Jiangyu Han and Ke Zhang and Wupeng Wang and Haizhou Li}},
+                year = {{2025}},
+                booktitle = {{Interspeech 2025}},
+                pages = {{1923--1927}},
+                doi = {{10.21437/Interspeech.2025-2662}} ,
+                issn = {{2958-1796}},
+                }
               </textarea>
               <p>
                 <!-- <p class="item-intro"></p> -->
@@ -714,7 +712,13 @@
               <!-- Project Details Go Here -->
               
               <span >
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this paper, we introduce a novel and extensive audio-visual speaker verification dataset named <strong>VoxBlink</strong>. We propose an innovative and robust automatic audio-visual collection pipeline designed to curate this dataset. Finally, there are total 38k identities with 1.45M utterances are collected. Due to the inherent nature of automated data collection, the introduction of noisy data is inevitable. Therefore, we also provide a clean version of VoxBlink, named as VoxBlink-clean, comprising 18k identities and 1.02M utterances. In contrast to VoxCeleb, VoxBlink contains from YouTube ordinary person channels, that means the dataset scenarios covered are more in line with real-life situations. To our best knowledge, the VoxBlink dataset is one of the largest open speaker recognition datasets. Leveraging the VoxCeleb and VoxBlink dataset, we employ diverse speaker verification models with multiple architectural backbones to conduct comprehensive experimentation on the VoxCeleb test sets. Experimential results indicates that a substantial enhancement in performance—ranging from 12% to 30%—across various backbone architectures upon the incorporation of VoxBlink into the training process.
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Current target speaker extraction (TSE) systems achieve remarkable performance on synthetic datasets like LibriMix and
+                WSJMix. However, their effectiveness in real conversational scenarios, where the cocktail party problem is most
+                prevalent, remains largely unexplored. In this paper, we conduct a comprehensive analysis of several speaker diarization
+                datasets and introduce REAL-T, the first conversation-centric dataset specifically designed for TSE in real-world
+                conditions. Our evaluations reveal significant performance degradation of existing TSE models on this dataset,
+                highlighting the unaddressed complexity of real-world speech extraction. To facilitate controlled benchmarking, we
+                define two subsets: BASE and PRIMARY, ensuring more manageable yet challenging evaluation settings.
               </span>
               <p>
                 <!-- <p class="item-intro"></p> -->
