@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="REAL-TSE Challenge - Real-world Target Speaker Extraction Challenge">
+  <meta name="author" content="REAL-T Team">
+  <link rel="canonical" href="https://real-tse.github.io/challenge">
+
+  <title>REAL-TSE Challenge - Real-world Target Speaker Extraction Challenge</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Custom fonts for this template -->
+  <link href="../assets/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this theme -->
+  <link href="../assets/css/agency.css" rel="stylesheet" />
+
+  <style>
+    .challenge-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 100px 0 80px;
+      color: white;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 60px;
+      padding-bottom: 40px;
+      border-left: 2px solid #fed136;
+      margin-left: 20px;
+    }
+
+    .timeline-item:last-child {
+      border-left: 2px solid transparent;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -12px;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #fed136;
+      border: 4px solid white;
+    }
+
+    .track-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      height: 100%;
+    }
+
+    .track-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-divider {
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #fed136, transparent);
+      margin: 40px 0;
+    }
+
+    .rule-box {
+      background: #f8f9fa;
+      border-left: 4px solid #fed136;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .highlight-box {
+      background: #fff3cd;
+      border: 1px solid #fed136;
+      border-radius: 5px;
+      padding: 15px;
+      margin: 20px 0;
+    }
+
+    /* 减小标题和内容之间的间距 */
+    .section-heading {
+      margin-bottom: 10px !important;
+    }
+    
+    .section-subheading {
+      margin-bottom: 20px !important;
+    }
+    
+    .page-section .row:first-of-type {
+      margin-bottom: 20px !important;
+    }
+  </style>
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="../">REAL-T</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item"><a class="nav-link" href="../#services">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="../#portfolio">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="../#about">Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="../#timeline">Guidance</a></li>
+          <li class="nav-item"><a class="nav-link" href="../#acknowledgement">Acknowledgement</a></li>
+          <li class="nav-item"><a class="nav-link active" href="./">Challenge</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navigation -->
+
+  <!-- Header -->
+  <header class="challenge-header">
+    <div class="container text-center">
+      <h1 class="display-3 font-weight-bold mb-3">REAL-TSE Challenge</h1>
+      <h3 class="mb-4">Real-world Target Speaker Extraction Challenge</h3>
+      <p class="lead mb-4">
+        Moving target speaker extraction research from simulated benchmarks<br>
+        toward real-world conversational applications
+      </p>
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-3 mb-3">
+          <div class="bg-white text-dark p-3 rounded">
+            <h5 class="font-weight-bold mb-2">Registration Opens</h5>
+            <p class="mb-0">TBA</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="bg-white text-dark p-3 rounded">
+            <h5 class="font-weight-bold mb-2">Challenge Starts</h5>
+            <p class="mb-0">TBA</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="bg-white text-dark p-3 rounded">
+            <h5 class="font-weight-bold mb-2">Submission Deadline</h5>
+            <p class="mb-0">TBA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Introduction Section -->
+  <section class="page-section" id="introduction">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-3">
+          <h2 class="section-heading text-uppercase">Introduction of the Challenge</h2>
+          <h3 class="section-subheading text-muted">Bridging the gap between simulation and reality</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <p class="text-muted" style="text-align: justify; line-height: 1.8;">
+            Target Speaker Extraction (TSE) has become a cornerstone of modern speech technology. Unlike blind speech separation that attempts to recover all sources, TSE focuses on extracting the voice of a specific target speaker from multi-speaker mixtures by leveraging auxiliary cues such as enrollment utterances and spatial information.
+          </p>
+          <p class="text-muted" style="text-align: justify; line-height: 1.8;">
+            Despite rapid advances in neural TSE models, most prior works rely on simulated mixtures, limiting real-world applicability. These simulations combine utterances recorded in different acoustic conditions, thereby distorting loudness relationships, and they lack authentic room reverberation and ambient noise, producing an unnatural acoustic signature. Crucially, widely used datasets are dominated by read speech from fixed prompts and therefore miss the spontaneous turn-taking and reactive overlaps that characterize real conversational settings—a well-known challenge in the cocktail-party problem.
+          </p>
+          <p class="text-muted" style="text-align: justify; line-height: 1.8;">
+            To close this gap, we propose the <strong>REAL-TSE Challenge (Real-world Target Speaker Extraction Challenge)</strong>. The challenge is grounded in real conversational recordings spanning Mandarin and English and covering diverse scenarios (e.g., meetings and dinner-party interactions). It also provides multiple enrollment utterances per speaker, enabling robust, enrollment-aware conditioning. The goal is to evaluate TSE systems under natural, spontaneous conversational dynamics. Participants of the challenge shall be required to design a Target Speaker Extraction (TSE) system. This system must process real-world speech mixtures and an enrollment speech sample of the target speaker, and subsequently output an estimated signal of the target speaker extracted from the mixtures. The recordings will be captured using distant microphones in real-life scenarios, such as meetings or dinner parties. The challenge consists of two complementary tracks:
+          </p>
+          
+          <p class="text-muted" style="text-align: justify; line-height: 1.8;">
+            <strong>1) Online (Causal) Track</strong> – focusing on streaming and low-latency TSE, where the model must operate under causality and limited latency.
+          </p>
+
+          <p class="text-muted" style="text-align: justify; line-height: 1.8;">
+            <strong>2) Offline (Global) Track</strong> – exploring context-aware extraction using full utterances, allowing for global optimization and non-causal modeling.
+          </p>
+
+          <p class="text-muted" style="text-align: justify; line-height: 1.8;">
+            Together, these tracks form a comprehensive benchmark for practical TSE systems. By rooting evaluation in real acoustics and natural interaction, the REAL-TSE Challenge aims to move the field beyond synthetic benchmarks toward deployable, speaker-aware auditory intelligence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Significance Section -->
+  <section class="page-section bg-light" id="significance">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-3">
+          <h2 class="section-heading text-uppercase">Significance of the Challenge</h2>
+          <h3 class="section-subheading text-muted">Advancing the frontier of speaker-aware auditory intelligence</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <p class="text-muted mb-4" style="text-align: justify; line-height: 1.8;">
+            The REAL-TSE Challenge addresses a fundamental bottleneck in the evolution of speech understanding systems—how to enable machines to focus on one speaker in a complex acoustic scene. This goal resonates strongly with the theme of Interspeech 2026, <strong>"Speaking Together,"</strong> as it reflects the cognitive process of selective auditory attention in human communication.
+          </p>
+
+          <h5 class="font-weight-bold mb-3">The significance of this challenge can be summarized in three major aspects:</h5>
+
+          <!-- Aspect 1 -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold">
+                1. Bridging Research and Real-World Deployment
+              </h5>
+              <ul class="text-muted mb-0" style="line-height: 1.8;">
+                <li>Most existing TSE datasets (e.g., LibriMix, WSJ0-2mix) rely on simulated mixtures that fail to capture true spatial, temporal, and conversational dynamics.</li>
+                <li>REAL-TSE provides the first real conversational Benchmark for both online and offline TSE evaluation, serving as a critical stepping stone from laboratory research to real applications such as smart assistants, teleconferencing, and hearing devices.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Aspect 2 -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold">
+                2. Advancing Dual-Track Research Directions
+              </h5>
+              <ul class="text-muted mb-0" style="line-height: 1.8;">
+                <li><strong>The Online Track</strong> targets causal, low-latency, and computationally efficient TSE for real-time processing. Participants are encouraged to optimize latency, and robustness under strict causal constraints—reflecting the real requirements of interactive systems.</li>
+                <li><strong>The Offline Track</strong> promotes exploration of global modeling paradigms, including self-supervised learning, diffusion-based generation, and speaker-conditioned large models. This track focuses on pushing the frontier of speech extraction fidelity and perceptual naturalness.</li>
+                <li>Together, these tracks foster synergy between system efficiency and modeling quality, encouraging innovation across both algorithmic and architectural dimensions.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Aspect 3 -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold">
+                3. Driving Community Collaboration and Benchmark Standardization
+              </h5>
+              <ul class="text-muted mb-0" style="line-height: 1.8;">
+                <li>By providing an open, reproducible, and ethically approved dataset and baseline framework (<strong>Wesep</strong>: <a href="https://github.com/wenet-e2e/wesep" target="_blank">https://github.com/wenet-e2e/wesep</a>), this challenge aims to unify evaluation practices for real-world TSE.</li>
+                <li>The joint analysis of intelligibility (WER), speaker preservation (similarity), and perceptual quality (MOS) establishes a multi-faceted metric standard for future studies.</li>
+                <li>We anticipate that the REAL-TSE Challenge will not only stimulate new research ideas but also serve as a long-term benchmark and platform for cross-community collaboration among ASR, separation, and speaker modeling researchers.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="alert alert-info mt-4" role="alert">
+            <p class="mb-0" style="line-height: 1.8;">
+              <strong>In summary,</strong> the REAL-TSE Challenge represents a timely and necessary effort to move target speaker extraction research from simulated benchmarks toward real-world and conversational applications—an essential step in enabling machines to truly <em>"listen and speak together"</em> with us.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tracks Section -->
+  <section class="page-section" id="tracks">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-3">
+          <h2 class="section-heading text-uppercase">Challenge Tracks</h2>
+          <h3 class="section-subheading text-muted">Choose your track and compete!</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Track 1: Online (Causal) -->
+        <div class="col-md-6 mb-4">
+          <div class="card track-card">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="card-title font-weight-bold">Track 1: Online (Causal)</h4>
+                <span class="badge badge-primary badge-pill">Real-Time</span>
+              </div>
+              <p class="card-text text-muted mb-0">
+                Focusing on streaming and low-latency TSE for real-time processing.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 2: Offline (Global) -->
+        <div class="col-md-6 mb-4">
+          <div class="card track-card">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="card-title font-weight-bold">Track 2: Offline (Global)</h4>
+                <span class="badge badge-success badge-pill">High Quality</span>
+              </div>
+              <p class="card-text text-muted mb-0">
+                Exploring context-aware extraction using full utterances and global optimization.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rules Section -->
+  <section class="page-section bg-light" id="rules">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-3">
+          <h2 class="section-heading text-uppercase">Rules for Participation</h2>
+          <h3 class="section-subheading text-muted">Guidelines for submission and evaluation</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="alert alert-primary" role="alert">
+            <h5 class="font-weight-bold mb-2"><i class="fas fa-info-circle mr-2"></i>General Information</h5>
+            <p class="mb-0">Participants may submit results for <strong>one or both tracks</strong> of the Challenge.</p>
+          </div>
+
+          <!-- Online Track Rules -->
+          <div class="rule-box">
+            <h5 class="font-weight-bold mb-3">
+              <i class="fas fa-stopwatch text-primary mr-2"></i>
+              Online Track Requirements
+            </h5>
+            <ol class="text-muted mb-0" style="line-height: 1.8;">
+              <li><strong>Causality Constraint:</strong> Systems must be strictly causal and not access any future frame information.</li>
+              <li><strong>Real-Time Requirement:</strong> The end-to-end algorithmic latency can not exceed 100 ms.</li>
+              <li><strong>Streaming Output:</strong> Models should support frame-wise or chunk-wise input with continuous output generation, without relying on full-utterance buffering.</li>
+            </ol>
+          </div>
+
+          <!-- Offline Track Rules -->
+          <div class="rule-box">
+            <h5 class="font-weight-bold mb-3">
+              <i class="fas fa-globe text-success mr-2"></i>
+              Offline Track Requirements
+            </h5>
+            <ol class="text-muted mb-0" style="line-height: 1.8;">
+              <li><strong>Full Context Access:</strong> Systems may utilize the entire utterance and global context information.</li>
+              <li><strong>No Restriction on Architecture or Complexity:</strong> There is no limitation on model type, inference duration, or computational cost.</li>
+              <li><strong>Encouraged Exploration:</strong> Participants are encouraged to explore high-performance architectures, long-context modeling, and generation-based methods.</li>
+            </ol>
+          </div>
+
+          <!-- General Submission Rules -->
+          <div class="card mt-4">
+            <div class="card-header bg-warning text-dark">
+              <h5 class="mb-0 font-weight-bold">
+                <i class="fas fa-file-upload mr-2"></i>
+                General Submission Rules
+              </h5>
+            </div>
+            <div class="card-body">
+              <ul class="mb-0" style="line-height: 1.8;">
+                <li>All submissions must include <strong>detailed system descriptions</strong> for reproducibility.</li>
+                <li>Each team may submit up to <strong>three valid systems per track</strong>.</li>
+                <li>Teams are encouraged to make their models or scripts <strong>publicly available</strong> after the challenge.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="page-section" id="timeline">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-3">
+          <h2 class="section-heading text-uppercase">Important Dates</h2>
+          <h3 class="section-subheading text-muted">Mark your calendar</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h5 class="font-weight-bold">Registration Opens</h5>
+            <p class="text-muted mb-1"><strong>TBA</strong></p>
+            <p class="text-muted small">Register your team and get access to the challenge data</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h5 class="font-weight-bold">Development Phase</h5>
+            <p class="text-muted mb-1"><strong>TBA</strong></p>
+            <p class="text-muted small">Train and develop your TSE systems using the provided datasets</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h5 class="font-weight-bold">Evaluation Phase</h5>
+            <p class="text-muted mb-1"><strong>TBA</strong></p>
+            <p class="text-muted small">Submit your system outputs for evaluation</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h5 class="font-weight-bold">System Description Deadline</h5>
+            <p class="text-muted mb-1"><strong>TBA</strong></p>
+            <p class="text-muted small">Submit a detailed technical report describing your system</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h5 class="font-weight-bold">Results Announcement</h5>
+            <p class="text-muted mb-1"><strong>TBA</strong></p>
+            <p class="text-muted small">Winners announced and leaderboard finalized</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Section -->
+  <section class="page-section bg-light" id="register">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-3">
+          <h2 class="section-heading text-uppercase">Registration & Resources</h2>
+          <h3 class="section-subheading text-muted">Get started with the challenge</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <div class="card">
+            <div class="card-body p-5">
+              <i class="fas fa-clipboard-check fa-4x text-primary mb-4"></i>
+              <h4 class="font-weight-bold mb-3">Registration Coming Soon</h4>
+              <p class="text-muted mb-4">
+                Registration details and the challenge platform will be announced shortly. 
+                Stay tuned for updates!
+              </p>
+              <div class="alert alert-info" role="alert">
+                <i class="fas fa-info-circle mr-2"></i>
+                For questions or inquiries, please contact us through the links below.
+              </div>
+              <div class="mt-4">
+                <a href="https://github.com/wenet-e2e/wesep" class="btn btn-primary btn-lg mr-2 mb-2" target="_blank">
+                  <i class="fab fa-github mr-2"></i>Wesep Baseline
+                </a>
+                <a href="https://github.com/REAL-TSE/REAL-T" class="btn btn-outline-primary btn-lg mr-2 mb-2" target="_blank">
+                  <i class="fab fa-github mr-2"></i>REAL-T Dataset
+                </a>
+                <a href="https://huggingface.co/datasets/SLbaba/REAL-T" class="btn btn-outline-secondary btn-lg mb-2" target="_blank">
+                  <i class="fas fa-database mr-2"></i>Hugging Face
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Organizers Section -->
+  <section class="page-section" id="organizers">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-3">
+          <h2 class="section-heading text-uppercase">Organizers</h2>
+          <h3 class="section-subheading text-muted">Meet the challenge organizers</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <p class="text-center text-muted mb-4">
+            Information will be announced soon.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer" style="background-color: white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4 d-flex align-items-center">
+          <span class="copyright">Copyright &copy; CUHKSZ, SRIBD and NJU</span>
+        </div>
+        <div class="col-md-8 d-flex justify-content-md-end justify-content-center align-items-center">
+          <img src="../assets/img/CUHKSZ.png" alt="CUHKSZ Logo" style="height: 50px; margin-top: 15px; margin-right: 5px;">
+          <img src="../assets/img/SRIBD.png" alt="SRIBD Logo" style="height: 80px;">
+          <img src="../assets/img/NJU.png" alt="NJU Logo" style="height: 60px;">
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="../assets/js/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="../assets/js/agency.min.js"></script>
+
+</body>
+</html>
