@@ -18,7 +18,8 @@
     
     :root {
       --rt-navy: #0f172a;
-      --rt-slate: #334155;
+      /* Main copy: darker than Bootstrap text-muted (#6c757d) */
+      --rt-slate: #1e293b;
       --rt-blue: #2563eb;
       --rt-teal: #0d9488;
       --rt-bg: #f8fafc;
@@ -30,7 +31,46 @@
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background: var(--rt-bg);
       color: var(--rt-slate);
-      line-height: 1.6;
+      line-height: 1.65;
+      font-size: 1.0625rem;
+    }
+
+    /* Override Bootstrap .text-muted (gray #6c757d) — match main body color */
+    .text-muted {
+      color: var(--rt-slate) !important;
+    }
+
+    /* Bootstrap .small is ~80% — too small for long explanatory copy */
+    .small,
+    small {
+      font-size: 0.96875rem !important;
+    }
+
+    /* Algorithmic / buffering latency examples — denser copy, slightly smaller */
+    .latency-detail-box h6 {
+      font-size: 0.9rem !important;
+    }
+    .latency-detail-box .small,
+    .latency-detail-box .alert.small {
+      font-size: 0.875rem !important;
+      line-height: 1.55;
+    }
+
+    .latency-detail-box .latency-baseline-note {
+      display: block;
+      box-sizing: border-box;
+      max-width: calc(100% - 0.65rem);
+      margin-top: 0.45rem;
+      margin-bottom: 0.7rem;
+      padding: 0.4rem 0.55rem 0.5rem 0.65rem;
+      border-left: 2px solid rgba(37, 99, 235, 0.28);
+      background: rgba(37, 99, 235, 0.035);
+      border-radius: 0 5px 5px 0;
+      color: var(--rt-slate) !important;
+    }
+
+    .lead {
+      font-size: 1.35rem;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -55,7 +95,7 @@
     .nav-link {
       color: var(--rt-slate) !important;
       font-weight: 500;
-      font-size: 0.95rem;
+      font-size: 1rem;
       padding: 0.5rem 1rem !important;
       transition: color 0.2s;
     }
@@ -81,7 +121,7 @@
     }
 
     .section-title {
-      font-size: 1.75rem;
+      font-size: 1.85rem;
       letter-spacing: -0.5px;
       position: sticky;
       top: 100px;
@@ -163,6 +203,12 @@
       border: 2px solid #fff;
     }
 
+    .timeline-date {
+      color: var(--rt-teal);
+      letter-spacing: 0.04em;
+      font-size: 0.8125rem;
+    }
+
     .faq-btn {
       box-shadow: none !important;
     }
@@ -186,6 +232,18 @@
     .badge-success { background: #f0fdf4; color: #0d9488; }
 
     .text-justify { text-align: justify; }
+
+    code {
+      color: var(--rt-slate);
+      background: #f1f5f9;
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-size: 0.875em;
+    }
+
+    [id^="ref-"] {
+      scroll-margin-top: 90px;
+    }
   </style>
 </head>
 
@@ -200,13 +258,16 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto align-items-center">
-          <li class="nav-item"><a class="nav-link" href="../">Home</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#page-top">Home</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#introduction">Intro</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#data">Data</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#tracks">Tracks</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#rules">Rules</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#baselines">Baselines</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#evaluation">Evaluation</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#timeline">Timeline</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#organizers">Organizers</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#rules">Rules</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#organizers">Organizers</a></li>
           <li class="nav-item ml-lg-3 mt-2 mt-lg-0"><a class="btn btn-primary btn-sm rounded-pill px-4 py-2 js-scroll-trigger" href="#register">Register</a></li>
         </ul>
       </div>
@@ -220,16 +281,25 @@
         <div class="col-lg-8">
           <h1 class="display-4 font-weight-bold mb-3" style="letter-spacing: -1px;">REAL-TSE Challenge</h1>
           <h3 class="mb-4 text-muted" style="font-weight: 400;">Real-world Target Speaker Extraction Challenge</h3>
-          <p class="lead mb-5 text-muted" style="max-width: 600px;">
+          <p class="lead mb-2 text-muted" style="max-width: 600px;">
             Moving target speaker extraction research from simulated benchmarks toward real-world conversational applications
           </p>
+          <p class="mb-5" style="font-size: 0.95rem; color: #64748b;">
+            <i class="fas fa-calendar-alt mr-1"></i> A satellite challenge of <strong>IEEE SLT 2026</strong>
+          </p>
+          <!-- Temporarily hidden: GitHub repo buttons
           <div class="d-flex flex-wrap">
             <a href="https://github.com/REAL-TSE/REAL-TSE-Challenge" class="btn btn-dark btn-lg rounded-pill px-4 mr-3 mb-3" target="_blank">
-              <i class="fab fa-github mr-2"></i>REAL-T Dataset
+              <i class="fab fa-github mr-2"></i>REAL-TSE-Challenge
             </a>
             <a href="https://github.com/REAL-TSE/wesep-real-tse" class="btn btn-outline-primary btn-lg rounded-pill px-4 mb-3" target="_blank">
               <i class="fab fa-github mr-2"></i>Wesep Baseline
             </a>
+          </div>
+          -->
+          <div class="d-flex align-items-center flex-wrap mt-2">
+            <img src="../assets/img/real-tse-caption.png" alt="REAL-TSE" style="max-height: 120px; width: auto;" class="mr-4 mb-3">
+            <img src="../assets/img/slt2026-logo.png" alt="SLT 2026" style="max-height: 53px; width: auto;" class="mb-3">
           </div>
         </div>
       </div>
@@ -237,7 +307,7 @@
   </header>
 
   <!-- Introduction -->
-  <section class="page-section bg-light" id="introduction">
+  <section class="page-section" id="introduction">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 mb-4 mb-lg-0">
@@ -245,14 +315,86 @@
         </div>
         <div class="col-lg-9">
           <p class="text-muted text-justify">
-            Target Speaker Extraction (TSE) has become a cornerstone of modern speech technology. Unlike blind speech separation that attempts to recover all sources, TSE focuses on extracting the voice of a specific target speaker from multi-speaker mixtures by leveraging auxiliary cues such as enrollment utterances and spatial information.
+            The REAL-TSE Challenge focuses on Target Speaker Extraction (TSE) in real-world conversational environments. Given a multi-speaker recording and enrollment speech from a target speaker, the goal is to extract the target speaker's voice from the mixture.
           </p>
           <p class="text-muted text-justify">
-            Despite rapid advances in neural TSE models, most prior works rely on simulated mixtures, limiting real-world applicability. These simulations combine utterances recorded in different acoustic conditions, thereby distorting loudness relationships, and they lack authentic room reverberation and ambient noise, producing an unnatural acoustic signature. Crucially, widely used datasets are dominated by read speech from fixed prompts and therefore miss the spontaneous turn-taking and reactive overlaps that characterize real conversational settings—a well-known challenge in the cocktail-party problem.
+            While recent TSE models have shown strong performance, most are trained and evaluated on simulated mixtures. These simulated data often miss the realistic reverberation, background noise, loudness variation, and spontaneous overlap patterns found in natural conversations. In addition, many existing datasets mainly contain read speech, which does not fully reflect real interactive scenarios.
           </p>
           <p class="text-muted text-justify mb-0">
-            To close this gap, we propose the <strong>REAL-TSE Challenge (Real-world Target Speaker Extraction Challenge)</strong>. The challenge is grounded in real conversational recordings spanning Mandarin and English and covering diverse scenarios (e.g., meetings and dinner-party interactions). It also provides multiple enrollment utterances per speaker, enabling robust, enrollment-aware conditioning. The goal is to evaluate TSE systems under natural, spontaneous conversational dynamics. Participants of the challenge shall be required to design a Target Speaker Extraction (TSE) system. This system must process real-world speech mixtures and an enrollment speech sample of the target speaker, and subsequently output an estimated signal of the target speaker extracted from the mixtures. The recordings will be captured using distant microphones in real-life scenarios, such as meetings or dinner parties.
+            To bridge this gap, the REAL-TSE Challenge, organized as a satellite event of <strong>IEEE SLT 2026</strong>, provides real conversational recordings in Mandarin and English from scenarios such as meetings and dinner-party interactions, together with multiple enrollment utterances per speaker. The challenge is designed to evaluate and advance TSE systems under natural, spontaneous, and practically relevant conditions.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data -->
+  <section class="page-section" id="data">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 mb-4 mb-lg-0">
+          <h2 class="section-title">Data</h2>
+        </div>
+        <div class="col-lg-9">
+          <p class="text-muted mb-4">
+            The REAL-TSE Challenge does <strong>not</strong> distribute a challenge-specific training corpus; instead, participants train on external open data under the <strong>usage constraints</strong> summarized below. Two official data partitions are released: a <strong>development set</strong> for validation and hyper-parameter selection, and an <strong>evaluation set</strong> reserved exclusively for final scoring. The following sections cover training data rules, followed by the source, permitted use, and characteristics of the development and evaluation sets.
+          </p>
+
+          <!-- Training policy (no official training partition) -->
+          <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-database text-primary mr-2"></i>Model training (external data)</h5>
+          <div class="card p-4 border-0 mb-4" style="background: #f8fafc;">
+            <p class="text-muted small mb-2">
+              The challenge does <strong>not</strong> prescribe a fixed training set. Teams may use any <strong>openly available (open-source) datasets</strong> for model training, provided that every dataset used is listed in the system description with <strong>explicit citations or links</strong>.
+            </p>
+            <p class="text-muted small mb-2">
+              Use of <strong>pre-trained models</strong> (e.g., speech, speaker, or general-purpose backbones) is allowed, with clear documentation of the source of each checkpoint.
+            </p>
+            <p class="text-muted small mb-0">
+              <strong>Prohibited corpora:</strong> Participants must <strong>not</strong> use—directly or indirectly—any audio, transcripts, or labels from the five source corpora of the development set: <strong>AliMeeting</strong>, <strong>AISHELL-4</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong>. This prohibition applies to all stages including pre-training, training, data augmentation, and any other form of data utilization.
+            </p>
+          </div>
+
+          <!-- Development Set -->
+          <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-flask text-primary mr-2"></i>Development Set</h5>
+          <div class="card p-4 border-0 mb-4" style="background: #f8fafc;">
+            <p class="text-muted small mb-2">
+              The development set is the <strong>PRIMARY</strong> partition of our previous work <a href="https://www.isca-archive.org/interspeech_2025/li25da_interspeech.pdf" target="_blank" rel="noopener noreferrer"><strong>REAL-T</strong></a>, the first conversation-centric dataset designed for target speaker extraction under real-world conditions. Each sample consists of a multi-speaker mixture, enrollment utterance(s) identifying the target speaker, and the corresponding clean reference. Each mixture–speaker pair is coupled with multiple distinct enrollment utterances, each forming an independent sample.
+            </p>
+            <p class="text-muted small mb-2">
+              The data is constructed from five established speaker diarization corpora—<strong>AISHELL-4</strong>, <strong>AliMeeting</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong>—spanning Mandarin and English across conversational genres such as meetings and dinner parties. An automated filtering pipeline segments long recordings while preserving semantic completeness: mixture utterances are generated by identifying and merging overlapping segments, while non-overlapping segments of at least 5 seconds are randomly selected as enrollment utterances.
+            </p>
+            <p class="text-muted small mb-2">
+              Unlike synthetic mixtures (e.g., LibriMix), the development set naturally captures spontaneous interactions, authentic reverberation, and ambient noise. It reflects several challenges commonly found in real conversational speech, including sparse and uneven speaker overlap, frequent but intermittent speaking behavior, short utterances with rapid turn-taking, and non-speech vocalizations such as laughter and humming.
+            </p>
+            <p class="text-muted small mb-0">
+              <strong>Usage:</strong> The development set may be used for hyper-parameter selection, model comparison, and validation, but must <strong>not</strong> be used for model training or fine-tuning.
+            </p>
+          </div>
+
+          <!-- Evaluation Set -->
+          <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-award text-primary mr-2"></i>Evaluation Set</h5>
+          <div class="card p-4 border-0 mb-0" style="background: #f8fafc;">
+            <p class="text-muted small mb-3">
+              The evaluation set consists of two subsets that together assess both in-domain robustness and real-world generalization:
+            </p>
+            <div class="row mb-3">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <div class="rounded p-3" style="background: #fff; border: 1px solid var(--rt-border);">
+                  <h6 class="font-weight-bold mb-2"><span class="badge badge-primary mr-2">EVAL-1</span>Seen Set</h6>
+                  <p class="text-muted small mb-0">Constructed from the same source corpora as the development set using a held-out partition, sharing similar acoustic conditions and conversation styles. EVAL-1 measures system performance under familiar, in-domain settings.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="rounded p-3" style="background: #fff; border: 1px solid var(--rt-border);">
+                  <h6 class="font-weight-bold mb-2"><span class="badge badge-success mr-2">EVAL-2</span>Unseen Set</h6>
+                  <p class="text-muted small mb-0">Newly collected recordings that cover a broader range of real-world scenarios beyond the development set. EVAL-2 provides a comprehensive assessment of model generalization to previously unseen acoustic environments and interaction patterns.</p>
+                </div>
+              </div>
+            </div>
+            <p class="text-muted small mb-0">
+              <strong>Usage:</strong> The evaluation set must <strong>not</strong> be used for training, fine-tuning, hyper-parameter tuning, or any form of model optimization. It is reserved <strong>exclusively for final evaluation</strong>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -266,23 +408,33 @@
           <h2 class="section-title">Tracks</h2>
         </div>
         <div class="col-lg-9">
-          <div class="row">
-            <div class="col-md-6 mb-4">
-              <div class="card h-100 p-4 border-0">
-                <div class="d-flex justify-content-between align-items-start mb-3">
-                  <h5 class="font-weight-bold mb-0">Track 1: Online</h5>
-                  <span class="badge badge-primary">Real-Time</span>
-                </div>
-                <p class="text-muted mb-0 small">Focusing on streaming and low-latency TSE for real-time processing.</p>
+          <div class="card p-4 border-0 mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-3 pb-3" style="border-bottom: 1px solid var(--rt-border);">
+              <h5 class="font-weight-bold mb-0">Track 1: Online Target Speaker Extraction</h5>
+              <span class="badge badge-primary">Low-Latency TSE</span>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-md-5 mb-3 mb-md-0">
+                <img src="../assets/img/track1.png" alt="Track 1: Online Target Speaker Extraction" class="img-fluid rounded" style="width: 100%;">
+              </div>
+              <div class="col-md-7">
+                <p class="text-muted small mb-2"><strong>Scenario:</strong> Target speaker extraction in latency-sensitive applications such as assistive hearing, real-time communication, and interactive voice systems. The system must produce temporally responsive outputs under overlapping speech and background noise, enabling continuous and natural listening.</p>
+                <p class="text-muted mb-0 small"><strong>Task:</strong> Evaluate target speaker extraction under strict end-to-end latency constraints. Systems are not required to implement a streaming inference pipeline; instead, effective latency is measured via the temporal response of outputs to localized input perturbations. Models must ensure input changes are reflected within a bounded delay (&le; 100 ms), balancing extraction quality and responsiveness.</p>
               </div>
             </div>
-            <div class="col-md-6 mb-4">
-              <div class="card h-100 p-4 border-0">
-                <div class="d-flex justify-content-between align-items-start mb-3">
-                  <h5 class="font-weight-bold mb-0">Track 2: Offline</h5>
-                  <span class="badge badge-success">High Quality</span>
-                </div>
-                <p class="text-muted mb-0 small">Exploring context-aware extraction using full utterances and global optimization.</p>
+          </div>
+          <div class="card p-4 border-0 mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-3 pb-3" style="border-bottom: 1px solid var(--rt-border);">
+              <h5 class="font-weight-bold mb-0">Track 2: Offline Target Speaker Extraction</h5>
+              <span class="badge badge-success">Full-Context TSE</span>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-md-5 mb-3 mb-md-0">
+                <img src="../assets/img/track2.png" alt="Track 2: Offline Target Speaker Extraction" class="img-fluid rounded" style="width: 100%;">
+              </div>
+              <div class="col-md-7">
+                <p class="text-muted small mb-2"><strong>Scenario:</strong> Target speaker extraction in offline scenarios such as speech transcription, meeting analysis, and audio post-processing, where the full utterance is available prior to inference.</p>
+                <p class="text-muted mb-0 small"><strong>Task:</strong> Evaluate target speaker extraction with full-utterance access and unconstrained inference. Systems may exploit global temporal dependencies and full-context modeling to maximize separation quality. This track targets the upper performance bounds of TSE systems, focusing on speech quality, interference suppression, and robustness without latency constraints.</p>
               </div>
             </div>
           </div>
@@ -290,88 +442,71 @@
       </div>
     </div>
   </section>
-
-  <!-- Rules -->
-  <section class="page-section bg-light" id="rules">
+  <!-- Baselines -->
+  <section class="page-section" id="baselines">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 mb-4 mb-lg-0">
-          <h2 class="section-title">Rules for Participation</h2>
+          <h2 class="section-title">Baselines</h2>
         </div>
         <div class="col-lg-9">
-          
-          <div class="card p-4 border-0 mb-4">
-            <h6 class="font-weight-bold mb-3"><i class="fas fa-info-circle text-primary mr-2"></i>General Information</h6>
-            <p class="text-muted mb-0 small">Participants may submit results for <strong>one or both tracks</strong> of the Challenge.</p>
-          </div>
+          <p class="text-muted mb-3">
+            We provide four pretrained baseline models, all based on the BSRNN architecture <a href="#ref-1">[1]</a> and trained on the Libri2Mix-100 dataset <a href="#ref-2">[2]</a>. These models differ in the type of speaker representation and whether low-latency constraints are considered.
+          </p>
+          <p class="text-muted small mb-4">
+            Two models use speaker embeddings extracted from a pretrained ECAPA-TDNN model as speaker conditioning <a href="#ref-3">[3]</a><a href="#ref-4">[4]</a>. The other two adopt a combination of TF-Map and contextual embeddings <a href="#ref-5">[5]</a>. For each type of speaker representation, both an offline and an online (low-latency) variant are provided. All models are trained on 16 kHz audio for 150 epochs with an exponential decay learning rate schedule from 0.001 to 2.5e-5.
+          </p>
 
-          <div class="card p-4 border-0 mb-4">
-            <h6 class="font-weight-bold mb-3"><i class="fas fa-stopwatch text-primary mr-2"></i>Online Track Requirements</h6>
-            <ol class="text-muted small pl-3 mb-4" style="line-height: 1.8;">
-              <li><strong>Causality Constraint:</strong> Systems must be strictly causal and not access any future frame information.</li>
-              <li><strong>Real-Time Requirement:</strong> The end-to-end algorithmic latency can not exceed 100 ms.</li>
-              <li><strong>Streaming Output:</strong> Models should support frame-wise or chunk-wise input with continuous output generation, without relying on full-utterance buffering.</li>
-            </ol>
-            
-            <div class="bg-light p-4 rounded">
-              <h6 class="font-weight-bold mb-2 text-dark" style="font-size: 0.9rem;"><i class="fas fa-clock text-primary mr-1"></i> Algorithmic Latency</h6>
-              <p class="text-muted small mb-2">The offset introduced by the whole processing chain (including STFT, iSTFT, overlap-add, additional lookahead frames, etc.) compared to just passing the signal through without modification. This does <strong>not</strong> include buffering latency.</p>
-              <ul class="text-muted small pl-3 mb-4">
-                <li><strong>Ex.1:</strong> A STFT-based processing with window length = 20 ms and hop length = 10 ms introduces an algorithmic delay of window length − hop length = <strong>10 ms</strong>.</li>
-                <li><strong>Ex.2:</strong> A STFT-based processing with window length = 32 ms and hop length = 8 ms introduces an algorithmic delay of window length − hop length = <strong>24 ms</strong>.</li>
-                <li><strong>Ex.3:</strong> An overlap-save based processing algorithm introduces <strong>no additional</strong> algorithmic latency.</li>
-                <li><strong>Ex.4:</strong> A time-domain convolution with filter kernel size = 16 samples introduces an algorithmic latency of kernel size − 1 = <strong>15 samples</strong>. Using one-sided (left) padding with kernel size − 1 samples makes the operation fully causal with <strong>no</strong> algorithmic latency.</li>
-                <li><strong>Ex.5:</strong> A STFT-based processing with window_length = 20 ms and hop_length = 10 ms using 2 future frames introduces an algorithmic latency of (window_length − hop_length) + 2 × hop_length = <strong>30 ms</strong>.</li>
-              </ul>
-
-              <h6 class="font-weight-bold mb-2 text-dark" style="font-size: 0.9rem;"><i class="fas fa-layer-group text-primary mr-1"></i> Buffering Latency</h6>
-              <p class="text-muted small mb-2">The latency introduced by block-wise processing, often referred to as hop-size, frame-shift, or temporal stride.</p>
-              <ul class="text-muted small pl-3 mb-3">
-                <li><strong>Ex.1:</strong> A STFT-based processing has a buffering latency corresponding to the <strong>hop size</strong>.</li>
-                <li><strong>Ex.2:</strong> An overlap-save processing has a buffering latency corresponding to the <strong>frame size</strong>.</li>
-                <li><strong>Ex.3:</strong> A time-domain convolution with stride 1 introduces a buffering latency of <strong>1 sample</strong>.</li>
-              </ul>
-
-              <div class="alert alert-primary mb-0 small border-0" style="background: #eff6ff; color: #1e3a8a;">
-                <i class="fas fa-info-circle mr-1"></i> In addition to the reported algorithmic latency, the effective system latency will be evaluated by measuring the output response delay to a controlled input perturbation. This evaluation is designed to reflect real streaming behavior without requiring participants to explicitly implement a streaming inference pipeline.
+          <p class="font-weight-bold text-dark mb-2" style="font-size: 0.95rem;">Provided Checkpoints</p>
+          <div class="row mb-2">
+            <div class="col-md-6 mb-3">
+              <div class="card h-100 p-4 border-0" style="background: #f8fafc;">
+                <h6 class="font-weight-bold mb-3"><i class="fas fa-user-circle text-primary mr-2"></i>Speaker Embedding</h6>
+                <p class="text-muted small mb-2">ECAPA-TDNN speaker embeddings as conditioning.</p>
+                <ul class="text-muted small pl-3 mb-0" style="line-height: 1.8;">
+                  <li><code>spk_emb_100</code> — Offline</li>
+                  <li><code>spk_emb_causal_100</code> — Online</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card h-100 p-4 border-0" style="background: #f8fafc;">
+                <h6 class="font-weight-bold mb-3"><i class="fas fa-map text-success mr-2"></i>TF-Map + Context</h6>
+                <p class="text-muted small mb-2">TF-Map and contextual embeddings as multi-level speaker representation.</p>
+                <ul class="text-muted small pl-3 mb-0" style="line-height: 1.8;">
+                  <li><code>tfmap_context_100</code> — Offline</li>
+                  <li><code>tfmap_context_causal_100</code> — Online</li>
+                </ul>
               </div>
             </div>
           </div>
 
-          <div class="card p-4 border-0 mb-4">
-            <h6 class="font-weight-bold mb-3"><i class="fas fa-globe text-success mr-2"></i>Offline Track Requirements</h6>
-            <ol class="text-muted small pl-3 mb-0" style="line-height: 1.8;">
-              <li><strong>Full Context Access:</strong> Systems may utilize the entire utterance and global context information.</li>
-              <li><strong>No Restriction on Architecture or Complexity:</strong> There is no limitation on model type, inference duration, or computational cost.</li>
-              <li><strong>Encouraged Exploration:</strong> Participants are encouraged to explore high-performance architectures, long-context modeling, and generation-based methods.</li>
-            </ol>
+          <!-- Temporarily hidden: repo & checkpoint links
+          <p class="text-muted small mb-3">
+            The baseline systems can be run using <a href="https://github.com/REAL-TSE/wesep-real-tse" target="_blank" rel="noopener noreferrer">wesep-real-tse</a> with the <a href="https://drive.google.com/uc?export=download&id=1M4UqK2A2EeHmQ0pCevYqBgaYn3RvklgC" target="_blank" rel="noopener noreferrer">pretrained checkpoints</a>, and have been integrated into the <a href="https://github.com/REAL-TSE/REAL-TSE-Challenge" target="_blank" rel="noopener noreferrer">REAL-TSE Challenge</a> repo for automated inference and evaluation.
+          </p>
+          -->
+          <div class="alert alert-secondary border-0 small mb-4" style="background: #f1f5f9; color: #475569;">
+            <i class="fas fa-code-branch mr-2"></i> Code repository and pretrained checkpoints are <strong>coming soon</strong>. Stay tuned for updates!
           </div>
 
-          <div class="card p-4 border-0 mb-4">
-            <h6 class="font-weight-bold mb-3"><i class="fas fa-database text-info mr-2"></i>Training Data and Pre-trained Models</h6>
-            <ul class="text-muted small pl-3 mb-0" style="line-height: 1.8;">
-              <li><strong>Open-source training data only:</strong> Teams may use only <strong>openly available (open-source) datasets</strong> for model training. Every dataset used must be listed in the system description with <strong>explicit citations or links</strong> identifying its source.</li>
-              <li><strong>Pre-trained models:</strong> Use of pre-trained models (e.g., speech, speaker, or general-purpose backbones) is <strong>allowed</strong>. Teams must <strong>clearly document the source</strong> of each pre-trained checkpoint or service (repository, paper, model card, or official release).</li>
-              <li><strong>Excluded source corpora:</strong> Participants must <strong>not</strong> use—either directly or indirectly—any audio, transcripts, or labels from the five corpora that REAL-T builds upon: <strong>AliMeeting</strong>, <strong>AISHELL-4</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong>. This prohibition applies to all stages including model training, pre-training, data augmentation, and any other form of data utilization.</li>
-              <li><strong>Development set usage:</strong> The official <strong>development set</strong> may be used for hyper-parameter tuning, model selection, and validation, but must <strong>not</strong> be used for model training or fine-tuning.</li>
-              <li><strong>Test set restriction:</strong> The official <strong>test set</strong> must <strong>not</strong> be used for training, fine-tuning, hyper-parameter tuning, or any form of model optimization. It is reserved <strong>exclusively for final evaluation</strong>.</li>
-            </ul>
+          <div class="card border-0 p-4 mb-4 small text-muted" style="background: #f8fafc; border-left: 3px solid var(--rt-border) !important;">
+            <strong class="text-dark d-block mb-2">A note on baseline limitations</strong>
+            These baselines are trained on Libri2Mix — synthetic mixtures with full speaker overlap and fixed 3-second segments — which differs substantially from REAL-TSE's real conversational data. Baseline performance should therefore be interpreted as a lower bound rather than a representative ceiling. We encourage participants to explore training strategies, data simulation pipelines, and model architectures better suited to real-world conversational TSE.
           </div>
 
-          <div class="card p-4 border-0 mb-0" style="background: #fdfcfa; border-left: 4px solid #f59e0b !important;">
-            <h6 class="font-weight-bold mb-3"><i class="fas fa-file-upload text-warning mr-2"></i>General Submission Rules</h6>
-            <ul class="text-muted small pl-3 mb-0" style="line-height: 1.8;">
-              <li>All submissions must include <strong>detailed system descriptions</strong> for reproducibility.</li>
-              <li>Each team may submit up to <strong>three valid systems per track</strong>.</li>
-              <li>Teams are encouraged to make their models or scripts <strong>publicly available</strong> after the challenge.</li>
-            </ul>
+          <h6 class="font-weight-bold mb-2" style="color: #64748b; font-size: 0.85rem;">References</h6>
+          <div style="line-height: 1.7; font-size: 0.8rem; color: #64748b;">
+            <p class="mb-1" id="ref-1">[1] Y. Luo and J. Yu, &ldquo;Music source separation with band-split RNN,&rdquo; <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, vol. 31, pp. 1893&ndash;1901, 2023.</p>
+            <p class="mb-1" id="ref-2">[2] J. Cosentino, M. Pariente, S. Cornell, A. Deleforge, and E. Vincent, &ldquo;LibriMix: An open-source dataset for generalizable speech separation,&rdquo; 2020.</p>
+            <p class="mb-1" id="ref-3">[3] B. Desplanques, J. Thienpondt, and K. Demuynck, &ldquo;ECAPA-TDNN: Emphasized Channel Attention, Propagation and Aggregation in TDNN Based Speaker Verification,&rdquo; in <em>Proc. Interspeech 2020</em>, pp. 3830&ndash;3834.</p>
+            <p class="mb-1" id="ref-4">[4] H. Wang, C. Liang, S. Wang, Z. Chen, B. Zhang, X. Xiang, Y. Deng, and Y. Qian, &ldquo;WeSpeaker: A research and production oriented speaker embedding learning toolkit,&rdquo; in <em>ICASSP 2023</em>, 2023.</p>
+            <p class="mb-0" id="ref-5">[5] K. Zhang, J. Li, S. Wang, Y. Wei, Y. Wang, Y. Wang, and H. Li, &ldquo;Multi-level speaker representation for target speaker extraction,&rdquo; in <em>ICASSP 2025</em>, 2025.</p>
           </div>
-
         </div>
       </div>
     </div>
   </section>
-
   <!-- Evaluation -->
   <section class="page-section" id="evaluation">
     <div class="container">
@@ -380,35 +515,40 @@
           <h2 class="section-title">Evaluation Metrics</h2>
         </div>
         <div class="col-lg-9">
+          <div class="card p-4 border-0 mb-4" style="background: #f8fafc;">
+            <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-calculator text-primary mr-2"></i>Composite Score</h5>
+            <p class="text-muted small mb-3">
+              Systems are ranked by a <strong>composite score</strong> that comprehensively integrates the four metrics described below. The detailed formulations for each sub-metric and the composite score will be specified in the challenge description paper and released with the official scoring toolkit.
+            </p>
+          </div>
+
           <div class="row mb-4">
             <div class="col-md-6 mb-3">
               <div class="card h-100 p-4 border-0">
-                <h6 class="font-weight-bold mb-2">Intelligibility</h6>
-                <p class="text-muted small mb-0">Word Error Rate (<strong>WER</strong>).</p>
+                <h6 class="font-weight-bold mb-2">Intelligibility — WER</h6>
+                <p class="text-muted small mb-0">Word Error Rate (<strong>WER</strong>) measures how accurately the extracted speech can be transcribed. A lower WER indicates better intelligibility.</p>
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <div class="card h-100 p-4 border-0">
-                <h6 class="font-weight-bold mb-2">Speaker Consistency</h6>
-                <p class="text-muted small mb-0">Cosine similarity between speaker embeddings of extracted and reference speech.</p>
+                <h6 class="font-weight-bold mb-2">Speaker Consistency — SpkSim</h6>
+                <p class="text-muted small mb-0">Cosine similarity between speaker embeddings of the extracted and reference speech. Higher similarity indicates better speaker fidelity.</p>
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <div class="card h-100 p-4 border-0">
-                <h6 class="font-weight-bold mb-2">Perceptual Quality</h6>
-                <p class="text-muted small mb-0">Neural estimators such as <strong>DNSMOS</strong>.</p>
+                <h6 class="font-weight-bold mb-2">Perceptual Quality — DNSMOS</h6>
+                <p class="text-muted small mb-0">Neural Mean Opinion Score estimator (<strong>DNSMOS</strong>) evaluating the overall perceptual quality of the extracted speech.</p>
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <div class="card h-100 p-4 border-0">
-                <h6 class="font-weight-bold mb-2">Target Speaker Presence Rate</h6>
-                <p class="text-muted small mb-0">Accuracy of extracting speech only from target-speaker active regions, measured by temporal <strong>precision</strong>, <strong>recall</strong>, and <strong>F1</strong>.</p>
+                <h6 class="font-weight-bold mb-2">Target Speaker Presence Rate — F1</h6>
+                <p class="text-muted small mb-0">Measures accuracy of extracting speech only from target-speaker active regions via temporal <strong>precision</strong>, <strong>recall</strong>, and their harmonic mean <strong>F1</strong>.</p>
               </div>
             </div>
           </div>
-          <div class="alert alert-light border-0 mb-3 small text-muted">
-            <i class="fas fa-calculator mr-2 text-primary"></i> A final <strong>composite score</strong> will be computed as a weighted sum of the above metrics.
-          </div>
+
           <div class="alert alert-primary border-0 small mb-0" style="background: #eff6ff; color: #1e3a8a;">
             <i class="fas fa-headphones mr-2"></i> In addition to objective metrics, we will conduct <strong>subjective Mean Opinion Score (MOS) listening tests</strong> for a selected set of <strong>top-ranked submissions</strong>. The resulting human MOS scores will be used as an <strong>important indicator</strong> for ranking and for assessing perceptual quality in real-world conditions.
           </div>
@@ -416,113 +556,65 @@
       </div>
     </div>
   </section>
-
   <!-- Timeline -->
-  <section class="page-section bg-light" id="timeline">
+  <section class="page-section" id="timeline">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 mb-4 mb-lg-0">
           <h2 class="section-title">Timeline</h2>
         </div>
         <div class="col-lg-9">
+          <p class="text-muted mb-4">Key dates for the REAL-TSE Challenge at IEEE SLT 2026. All times follow the official challenge announcement unless stated otherwise.</p>
           <div class="pl-2">
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <h6 class="font-weight-bold mb-1">Registration Opens</h6>
-              <p class="text-primary font-weight-bold mb-1 small">TBA</p>
-              <p class="text-muted small mb-0">Register your team and get access to the challenge data</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">6 April 2026</p>
+              <h6 class="font-weight-bold mb-1">Registration opens</h6>
+              <p class="text-muted small mb-0">Teams can register for the challenge.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <h6 class="font-weight-bold mb-1">Development Phase</h6>
-              <p class="text-primary font-weight-bold mb-1 small">TBA</p>
-              <p class="text-muted small mb-0">Train and develop your TSE systems using the provided datasets</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">10 April 2026</p>
+              <h6 class="font-weight-bold mb-1">Development set &amp; baselines</h6>
+              <p class="text-muted small mb-0">Development data and baseline systems released.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <h6 class="font-weight-bold mb-1">Evaluation Phase</h6>
-              <p class="text-primary font-weight-bold mb-1 small">TBA</p>
-              <p class="text-muted small mb-0">Submit your system outputs for evaluation</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">31 May 2026</p>
+              <h6 class="font-weight-bold mb-1">Evaluation set release</h6>
+              <p class="text-muted small mb-0">Evaluation partition and scoring protocol materials released per the challenge kit.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <h6 class="font-weight-bold mb-1">System Description Deadline</h6>
-              <p class="text-primary font-weight-bold mb-1 small">TBA</p>
-              <p class="text-muted small mb-0">Submit a detailed technical report describing your system</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">10 June 2026</p>
+              <h6 class="font-weight-bold mb-1">System submission deadline</h6>
+              <p class="text-muted small mb-0">Final deadline for submitting systems for official evaluation.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <h6 class="font-weight-bold mb-1">Results Announcement</h6>
-              <p class="text-primary font-weight-bold mb-1 small">TBA</p>
-              <p class="text-muted small mb-0">Winners announced and leaderboard finalized</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">20 June 2026</p>
+              <h6 class="font-weight-bold mb-1">Result announcement</h6>
+              <p class="text-muted small mb-0">Leaderboard results and summary released to participants.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">8 July 2026</p>
+              <h6 class="font-weight-bold mb-1">Paper submission (SLT)</h6>
+              <p class="text-muted small mb-0">Deadline for challenge-related papers to the IEEE Spoken Language Technology Workshop (SLT) track.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">1 September 2026</p>
+              <h6 class="font-weight-bold mb-1">Challenge paper notification</h6>
+              <p class="text-muted small mb-0">Notification of acceptance decisions for submitted challenge papers.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Organizers -->
-  <section class="page-section" id="organizers">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 mb-4 mb-lg-0">
-          <h2 class="section-title">Organizers</h2>
-        </div>
-        <div class="col-lg-9">
-          <div class="row">
-            <div class="col-6 col-sm-4 col-md-3 mb-4">
-              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 0.95rem;">Shuai Wang</h6>
-              <p class="text-muted small mb-0">Nanjing University</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 mb-4">
-              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 0.95rem;">Ke Zhang</h6>
-              <p class="text-muted small mb-0">Chinese University of Hong Kong, Shenzhen</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 mb-4">
-              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 0.95rem;">Zihan Qian</h6>
-              <p class="text-muted small mb-0">Nanjing University</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 mb-4">
-              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 0.95rem;">Zikai Liu</h6>
-              <p class="text-muted small mb-0">Northwestern Polytechnical University</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 mb-4">
-              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 0.95rem;">Haoyu Li</h6>
-              <p class="text-muted small mb-0">Nanjing University</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 mb-4">
-              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 0.95rem;">Marc Delcroix</h6>
-              <p class="text-muted small mb-0">NTT Corporation</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 mb-4">
-              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 0.95rem;">Jiangyu Han</h6>
-              <p class="text-muted small mb-0">Brno University of Technology</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 mb-4">
-              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 0.95rem;">Kai Yu</h6>
-              <p class="text-muted small mb-0">Shanghai Jiao Tong University</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 mb-4">
-              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 0.95rem;">Lei Xie</h6>
-              <p class="text-muted small mb-0">Northwestern Polytechnical University</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 mb-4">
-              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 0.95rem;">Ming Li</h6>
-              <p class="text-muted small mb-0">Chinese University of Hong Kong, Shenzhen</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 mb-4">
-              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 0.95rem;">Haizhou Li</h6>
-              <p class="text-muted small mb-0">Chinese University of Hong Kong, Shenzhen</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Registration / Resources -->
-  <section class="page-section bg-light" id="register">
+  <section class="page-section" id="register">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 mb-4 mb-lg-0">
@@ -534,18 +626,96 @@
               <i class="fas fa-clipboard-list fa-3x text-primary opacity-50" style="opacity: 0.5;"></i>
             </div>
             <h4 class="font-weight-bold mb-3">Registration Coming Soon</h4>
-            <p class="text-muted mb-4 small">Registration details and the challenge platform will be announced shortly. Stay tuned for updates!</p>
-            <div class="d-flex flex-wrap justify-content-center">
-              <a href="https://github.com/REAL-TSE/REAL-TSE-Challenge" class="btn btn-dark rounded-pill px-4 mx-2 mb-2" target="_blank"><i class="fab fa-github mr-2"></i>REAL-T Dataset</a>
-              <a href="https://github.com/REAL-TSE/wesep-real-tse" class="btn btn-outline-primary rounded-pill px-4 mx-2 mb-2" target="_blank"><i class="fab fa-github mr-2"></i>Wesep Baseline</a>
-              <a href="https://drive.google.com/file/d/1uGTcTfRjOdqPa4PJAhjrXYLzxbGVy6pY/view?usp=sharing" class="btn btn-outline-primary rounded-pill px-4 mx-2 mb-2" target="_blank"><i class="fab fa-google-drive mr-2"></i>Google Drive</a>
-            </div>
+            <p class="text-muted mb-0 small">Registration details and the challenge platform will be announced shortly. Stay tuned for updates!</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <!-- Rules -->
+  <section class="page-section" id="rules">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 mb-4 mb-lg-0">
+          <h2 class="section-title">Rules for Participation</h2>
+        </div>
+        <div class="col-lg-9">
+          
+          <h5 class="font-weight-bold mb-3 text-dark">Tracks</h5>
+          <p class="text-muted small mb-3">Participants may submit results for <strong>one or both tracks</strong> of the Challenge.</p>
 
+          <div class="card p-4 border-0 mb-4">
+            <h6 class="font-weight-bold mb-3"><i class="fas fa-stopwatch text-primary mr-2"></i>Online Track — Low-Latency TSE</h6>
+
+            <p class="text-muted small mb-2"><strong>Key Requirements</strong></p>
+            <ol class="text-muted small pl-3 mb-4" style="line-height: 1.8;">
+              <li><strong>Latency constraint:</strong> The end-to-end algorithmic latency must not exceed 100 ms. Systems may use limited future context (lookahead) as long as this latency budget is satisfied.</li>
+              <li><strong>Streaming output:</strong> Models should support frame-wise or chunk-wise input with continuous output generation, without relying on full-utterance buffering.</li>
+            </ol>
+
+            <p class="text-muted small mb-2"><strong>Latency</strong></p>
+            <div class="bg-light p-4 rounded latency-detail-box">
+              <h6 class="font-weight-bold mb-2 text-dark"><i class="fas fa-clock text-primary mr-1"></i> Algorithmic Latency</h6>
+              <p class="text-muted small mb-2">The offset introduced by the whole processing chain including STFT, iSTFT, overlap-add, additional lookahead frames, etc., compared to just passing the signal through without modification. This does <strong>not</strong> include buffering latency.</p>
+              <ul class="text-muted small pl-3 mb-4">
+                <li><strong>Ex.1:</strong> A STFT-based processing with window length = 20 ms and hop length = 10 ms introduces an algorithmic delay of window length − hop length = <strong>10 ms</strong>.</li>
+                <li><strong>Ex.2:</strong> A STFT-based processing with window length = 32 ms and hop length = 8 ms introduces an algorithmic delay of window length − hop length = <strong>24 ms</strong>.
+                  <span class="latency-baseline-note">For reference, the online BSRNN baselines we provide (tfmap_context_causal_100 and spk_emb_causal_100) use this STFT configuration.</span>
+                </li>
+                <li><strong>Ex.3:</strong> An overlap-save based processing algorithm introduces <strong>no additional</strong> algorithmic latency.</li>
+                <li><strong>Ex.4:</strong> A time-domain convolution with a filter kernel size = 16 samples introduces an algorithmic latency of kernel size − 1 = <strong>15 samples</strong>. Using one-sided (left) padding with kernel size − 1 samples, the operation introduces <strong>no</strong> additional algorithmic latency.</li>
+                <li><strong>Ex.5:</strong> A STFT-based processing with window_length = 20 ms and hop_length = 10 ms using 2 future frames information introduces an algorithmic latency of (window_length − hop_length) + 2 × hop_length = <strong>30 ms</strong>.</li>
+              </ul>
+
+              <h6 class="font-weight-bold mb-2 text-dark"><i class="fas fa-layer-group text-primary mr-1"></i> Buffering Latency</h6>
+              <p class="text-muted small mb-2">The latency introduced by block-wise processing, often referred to as hop-size, frame-shift, or temporal stride.</p>
+              <ul class="text-muted small pl-3 mb-3">
+                <li><strong>Ex.1:</strong> A STFT-based processing has a buffering latency corresponding to the <strong>hop size</strong>.</li>
+                <li><strong>Ex.2:</strong> An overlap-save processing has a buffering latency corresponding to the <strong>frame size</strong>.</li>
+                <li><strong>Ex.3:</strong> A time-domain convolution with stride 1 introduces a buffering latency of <strong>1 sample</strong>.</li>
+              </ul>
+
+              <p class="text-muted small mb-3">Algorithmic and buffering latency definitions and examples above follow the <a href="https://www.microsoft.com/en-us/research/academic-program/deep-noise-suppression-challenge-icassp-2023/" target="_blank" rel="noopener noreferrer">ICASSP 2023 Deep Noise Suppression Challenge</a> (Microsoft Research). REAL-TSE sets its own latency limits under <strong>Online Track Requirements</strong>.</p>
+
+              <div class="alert alert-primary mb-0 small border-0" style="background: #eff6ff; color: #1e3a8a;">
+                <i class="fas fa-info-circle mr-1"></i> In addition to the reported algorithmic latency, the effective system latency will be evaluated by measuring the output response delay to a controlled input perturbation. This evaluation is designed to reflect real streaming behavior without requiring participants to explicitly implement a streaming inference pipeline.
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-4 border-0 mb-4">
+            <h6 class="font-weight-bold mb-3"><i class="fas fa-globe text-success mr-2"></i>Offline Track — Full-Context TSE</h6>
+
+            <p class="text-muted small mb-2"><strong>Key Requirements</strong></p>
+            <ol class="text-muted small pl-3 mb-0" style="line-height: 1.8;">
+              <li><strong>Full context access:</strong> Systems may utilize the entire utterance and global context information.</li>
+              <li><strong>No restriction on architecture:</strong> There is no limitation on model type, inference duration, or computational cost.</li>
+              <li><strong>Encouraged exploration:</strong> Participants are encouraged to explore high-performance architectures, long-context modeling, and generation-based methods.</li>
+            </ol>
+          </div>
+
+          <h5 class="font-weight-bold mb-3 mt-5 text-dark">Training Data &amp; Pre-trained Models</h5>
+
+          <div class="card p-4 border-0 mb-4">
+            <p class="text-muted small mb-0">
+              Detailed data usage constraints—including allowed training sources, prohibited corpora, and the usage scope of the development and evaluation sets—are specified in the <a href="#data" class="js-scroll-trigger font-weight-bold">Data</a> section above. All participants must comply with those requirements.
+            </p>
+          </div>
+
+          <h5 class="font-weight-bold mb-3 mt-5 text-dark">Submission Rules</h5>
+
+          <div class="card p-4 border-0 mb-0" style="background: #fdfcfa; border-left: 4px solid #f59e0b !important;">
+            <ol class="text-muted small pl-3 mb-0" style="line-height: 1.8;">
+              <li><strong>System description:</strong> All submissions must include <strong>detailed system descriptions</strong> for reproducibility.</li>
+              <li><strong>Number of submissions:</strong> Each team may submit up to <strong>three valid systems per track</strong>.</li>
+              <li><strong>Encouraged open source:</strong> Teams are encouraged to make their models or scripts <strong>publicly available</strong> after the challenge.</li>
+            </ol>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- FAQ -->
   <section class="page-section" id="faq">
     <div class="container">
@@ -603,6 +773,69 @@
       </div>
     </div>
   </section>
+  <!-- Organizers -->
+  <section class="page-section" id="organizers">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 mb-4 mb-lg-0">
+          <h2 class="section-title">Organizers</h2>
+        </div>
+        <div class="col-lg-9">
+          <div class="row">
+            <div class="col-6 col-sm-4 col-md-3 mb-4">
+              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 1.05rem;">Shuai Wang</h6>
+              <p class="text-muted small mb-0">Nanjing University</p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 mb-4">
+              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 1.05rem;">Ke Zhang</h6>
+              <p class="text-muted small mb-0">Chinese University of Hong Kong, Shenzhen</p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 mb-4">
+              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 1.05rem;">Zihan Qian</h6>
+              <p class="text-muted small mb-0">Nanjing University</p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 mb-4">
+              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 1.05rem;">Zikai Liu</h6>
+              <p class="text-muted small mb-0">Northwestern Polytechnical University</p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 mb-4">
+              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 1.05rem;">Haoyu Li</h6>
+              <p class="text-muted small mb-0">Nanjing University</p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 mb-4">
+              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 1.05rem;">Marc Delcroix</h6>
+              <p class="text-muted small mb-0">NTT Corporation</p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 mb-4">
+              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 1.05rem;">Zhaokai Sun</h6>
+              <p class="text-muted small mb-0">Northwestern Polytechnical University</p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 mb-4">
+              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 1.05rem;">Jiangyu Han</h6>
+              <p class="text-muted small mb-0">Brno University of Technology</p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 mb-4">
+              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 1.05rem;">Kai Yu</h6>
+              <p class="text-muted small mb-0">Shanghai Jiao Tong University</p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 mb-4">
+              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 1.05rem;">Lei Xie</h6>
+              <p class="text-muted small mb-0">Northwestern Polytechnical University</p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 mb-4">
+              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 1.05rem;">Ming Li</h6>
+              <p class="text-muted small mb-0">Chinese University of Hong Kong, Shenzhen</p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 mb-4">
+              <h6 class="font-weight-bold text-dark mb-1" style="font-size: 1.05rem;">Haizhou Li</h6>
+              <p class="text-muted small mb-0">Chinese University of Hong Kong, Shenzhen</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Footer -->
   <footer class="py-4 bg-white border-top">
@@ -644,4 +877,5 @@
   </script>
 
 </body>
+</html>
 </html>
