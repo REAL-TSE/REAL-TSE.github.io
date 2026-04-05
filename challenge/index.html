@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://real-tse.github.io/challenge">
 
   <title>REAL-TSE Challenge</title>
+  <link rel="icon" type="image/png" href="../assets/img/real-tse-caption.png">
 
   <!-- Bootstrap core CSS -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -278,13 +279,13 @@
   <header class="challenge-header">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-8">
+        <div class="col-lg-8 col-xl-7">
           <h1 class="display-4 font-weight-bold mb-3" style="letter-spacing: -1px;">REAL-TSE Challenge</h1>
           <h3 class="mb-4 text-muted" style="font-weight: 400;">Real-world Target Speaker Extraction Challenge</h3>
           <p class="lead mb-2 text-muted" style="max-width: 600px;">
             Moving target speaker extraction research from simulated benchmarks toward real-world conversational applications
           </p>
-          <p class="mb-5" style="font-size: 0.95rem; color: #64748b;">
+          <p class="mb-0" style="font-size: 0.95rem; color: #64748b;">
             <i class="fas fa-calendar-alt mr-1"></i> A satellite challenge of <strong>IEEE SLT 2026</strong>
           </p>
           <!-- Temporarily hidden: GitHub repo buttons
@@ -297,9 +298,11 @@
             </a>
           </div>
           -->
-          <div class="d-flex align-items-center flex-wrap mt-2">
-            <img src="../assets/img/real-tse-caption.png" alt="REAL-TSE" style="max-height: 120px; width: auto;" class="mr-4 mb-3">
-            <img src="../assets/img/slt2026-logo.png" alt="SLT 2026" style="max-height: 53px; width: auto;" class="mb-3">
+        </div>
+        <div class="col-lg-4 col-xl-5 mt-5 mt-lg-0">
+          <div class="d-flex flex-column align-items-lg-end align-items-start">
+            <img src="../assets/img/slt2026-logo.png" alt="SLT 2026" style="max-height: 56px; width: auto;" class="mb-4">
+            <img src="../assets/img/real-tse-caption.png" alt="REAL-TSE" style="max-height: 110px; width: auto;" class="mb-0">
           </div>
         </div>
       </div>
@@ -314,14 +317,8 @@
           <h2 class="section-title">Introduction</h2>
         </div>
         <div class="col-lg-9">
-          <p class="text-muted text-justify">
-            The REAL-TSE Challenge focuses on Target Speaker Extraction (TSE) in real-world conversational environments. Given a multi-speaker recording and enrollment speech from a target speaker, the goal is to extract the target speaker's voice from the mixture.
-          </p>
-          <p class="text-muted text-justify">
-            While recent TSE models have shown strong performance, most are trained and evaluated on simulated mixtures. These simulated data often miss the realistic reverberation, background noise, loudness variation, and spontaneous overlap patterns found in natural conversations. In addition, many existing datasets mainly contain read speech, which does not fully reflect real interactive scenarios.
-          </p>
           <p class="text-muted text-justify mb-0">
-            To bridge this gap, the REAL-TSE Challenge, organized as a satellite event of <strong>IEEE SLT 2026</strong>, provides real conversational recordings in Mandarin and English from scenarios such as meetings and dinner-party interactions, together with multiple enrollment utterances per speaker. The challenge is designed to evaluate and advance TSE systems under natural, spontaneous, and practically relevant conditions.
+            The <strong>REAL-TSE Challenge</strong>, organized as a satellite challenge of <strong>IEEE SLT 2026</strong>, focuses on <strong>Target Speaker Extraction (TSE)</strong> in real conversational environments. Given a multi-speaker mixture recorded in real-life settings such as meetings and dinner-party interactions, together with enrollment utterance(s) from a target speaker, the task is to recover the target speaker’s speech from the mixture. In contrast to conventional benchmarks built on simulated or read-speech data, REAL-TSE emphasizes naturally occurring overlap, authentic reverberation, ambient noise, and multilingual conversational dynamics in <strong>Mandarin</strong> and <strong>English</strong>, providing a more practical testbed for real-world TSE research.
           </p>
         </div>
       </div>
@@ -337,20 +334,17 @@
         </div>
         <div class="col-lg-9">
           <p class="text-muted mb-4">
-            The REAL-TSE Challenge does <strong>not</strong> distribute a challenge-specific training corpus; instead, participants train on external open data under the <strong>usage constraints</strong> summarized below. Two official data partitions are released: a <strong>development set</strong> for validation and hyper-parameter selection, and an <strong>evaluation set</strong> reserved exclusively for final scoring. The following sections cover training data rules, followed by the source, permitted use, and characteristics of the development and evaluation sets.
+            The REAL-TSE Challenge provides an official <strong>development set</strong> and <strong>evaluation set</strong>, while model training is restricted to eligible <strong>external open-source data</strong> under the rules summarized below.
           </p>
 
           <!-- Training policy (no official training partition) -->
-          <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-database text-primary mr-2"></i>Model training (external data)</h5>
+          <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-database text-primary mr-2"></i>Train Set (Extranal Data)</h5>
           <div class="card p-4 border-0 mb-4" style="background: #f8fafc;">
             <p class="text-muted small mb-2">
-              The challenge does <strong>not</strong> prescribe a fixed training set. Teams may use any <strong>openly available (open-source) datasets</strong> for model training, provided that every dataset used is listed in the system description with <strong>explicit citations or links</strong>.
-            </p>
-            <p class="text-muted small mb-2">
-              Use of <strong>pre-trained models</strong> (e.g., speech, speaker, or general-purpose backbones) is allowed, with clear documentation of the source of each checkpoint.
+             The challenge does not define an official training set. Participants may use any open-source datasets for training, and pre-trained models are allowed, provided that all data sources and checkpoints are clearly documented.
             </p>
             <p class="text-muted small mb-0">
-              <strong>Prohibited corpora:</strong> Participants must <strong>not</strong> use—directly or indirectly—any audio, transcripts, or labels from the five source corpora of the development set: <strong>AliMeeting</strong>, <strong>AISHELL-4</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong>. This prohibition applies to all stages including pre-training, training, data augmentation, and any other form of data utilization.
+              <strong>Useage:</strong> Every dataset and pre-trained model must be reported in the system description with citations or links. Data derived from AliMeeting, AISHELL-4, AMI, DipCo, and CHiME6 must not be used at any stage, including pre-training, training, or data augmentation.
             </p>
           </div>
 
@@ -358,13 +352,10 @@
           <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-flask text-primary mr-2"></i>Development Set</h5>
           <div class="card p-4 border-0 mb-4" style="background: #f8fafc;">
             <p class="text-muted small mb-2">
-              The development set is the <strong>PRIMARY</strong> partition of our previous work <a href="https://www.isca-archive.org/interspeech_2025/li25da_interspeech.pdf" target="_blank" rel="noopener noreferrer"><strong>REAL-T</strong></a>, the first conversation-centric dataset designed for target speaker extraction under real-world conditions. Each sample consists of a multi-speaker mixture, enrollment utterance(s) identifying the target speaker, and the corresponding clean reference. Each mixture–speaker pair is coupled with multiple distinct enrollment utterances, each forming an independent sample.
+             The development set is derived from <a href="https://real-tse.github.io/" target="_blank" rel="noopener noreferrer">REAL-T</a>, a real-world conversational dataset for target speaker extraction (<strong>to be released soon</strong>). The data originates from five speaker diarization corpora—AISHELL-4, AliMeeting, AMI, DipCo, and CHiME6—covering Mandarin and English in scenarios such as meetings and dinner parties. Each sample includes a multi-speaker mixture, enrollment utterance(s) for the target speaker, and the clean target reference.
             </p>
             <p class="text-muted small mb-2">
-              The data is constructed from five established speaker diarization corpora—<strong>AISHELL-4</strong>, <strong>AliMeeting</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong>—spanning Mandarin and English across conversational genres such as meetings and dinner parties. An automated filtering pipeline segments long recordings while preserving semantic completeness: mixture utterances are generated by identifying and merging overlapping segments, while non-overlapping segments of at least 5 seconds are randomly selected as enrollment utterances.
-            </p>
-            <p class="text-muted small mb-2">
-              Unlike synthetic mixtures (e.g., LibriMix), the development set naturally captures spontaneous interactions, authentic reverberation, and ambient noise. It reflects several challenges commonly found in real conversational speech, including sparse and uneven speaker overlap, frequent but intermittent speaking behavior, short utterances with rapid turn-taking, and non-speech vocalizations such as laughter and humming.
+              The data is constructed through an automated pipeline that extracts naturally overlapping segments as mixtures and selects non-overlapping speech segments of at least 5 seconds as enrollment utterances. Unlike synthetic mixtures, it captures realistic overlap patterns, reverberation, ambient noise, and conversational turn-taking. The development set is intended for validation, model comparison, and hyper-parameter tuning only, and must not be used for training or fine-tuning.
             </p>
             <p class="text-muted small mb-0">
               <strong>Usage:</strong> The development set may be used for hyper-parameter selection, model comparison, and validation, but must <strong>not</strong> be used for model training or fine-tuning.
@@ -375,7 +366,7 @@
           <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-award text-primary mr-2"></i>Evaluation Set</h5>
           <div class="card p-4 border-0 mb-0" style="background: #f8fafc;">
             <p class="text-muted small mb-3">
-              The evaluation set consists of two subsets that together assess both in-domain robustness and real-world generalization:
+              The evaluation set (<strong>to be released soon</strong>) consists of two subsets that together assess both in-domain robustness and real-world generalization:
             </p>
             <div class="row mb-3">
               <div class="col-md-6 mb-3 mb-md-0">
@@ -550,7 +541,7 @@
           </div>
 
           <div class="alert alert-primary border-0 small mb-0" style="background: #eff6ff; color: #1e3a8a;">
-            <i class="fas fa-headphones mr-2"></i> In addition to objective metrics, we will conduct <strong>subjective Mean Opinion Score (MOS) listening tests</strong> for a selected set of <strong>top-ranked submissions</strong>. The resulting human MOS scores will be used as an <strong>important indicator</strong> for ranking and for assessing perceptual quality in real-world conditions.
+            <i class="fas fa-info-circle mr-2"></i> In addition to objective metrics, we will conduct <strong>subjective Mean Opinion Score (MOS) listening tests</strong> for a selected set of <strong>top-ranked submissions</strong>. The resulting human MOS scores will be used as an <strong>important indicator</strong> for ranking and for assessing perceptual quality in real-world conditions.
           </div>
         </div>
       </div>
@@ -574,37 +565,37 @@
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2">10 April 2026</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">10 April 2026 <span class="text-lowercase font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0;">(tentative)</span></p>
               <h6 class="font-weight-bold mb-1">Development set &amp; baselines</h6>
               <p class="text-muted small mb-0">Development data and baseline systems released.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2">31 May 2026</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">31 May 2026 <span class="text-lowercase font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0;">(tentative)</span></p>
               <h6 class="font-weight-bold mb-1">Evaluation set release</h6>
               <p class="text-muted small mb-0">Evaluation partition and scoring protocol materials released per the challenge kit.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2">10 June 2026</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">10 June 2026 <span class="text-lowercase font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0;">(tentative)</span></p>
               <h6 class="font-weight-bold mb-1">System submission deadline</h6>
               <p class="text-muted small mb-0">Final deadline for submitting systems for official evaluation.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2">20 June 2026</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">20 June 2026 <span class="text-lowercase font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0;">(tentative)</span></p>
               <h6 class="font-weight-bold mb-1">Result announcement</h6>
               <p class="text-muted small mb-0">Leaderboard results and summary released to participants.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2">8 July 2026</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">8 July 2026 <span class="text-lowercase font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0;">(tentative)</span></p>
               <h6 class="font-weight-bold mb-1">Paper submission (SLT)</h6>
               <p class="text-muted small mb-0">Deadline for challenge-related papers to the IEEE Spoken Language Technology Workshop (SLT) track.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2">1 September 2026</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">1 September 2026 <span class="text-lowercase font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0;">(tentative)</span></p>
               <h6 class="font-weight-bold mb-1">Challenge paper notification</h6>
               <p class="text-muted small mb-0">Notification of acceptance decisions for submitted challenge papers.</p>
             </div>
@@ -675,7 +666,7 @@
                 <li><strong>Ex.3:</strong> A time-domain convolution with stride 1 introduces a buffering latency of <strong>1 sample</strong>.</li>
               </ul>
 
-              <p class="text-muted small mb-3">Algorithmic and buffering latency definitions and examples above follow the <a href="https://www.microsoft.com/en-us/research/academic-program/deep-noise-suppression-challenge-icassp-2023/" target="_blank" rel="noopener noreferrer">ICASSP 2023 Deep Noise Suppression Challenge</a> (Microsoft Research). REAL-TSE sets its own latency limits under <strong>Online Track Requirements</strong>.</p>
+              <p class="text-muted small mb-3">Algorithmic and buffering latency definitions and examples above follow the <a href="https://www.microsoft.com/en-us/research/academic-program/deep-noise-suppression-challenge-icassp-2023/" target="_blank" rel="noopener noreferrer">ICASSP 2023 Deep Noise Suppression Challenge</a> (Microsoft Research).</p>
 
               <div class="alert alert-primary mb-0 small border-0" style="background: #eff6ff; color: #1e3a8a;">
                 <i class="fas fa-info-circle mr-1"></i> In addition to the reported algorithmic latency, the effective system latency will be evaluated by measuring the output response delay to a controlled input perturbation. This evaluation is designed to reflect real streaming behavior without requiring participants to explicitly implement a streaming inference pipeline.
@@ -704,7 +695,7 @@
 
           <h5 class="font-weight-bold mb-3 mt-5 text-dark">Submission Rules</h5>
 
-          <div class="card p-4 border-0 mb-0" style="background: #fdfcfa; border-left: 4px solid #f59e0b !important;">
+          <div class="card p-4 border-0 mb-0">
             <ol class="text-muted small pl-3 mb-0" style="line-height: 1.8;">
               <li><strong>System description:</strong> All submissions must include <strong>detailed system descriptions</strong> for reproducibility.</li>
               <li><strong>Number of submissions:</strong> Each team may submit up to <strong>three valid systems per track</strong>.</li>
