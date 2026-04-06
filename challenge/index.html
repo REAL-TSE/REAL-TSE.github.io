@@ -286,7 +286,7 @@
             Moving target speaker extraction research from simulated benchmarks toward real-world conversational applications
           </p>
           <p class="mb-0" style="font-size: 0.95rem; color: #64748b;">
-            <i class="fas fa-calendar-alt mr-1"></i> A satellite challenge of <strong>IEEE SLT 2026</strong>
+            <i class="fas fa-calendar-alt mr-1"></i> A satellite challenge of <a href="https://attend.ieee.org/slt-2026/" target="_blank" rel="noopener noreferrer"><strong>IEEE SLT 2026</strong></a>
           </p>
           <!-- Temporarily hidden: GitHub repo buttons
           <div class="d-flex flex-wrap">
@@ -318,7 +318,7 @@
         </div>
         <div class="col-lg-9">
           <p class="text-muted text-justify mb-0">
-            The <strong>REAL-TSE Challenge</strong>, organized as a satellite challenge of <strong>IEEE SLT 2026</strong>, focuses on <strong>Target Speaker Extraction (TSE)</strong> in real conversational environments. Given a multi-speaker mixture recorded in real-life settings such as meetings and dinner-party interactions, together with enrollment utterance(s) from a target speaker, the task is to recover the target speaker’s speech from the mixture. In contrast to conventional benchmarks built on simulated or read-speech data, REAL-TSE emphasizes naturally occurring overlap, authentic reverberation, ambient noise, and multilingual conversational dynamics in <strong>Mandarin</strong> and <strong>English</strong>, providing a more practical testbed for real-world TSE research.
+            The <strong>REAL-TSE Challenge</strong>, organized as a satellite challenge of <a href="https://attend.ieee.org/slt-2026/" target="_blank" rel="noopener noreferrer"><strong>IEEE SLT 2026</strong></a>, focuses on <strong>Target Speaker Extraction (TSE)</strong> in real conversational environments. Given a multi-speaker mixture recorded in real-life settings such as meetings and dinner-party interactions, together with enrollment utterance(s) from a target speaker, the task is to recover the target speaker’s speech from the mixture. In contrast to conventional benchmarks built on simulated or read-speech data, REAL-TSE emphasizes naturally occurring overlap, authentic reverberation, ambient noise, and conversational dynamics in <strong>Mandarin</strong> and <strong>English</strong>, providing a more practical testbed for real-world TSE research.
           </p>
         </div>
       </div>
@@ -338,13 +338,13 @@
           </p>
 
           <!-- Training policy (no official training partition) -->
-          <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-database text-primary mr-2"></i>Train Set</h5>
+          <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-database text-primary mr-2"></i>Training Set</h5>
           <div class="card p-4 border-0 mb-4" style="background: #f8fafc;">
             <p class="text-muted small mb-2">
-             The challenge does not define an official training set. Participants may use any open-source datasets for training, and pre-trained models are allowed, provided that all data sources and checkpoints are clearly documented.
+             The challenge does <strong>not</strong> define an official training set. Participants may use any open-source datasets for training, and pre-trained models are allowed, provided that all data sources and checkpoints are clearly documented.
             </p>
             <p class="text-muted small mb-0">
-              <strong>Useage:</strong> Every dataset and pre-trained model must be reported in the system description with citations or links. Data derived from AliMeeting, AISHELL-4, AMI, DipCo, and CHiME6 must not be used at any stage, including pre-training, training, or data augmentation.
+              <strong>Usage:</strong> Every dataset and pre-trained model must be reported in the system description with citations or links. Data derived from <strong>AliMeeting</strong>, <strong>AISHELL-4</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong> must <strong>not</strong> be used at any stage, including pre-training, training, or data augmentation.
             </p>
           </div>
 
@@ -352,7 +352,7 @@
           <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-flask text-primary mr-2"></i>Development Set</h5>
           <div class="card p-4 border-0 mb-4" style="background: #f8fafc;">
             <p class="text-muted small mb-2">
-             The development set is derived from <a href="https://real-tse.github.io/" target="_blank" rel="noopener noreferrer">REAL-T</a>, a real-world conversational dataset for target speaker extraction (<strong>to be released soon</strong>). The data originates from five speaker diarization corpora—AISHELL-4, AliMeeting, AMI, DipCo, and CHiME6—covering Mandarin and English in scenarios such as meetings and dinner parties. Each sample includes a multi-speaker mixture, enrollment utterance(s) for the target speaker, and the clean target reference.
+             The development set is derived from <a href="https://real-tse.github.io/" target="_blank" rel="noopener noreferrer">REAL-T</a>, a real-world conversational dataset for target speaker extraction (<strong>to be released soon</strong>). The data originates from five speaker diarization corpora—<strong>AISHELL-4</strong>, <strong>AliMeeting</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong>—covering Mandarin and English in scenarios such as meetings and dinner parties. Each sample includes a multi-speaker mixture, enrollment utterance(s) for the target speaker, and the clean target reference.
             </p>
             <p class="text-muted small mb-2">
               The data is constructed through an automated pipeline that extracts naturally overlapping segments as mixtures and selects non-overlapping speech segments of at least 5 seconds as enrollment utterances. Unlike synthetic mixtures, it captures realistic overlap patterns, reverberation, ambient noise, and conversational turn-taking. The development set is intended for validation, model comparison, and hyper-parameter tuning only, and must not be used for training or fine-tuning.
@@ -409,7 +409,7 @@
                 <img src="../assets/img/track1.png" alt="Track 1: Online Target Speaker Extraction" class="img-fluid rounded" style="width: 100%;">
               </div>
               <div class="col-md-7">
-                <p class="text-muted small mb-2"><strong>Scenario:</strong> Target speaker extraction in latency-sensitive applications such as assistive hearing, real-time communication, and interactive voice systems. The system must produce temporally responsive outputs under overlapping speech and background noise, enabling continuous and natural listening.</p>
+                <p class="text-muted small mb-2"><strong>Scenario:</strong> Target speaker extraction in latency-sensitive applications such as assistive hearing, real-time communication, and interactive voice systems, where the system must produce temporally responsive outputs under overlapping speech and background noise, enabling continuous and natural listening.</p>
                 <p class="text-muted mb-0 small"><strong>Task:</strong> Evaluate target speaker extraction under strict end-to-end latency constraints. Effective latency is measured via the temporal response of outputs to localized input perturbations. Models must ensure input changes are reflected within a bounded delay (&le; 100 ms), balancing extraction quality and responsiveness.</p>
               </div>
             </div>
@@ -444,7 +444,7 @@
           <p class="text-muted mb-3">
             We provide four pretrained baseline models, all based on the BSRNN architecture <a href="#ref-1">[1]</a> and trained on the Libri2Mix-100 dataset <a href="#ref-2">[2]</a>. These models differ in the type of speaker representation and whether low-latency constraints are considered.
           </p>
-          <p class="text-muted small mb-4">
+          <p class="text-muted mb-4">
             Two models use speaker embeddings extracted from a pretrained ECAPA-TDNN model as speaker conditioning <a href="#ref-3">[3]</a><a href="#ref-4">[4]</a>. The other two adopt a combination of TF-Map and contextual embeddings <a href="#ref-5">[5]</a>. For each type of speaker representation, both an offline and an online (low-latency) variant are provided. All models are trained on 16 kHz audio for 150 epochs with an exponential decay learning rate schedule from 0.001 to 2.5e-5.
           </p>
 
@@ -491,8 +491,8 @@
             <p class="mb-1" id="ref-1">[1] Y. Luo and J. Yu, &ldquo;Music source separation with band-split RNN,&rdquo; <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, vol. 31, pp. 1893&ndash;1901, 2023.</p>
             <p class="mb-1" id="ref-2">[2] J. Cosentino, M. Pariente, S. Cornell, A. Deleforge, and E. Vincent, &ldquo;LibriMix: An open-source dataset for generalizable speech separation,&rdquo; 2020.</p>
             <p class="mb-1" id="ref-3">[3] B. Desplanques, J. Thienpondt, and K. Demuynck, &ldquo;ECAPA-TDNN: Emphasized Channel Attention, Propagation and Aggregation in TDNN Based Speaker Verification,&rdquo; in <em>Proc. Interspeech 2020</em>, pp. 3830&ndash;3834.</p>
-            <p class="mb-1" id="ref-4">[4] H. Wang, C. Liang, S. Wang, Z. Chen, B. Zhang, X. Xiang, Y. Deng, and Y. Qian, &ldquo;WeSpeaker: A research and production oriented speaker embedding learning toolkit,&rdquo; in <em>ICASSP 2023</em>, 2023.</p>
-            <p class="mb-0" id="ref-5">[5] K. Zhang, J. Li, S. Wang, Y. Wei, Y. Wang, Y. Wang, and H. Li, &ldquo;Multi-level speaker representation for target speaker extraction,&rdquo; in <em>ICASSP 2025</em>, 2025.</p>
+            <p class="mb-1" id="ref-4">[4] H. Wang, C. Liang, S. Wang, Z. Chen, B. Zhang, X. Xiang, Y. Deng, and Y. Qian, &ldquo;WeSpeaker: A research and production oriented speaker embedding learning toolkit,&rdquo; in ICASSP 2023.</p>
+            <p class="mb-0" id="ref-5">[5] K. Zhang, J. Li, S. Wang, Y. Wei, Y. Wang, Y. Wang, and H. Li, &ldquo;Multi-level speaker representation for target speaker extraction,&rdquo; in ICASSP 2025.</p>
           </div>
         </div>
       </div>
@@ -748,7 +748,7 @@
               </div>
               <div id="collapseTwo" class="collapse" data-parent="#faqAccordion">
                 <div class="card-body text-muted pt-0 px-4 pb-4 small">
-                  Teams may use only openly available (open-source) datasets for model training, except for the five excluded corpora: AliMeeting, AISHELL-4, AMI, DipCo, and CHiME6. Pre-trained models are allowed but must be clearly documented.
+                  Teams may use only openly available (open-source) datasets for model training, except for the five excluded corpora: <strong>AliMeeting</strong>, <strong>AISHELL-4</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong>. Pre-trained models are allowed but must be clearly documented.
                 </div>
               </div>
             </div>
