@@ -346,7 +346,7 @@
              The challenge does <strong>not</strong> define an official training set. Participants may use any open-source datasets for training, and pre-trained models are allowed, provided that all data sources and checkpoints are clearly documented.
             </p>
             <p class="text-muted small mb-0">
-              <strong>Usage:</strong> Every dataset and pre-trained model must be reported in the system description with citations or links. Data derived from <strong>AliMeeting</strong>, <strong>AISHELL-4</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong> must <strong>not</strong> be used at any stage, including pre-training, training, or data augmentation.
+              <strong>Usage:</strong> Every dataset and pre-trained model must be reported in the system description with citations or links. The <strong>development</strong> and <strong>test</strong> sets of <strong>AliMeeting</strong>, <strong>AISHELL-4</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong> must <strong>not</strong> be used at any stage, including pre-training, training, or data augmentation. However, the official training splits of these corpora are permitted. Note that some corpora (e.g., AMI) have multiple partition schemes — please refer to the <a href="#faq" onclick="setTimeout(function(){ $('#collapseTwo').collapse('show'); }, 300);">FAQ: What data can I use for training?</a> for details on which sessions are excluded.
             </p>
           </div>
 
@@ -750,7 +750,12 @@
               </div>
               <div id="collapseTwo" class="collapse" data-parent="#faqAccordion">
                 <div class="card-body text-muted pt-0 px-4 pb-4 small">
-                  Teams may use only openly available (open-source) datasets for model training, except for the five excluded corpora: <strong>AliMeeting</strong>, <strong>AISHELL-4</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong>. Pre-trained models are allowed but must be clearly documented.
+                  <p class="mb-2">Teams may use only openly available (open-source) datasets for model training. The official training splits of <strong>AliMeeting</strong>, <strong>AISHELL-4</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong> are permitted, but their <strong>development</strong> and <strong>test</strong> sets must not be used at any stage, including pre-training, training, or data augmentation. Pre-trained models are allowed but must be clearly documented.</p>
+                  <p class="mb-2"><strong>Note on AMI corpus splits:</strong> The AMI corpus has multiple partition schemes (see <a href="https://groups.inf.ed.ac.uk/ami/corpus/datasets.shtml" target="_blank" rel="noopener noreferrer">AMI dataset page</a>). We follow the <strong>Full-corpus-ASR partition of meetings</strong>. Under this partition, the following sessions are considered development or test data and must <strong>not</strong> be used:</p>
+                  <ul class="mb-0 pl-4">
+                    <li><strong>Dev (SB):</strong> ES2011, IS1008, TS3004, IB4001, IB4002, IB4003, IB4004, IB4010, IB4011</li>
+                    <li><strong>Test (SC / Unseen Eval):</strong> ES2004, IS1009, TS3003, EN2002</li>
+                  </ul>
                 </div>
               </div>
             </div>
