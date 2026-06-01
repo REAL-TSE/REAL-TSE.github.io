@@ -205,6 +205,28 @@
       border: 2px solid #fff;
     }
 
+    .timeline-item.completed > .timeline-dot {
+      background: #94a3b8;
+    }
+
+    .timeline-item.completed .timeline-date,
+    .timeline-item.completed h6 {
+      color: #94a3b8 !important;
+    }
+
+    .timeline-status {
+      display: inline-block;
+      margin-left: 0.5rem;
+      padding: 0.1em 0.55em;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border-radius: 999px;
+      background: #ecfdf5;
+      color: #047857;
+      vertical-align: middle;
+    }
+
     .timeline-date {
       color: var(--rt-teal);
       letter-spacing: 0.04em;
@@ -267,11 +289,11 @@
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#baselines">Baselines</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#evaluation">Evaluation</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#timeline">Timeline</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#register">Register</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#rules">Rules</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#faq">FAQ</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#organizers">Organizers</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
-          <li class="nav-item ml-lg-3 mt-2 mt-lg-0"><a class="btn btn-primary btn-sm rounded-pill px-4 py-2 js-scroll-trigger" href="#register">Register</a></li>
         </ul>
       </div>
     </div>
@@ -318,6 +340,14 @@
         </div>
         <div class="col-lg-9">
           <ul class="list-unstyled mb-0">
+            <li class="mb-3 d-flex align-items-start">
+              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0" style="background: #fef3c7; color: #b45309; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">May 31, 2026 (AoE)</span>
+              <span class="text-muted small">The official <strong>evaluation set</strong> has been released, comprising <strong>EVAL-1 (Seen, 2,000 pairs)</strong> and <strong>EVAL-2 (Unseen, 3,000 pairs)</strong> &mdash; a total of <strong>5,000 mix-enroll pairs</strong>. Download links and password have been sent to all registered teams via email; newly registered teams will receive them within 24 hours of registration. The audio submission deadline is <strong>Jun 20, 2026 (AoE)</strong>. If you have not received the email after registration, please <a href="mailto:realtse.challenge@gmail.com">contact us</a>.</span>
+            </li>
+            <li class="mb-3 d-flex align-items-start">
+              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0" style="background: #fee2e2; color: #b91c1c; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">May 31, 2026 (AoE)</span>
+              <span class="text-muted small"><strong>Team registration is now closed.</strong> No further teams can register for the REAL-TSE Challenge. Teams that registered prior to this date will continue to receive dataset access via email within 24 hours of their registration.</span>
+            </li>
             <li class="mb-3 d-flex align-items-start">
               <span class="badge badge-pill mr-3 mt-1 flex-shrink-0" style="background: #e0f2fe; color: #0369a1; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Apr 10, 2026 (AoE)</span>
               <span class="text-muted small">The development set and baseline checkpoints have been sent to all registered teams via email. Teams that register afterwards will also receive them (within 24 hours of registration). If you have not received them after registration, please <a href="mailto:realtse.challenge@gmail.com">contact us</a>.</span>
@@ -395,21 +425,29 @@
           <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-award text-primary mr-2"></i>Evaluation Set</h5>
           <div class="card p-4 border-0 mb-0" style="background: #f8fafc;">
             <p class="text-muted small mb-3">
-              The evaluation set (<strong>to be released soon</strong>) consists of two subsets that together assess both in-domain robustness and real-world generalization:
+              The evaluation set has been <strong>released</strong> and consists of two subsets that together assess both in-domain robustness and real-world generalization, with a total of <strong>5,000 mix-enroll pairs</strong>:
             </p>
             <div class="row mb-3">
               <div class="col-md-6 mb-3 mb-md-0">
                 <div class="rounded p-3" style="background: #fff; border: 1px solid var(--rt-border);">
-                  <h6 class="font-weight-bold mb-2"><span class="badge badge-primary mr-2">EVAL-1</span>Seen Set</h6>
-                  <p class="text-muted small mb-0">Constructed from the same source corpora as the development set using a held-out partition, sharing similar acoustic conditions and conversation styles. EVAL-1 measures system performance under familiar, in-domain settings.</p>
+                  <h6 class="font-weight-bold mb-2"><span class="badge badge-primary mr-2">EVAL-1</span>Seen Set &mdash; 2,000 pairs</h6>
+                  <p class="text-muted small mb-0">Derived from the same open-source corpora as the development set, sharing similar acoustic conditions and conversation styles. There is <strong>no overlap</strong> between EVAL-1 and the development set. EVAL-1 measures system performance under familiar, in-domain settings.</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="rounded p-3" style="background: #fff; border: 1px solid var(--rt-border);">
-                  <h6 class="font-weight-bold mb-2"><span class="badge badge-success mr-2">EVAL-2</span>Unseen Set</h6>
-                  <p class="text-muted small mb-0">Newly collected recordings that cover a broader range of real-world scenarios beyond the development set. EVAL-2 provides a comprehensive assessment of model generalization to previously unseen acoustic environments and interaction patterns.</p>
+                  <h6 class="font-weight-bold mb-2"><span class="badge badge-success mr-2">EVAL-2</span>Unseen Set &mdash; 3,000 pairs</h6>
+                  <p class="text-muted small mb-0">Newly collected real-world conversational recordings specifically captured for the REAL-TSE Challenge. EVAL-2 covers diverse acoustic scenarios &mdash; including <strong>meeting rooms</strong>, <strong>caf&eacute;s</strong>, <strong>home environments</strong>, and <strong>in-vehicle conversations</strong> &mdash; recorded under a variety of conditions such as <strong>near-field microphones</strong>, <strong>far-field microphones</strong>, and <strong>mobile devices</strong>. EVAL-2 provides a comprehensive assessment of model generalization to previously unseen acoustic environments and interaction patterns.</p>
                 </div>
               </div>
+            </div>
+            <div class="alert border-0 small mb-3" style="background: #fff7ed; color: #9a3412;">
+              <i class="fas fa-shield-alt mr-2"></i>
+              <strong>Independent processing required:</strong> To ensure a fair evaluation, metadata such as scenario labels, speaker identities, and recording device information has been removed from the released evaluation set. Participants are only allowed to process each provided mix-enroll pair <strong>independently</strong>. Detailed statistics and analysis of the evaluation data will be published after the challenge.
+            </div>
+            <div class="alert border-0 small mb-3" style="background: #eff6ff; color: #1e3a8a;">
+              <i class="fas fa-envelope mr-2"></i>
+              <strong>Access:</strong> The evaluation set is available exclusively to registered teams. Download links and password have been sent via email to registered teams, and will continue to be sent to newly registered teams (within 24 hours of registration). If you have not received the email after registration, please <a href="mailto:realtse.challenge@gmail.com">contact us</a>.
             </div>
             <p class="text-muted small mb-0">
               <strong>Usage:</strong> The evaluation set must <strong>not</strong> be used for training, fine-tuning, hyper-parameter tuning, or any form of model optimization. It is reserved <strong>exclusively for final evaluation</strong>.
@@ -508,6 +546,10 @@
             <i class="fas fa-envelope mr-2"></i> Pretrained baseline checkpoints have been sent via email to registered teams, and will continue to be sent to newly registered teams.
           </div>
 
+          <div class="alert border-0 small mb-4" style="background: #ecfdf5; color: #065f46;">
+            <i class="fas fa-chart-line mr-2"></i> <strong>Baseline results updated:</strong> Baseline numbers in the official repository have been updated to reflect the new ASR backbones. Results on the development set, EVAL-1, and EVAL-2 are available on the <a href="https://github.com/REAL-TSE/REAL-TSE-Challenge#4-results" target="_blank" rel="noopener noreferrer" style="color: #047857; font-weight: 600;">REAL-TSE-Challenge results page</a>.
+          </div>
+
           <div class="card border-0 p-4 mb-4 small text-muted" style="background: #f8fafc; border-left: 3px solid var(--rt-border) !important;">
             <strong class="text-dark d-block mb-2">A note on baseline limitations</strong>
             These baselines are trained on Libri2Mix — synthetic mixtures with full speaker overlap and fixed 3-second segments — which differs substantially from REAL-TSE's real conversational data. Baseline performance should therefore be interpreted as a lower bound rather than a representative ceiling. We encourage participants to explore training strategies, data simulation pipelines, and model architectures better suited to real-world conversational TSE.
@@ -535,8 +577,11 @@
         <div class="col-lg-9">
           <div class="card p-4 border-0 mb-4" style="background: #f8fafc;">
             <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-calculator text-primary mr-2"></i>Composite Score</h5>
-            <p class="text-muted small mb-3">
-              Systems are ranked by a <strong>composite score</strong> that comprehensively integrates the four metrics described below. The detailed formulations for each sub-metric and the composite score will be specified in the challenge description paper and released with the official scoring toolkit.
+            <p class="text-muted small mb-2">
+              The four metrics described below are computed by the official evaluation pipeline. For each metric, valid submissions are ranked independently using <strong>dense ranking</strong>, and the final challenge ranking is determined by <strong>averaging the dense rankings across the four metrics</strong>.
+            </p>
+            <p class="text-muted small mb-0">
+              Each team may submit up to three systems per track, but only the <strong>best-performing submission</strong> from each team appears on the final leaderboard and is considered for the official ranking. Detailed formulations for each sub-metric will be specified in the challenge description paper and released with the official scoring toolkit.
             </p>
           </div>
 
@@ -544,7 +589,8 @@
             <div class="col-md-6 mb-3">
               <div class="card h-100 p-4 border-0">
                 <h6 class="font-weight-bold mb-2">Intelligibility — WER</h6>
-                <p class="text-muted small mb-0">Word Error Rate (<strong>WER</strong>) measures how accurately the extracted speech can be transcribed. A lower WER indicates better intelligibility.</p>
+                <p class="text-muted small mb-2">Word Error Rate (<strong>WER</strong>) measures how accurately the extracted speech can be transcribed. A lower WER indicates better intelligibility.</p>
+                <p class="text-muted small mb-0"><strong>Official ASR backbones: Zipformer-EN / Zipformer-ZH, chosen for stable transcription with reduced hallucinations.</strong></p>
               </div>
             </div>
             <div class="col-md-6 mb-3">
@@ -562,7 +608,8 @@
             <div class="col-md-6 mb-3">
               <div class="card h-100 p-4 border-0">
                 <h6 class="font-weight-bold mb-2">Target Speaker Presence Rate — F1</h6>
-                <p class="text-muted small mb-0">Measures accuracy of extracting speech only from target-speaker active regions via temporal <strong>precision</strong>, <strong>recall</strong>, and their harmonic mean <strong>F1</strong>.</p>
+                <p class="text-muted small mb-2">Measures accuracy of extracting speech only from target-speaker active regions via temporal <strong>precision</strong>, <strong>recall</strong>, and their harmonic mean <strong>F1</strong>.</p>
+                <p class="text-muted small mb-0"><strong>All audio signals are normalized using a unified scaling procedure before this metric is computed.</strong></p>
               </div>
             </div>
           </div>
@@ -586,23 +633,29 @@
         <div class="col-lg-9">
           <p class="text-muted mb-4">Key dates for the REAL-TSE Challenge at IEEE SLT 2026. All times follow the official challenge announcement unless stated otherwise.</p>
           <div class="pl-2">
-            <div class="timeline-item">
+            <div class="timeline-item completed">
               <div class="timeline-dot"></div>
               <p class="timeline-date font-weight-bold text-uppercase mb-2">7 April 2026 <span class="font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
-              <h6 class="font-weight-bold mb-1">Registration Opens</h6>
+              <h6 class="font-weight-bold mb-1">Registration Opens<span class="timeline-status">Completed</span></h6>
               <p class="text-muted small mb-0">Team registration for the challenge opens.</p>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item completed">
               <div class="timeline-dot"></div>
               <p class="timeline-date font-weight-bold text-uppercase mb-2">10 April 2026 <span class="font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
-              <h6 class="font-weight-bold mb-1">Development Set &amp; Baselines Released</h6>
+              <h6 class="font-weight-bold mb-1">Development Set &amp; Baselines Released<span class="timeline-status">Completed</span></h6>
               <p class="text-muted small mb-0">The development dataset and baseline systems are released. Dataset access is restricted to <a href="#register" class="js-scroll-trigger">registered teams</a> only; download links and passwords have been sent to registered teams, and will continue to be sent to newly registered teams (within 24 hours of registration).</p>
+            </div>
+            <div class="timeline-item completed">
+              <div class="timeline-dot"></div>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">31 May 2026 <span class="font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
+              <h6 class="font-weight-bold mb-1">Evaluation Set Released &amp; Registration Closes<span class="timeline-status">Completed</span></h6>
+              <p class="text-muted small mb-0">The evaluation set has been released to <a href="#register" class="js-scroll-trigger">registered teams</a> via email, comprising EVAL-1 (Seen, 2,000 pairs) and EVAL-2 (Unseen, 3,000 pairs) &mdash; 5,000 mix-enroll pairs in total. Team registration is now closed.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2">31 May 2026 <span class="font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE, tentative)</span></p>
-              <h6 class="font-weight-bold mb-1">Evaluation Set Released / Leaderboard Opens / Registration Closes</h6>
-              <p class="text-muted small mb-0">The evaluation dataset is released, the leaderboard opens, and registration closes. Only <a href="#register" class="js-scroll-trigger">registered teams</a> will receive dataset access via email.</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">5 June 2026 <span class="font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE, tentative)</span></p>
+              <h6 class="font-weight-bold mb-1">Public Leaderboard Opens</h6>
+              <p class="text-muted small mb-0">The public leaderboard opens for participating teams to monitor and compare submissions.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
@@ -642,17 +695,14 @@
         </div>
         <div class="col-lg-9">
           <div class="card border-0 p-5 text-center">
-            <div class="mb-4">
-              <i class="fas fa-clipboard-list fa-3x text-primary opacity-50" style="opacity: 0.5;"></i>
-            </div>
-            <p class="text-muted mb-0 small">
-              Please register here.
+            <p class="mb-2 small" style="color: #94a3b8; text-decoration: line-through;">
+              Please register via <a href="https://forms.gle/usEL2i1TfvzuG8367" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; text-decoration: line-through;">this form</a>.
               We will send you a successful registration email within three days after your registration.
-              If you have not received it, please <a href="mailto:realtse.challenge@gmail.com">contact us</a>.
+              If you have not received it, please <a href="mailto:realtse.challenge@gmail.com" style="color: #94a3b8; text-decoration: line-through;">contact us</a>.
             </p>
-            <div class="mt-4">
-              <a class="btn btn-primary rounded-pill px-4 py-2 d-inline-block" href="https://forms.gle/usEL2i1TfvzuG8367" target="_blank" rel="noopener noreferrer">Register Form</a>
-            </div>
+            <p class="mb-0 small" style="color: var(--rt-slate);">
+              Team registration is now closed (as of May 31, 2026, AoE). No further teams can register for the REAL-TSE Challenge.
+            </p>
           </div>
         </div>
       </div>
@@ -732,11 +782,18 @@
 
           <div class="card p-4 border-0 mb-0">
             <ol class="text-muted small pl-3 mb-0" style="line-height: 1.8;">
+              <li><strong>Final submission contents:</strong> Participants must submit the enhanced audio for <strong>all 5,000 evaluation samples</strong> (EVAL-1 + EVAL-2). We recommend submitting a compressed archive of all generated WAV files via Google Drive. Each submission should clearly specify the <strong>track</strong> (Online or Offline), <strong>team name</strong>, and a <strong>brief system description</strong>.</li>
               <li><strong>System description:</strong> All submissions must include <strong>detailed system descriptions</strong> for reproducibility.</li>
-              <li><strong>Number of submissions:</strong> Each team may submit up to <strong>three valid systems per track</strong>.</li>
+              <li><strong>Number of submissions:</strong> Each team may submit up to <strong>three valid systems per track</strong>. However, <strong>only the best-performing submission</strong> from each team will appear on the final leaderboard and be considered for the official ranking.</li>
+              <li><strong>Final ranking:</strong> The organizing committee performs all metric calculations and ranking using the official evaluation pipeline. For each metric, valid submissions are ranked independently, and the final challenge ranking is determined by <strong>averaging the dense rankings across the four metrics</strong>.</li>
+              <li><strong>Track 1 (Online) additional requirement:</strong> Online-track submissions must additionally provide an end-to-end <strong>latency report</strong> covering both <em>Algorithmic Latency</em> and <em>Buffering Latency</em>. Participants should also estimate the Algorithmic Latency using the official <code>latency_verification.py</code> script and include the result in the submission report. The verification result is intended primarily as a <strong>consistency check</strong> for the organizers and is not the sole criterion for determining whether a system satisfies the latency requirement; reasonable and explainable deviations are acceptable.</li>
               <li><strong>Encouraged open source:</strong> Teams are encouraged to make their models or scripts <strong>publicly available</strong> after the challenge.</li>
             </ol>
           </div>
+
+          <p class="text-muted small mt-3 mb-0" style="font-size: 0.8rem; color: #94a3b8;">
+            The organizers reserve the right to further clarify, update, or refine the evaluation protocol if necessary.
+          </p>
 
         </div>
       </div>
