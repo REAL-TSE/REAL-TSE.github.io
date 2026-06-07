@@ -182,6 +182,28 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
+    .hero-link-group {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      max-width: 660px;
+    }
+
+    .hero-link-group .hero-link {
+      width: 100%;
+      min-height: 3.35rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px !important;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    .hero-link-group .hero-link i {
+      flex-shrink: 0;
+    }
+
     .timeline-item {
       position: relative;
       padding-left: 2rem;
@@ -268,6 +290,12 @@
     [id^="ref-"] {
       scroll-margin-top: 90px;
     }
+
+    @media (max-width: 767.98px) {
+      .hero-link-group {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -312,12 +340,15 @@
           <p class="mb-0" style="font-size: 0.95rem; color: #64748b;">
             <i class="fas fa-calendar-alt mr-1"></i> A satellite challenge of <a href="https://attend.ieee.org/slt-2026/" target="_blank" rel="noopener noreferrer"><strong>IEEE SLT 2026</strong></a>
           </p>
-          <div class="d-flex flex-wrap mt-3">
-            <a href="https://github.com/REAL-TSE/REAL-TSE-Challenge" class="btn btn-dark btn-lg rounded-pill px-4 mr-3 mb-3" target="_blank">
-              <i class="fab fa-github mr-2"></i>REAL-TSE-Challenge
+          <div class="hero-link-group mt-3">
+            <a href="https://github.com/REAL-TSE/REAL-TSE-Challenge" class="btn btn-dark btn-lg hero-link px-4" target="_blank">
+              <i class="fab fa-github mr-2"></i>REAL-TSE
             </a>
-            <a href="https://github.com/REAL-TSE/wesep-real-tse" class="btn btn-outline-dark btn-lg rounded-pill px-4 mb-3" style="color: #000; border-color: #000; border-width: 2px;" target="_blank">
+            <a href="https://github.com/REAL-TSE/wesep-real-tse" class="btn btn-outline-dark btn-lg hero-link px-4" style="color: #000; border-color: #000; border-width: 2px;" target="_blank">
               <i class="fab fa-github mr-2"></i>Wesep Baseline
+            </a>
+            <a href="https://leaderboard.real-tse.com" class="btn btn-outline-dark btn-lg hero-link px-4" style="color: #000; border-color: #000; border-width: 2px;" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-trophy mr-2"></i>Leaderboard
             </a>
           </div>
         </div>
@@ -340,6 +371,10 @@
         </div>
         <div class="col-lg-9">
           <ul class="list-unstyled mb-0">
+            <li class="mb-3 d-flex align-items-start">
+              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0" style="background: #dcfce7; color: #166534; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Jun 5, 2026 (AoE)</span>
+              <span class="text-muted small">The public <a href="https://leaderboard.real-tse.com" target="_blank" rel="noopener noreferrer"><strong>REAL-TSE leaderboard</strong></a> is now open. Submission instructions, track links, team approval details, and fallback submission instructions have been sent to all participating teams via email.</span>
+            </li>
             <li class="mb-3 d-flex align-items-start">
               <span class="badge badge-pill mr-3 mt-1 flex-shrink-0" style="background: #fef3c7; color: #b45309; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">May 31, 2026 (AoE)</span>
               <span class="text-muted small">The official <strong>evaluation set</strong> has been released, comprising <strong>EVAL-1 (Seen, 2,000 pairs)</strong> and <strong>EVAL-2 (Unseen, 3,000 pairs)</strong> &mdash; a total of <strong>5,000 mix-enroll pairs</strong>. Download links and password have been sent to all registered teams via email; newly registered teams will receive them within 24 hours of registration. The audio submission deadline is <strong>Jun 20, 2026 (AoE)</strong>. If you have not received the email after registration, please <a href="mailto:realtse.challenge@gmail.com">contact us</a>.</span>
@@ -651,11 +686,11 @@
               <h6 class="font-weight-bold mb-1">Evaluation Set Released &amp; Registration Closes<span class="timeline-status">Completed</span></h6>
               <p class="text-muted small mb-0">The evaluation set has been released to <a href="#register" class="js-scroll-trigger">registered teams</a> via email, comprising EVAL-1 (Seen, 2,000 pairs) and EVAL-2 (Unseen, 3,000 pairs) &mdash; 5,000 mix-enroll pairs in total. Team registration is now closed.</p>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item completed">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2">5 June 2026 <span class="font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE, tentative)</span></p>
-              <h6 class="font-weight-bold mb-1">Public Leaderboard Opens</h6>
-              <p class="text-muted small mb-0">The public leaderboard opens for participating teams to monitor and compare submissions.</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">5 June 2026 <span class="font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
+              <h6 class="font-weight-bold mb-1">Public Leaderboard Opens<span class="timeline-status">Completed</span></h6>
+              <p class="text-muted small mb-0">The public <a href="https://leaderboard.real-tse.com" target="_blank" rel="noopener noreferrer">leaderboard</a> is open for participating teams to monitor and compare submissions. Track links, team approval details, and submission instructions have been sent to all participating teams via email.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
@@ -694,15 +729,33 @@
           <h2 class="section-title">Registration</h2>
         </div>
         <div class="col-lg-9">
-          <div class="card border-0 p-5 text-center">
+          <div class="card border-0 p-5">
             <p class="mb-2 small" style="color: #94a3b8; text-decoration: line-through;">
               Please register via <a href="https://forms.gle/usEL2i1TfvzuG8367" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; text-decoration: line-through;">this form</a>.
               We will send you a successful registration email within three days after your registration.
               If you have not received it, please <a href="mailto:realtse.challenge@gmail.com" style="color: #94a3b8; text-decoration: line-through;">contact us</a>.
             </p>
-            <p class="mb-0 small" style="color: var(--rt-slate);">
+            <p class="mb-3 small" style="color: var(--rt-slate);">
               Team registration is now closed (as of May 31, 2026, AoE). No further teams can register for the REAL-TSE Challenge.
             </p>
+            <p class="text-muted small mb-3">
+              Leaderboard account registration is open for participating teams. Please create and activate an account on the leaderboard website, complete your profile if prompted, open the corresponding track page, and click <strong>Participate</strong> to submit your team application.
+            </p>
+            <ul class="text-muted small pl-3 mb-3" style="line-height: 1.8;">
+              <li>Please make sure your team name, affiliation, and member information match the information previously submitted through the Google Form.</li>
+              <li>Wait for organizer approval. After approval, you will be able to submit results on the corresponding track page.</li>
+            </ul>
+            <div class="d-flex flex-wrap">
+              <a href="https://leaderboard.real-tse.com/challenges/real-tse-track-1" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-stopwatch mr-1"></i>Track 1 Leaderboard
+              </a>
+              <a href="https://leaderboard.real-tse.com/challenges/real-tse-track-2" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-globe mr-1"></i>Track 2 Leaderboard
+              </a>
+              <a href="https://leaderboard.real-tse.com" class="btn btn-outline-primary btn-sm mb-2" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-trophy mr-1"></i>Leaderboard Home
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -780,15 +833,26 @@
 
           <h5 class="font-weight-bold mb-3 mt-5 text-dark">Submission Rules</h5>
 
-          <div class="card p-4 border-0 mb-0">
+          <div class="card p-4 border-0 mb-4">
+            <h6 class="font-weight-bold mb-3"><i class="fas fa-trophy text-primary mr-2"></i>Leaderboard Submission</h6>
+            <p class="text-muted small mb-3">
+              We recommend using the public leaderboard for official submissions. Track pages are available for <a href="https://leaderboard.real-tse.com/challenges/real-tse-track-1" target="_blank" rel="noopener noreferrer">Track 1: Online Target Speaker Extraction</a> and <a href="https://leaderboard.real-tse.com/challenges/real-tse-track-2" target="_blank" rel="noopener noreferrer">Track 2: Offline Target Speaker Extraction</a>.
+            </p>
             <ol class="text-muted small pl-3 mb-0" style="line-height: 1.8;">
-              <li><strong>Final submission contents:</strong> Participants must submit the enhanced audio for <strong>all 5,000 evaluation samples</strong> (EVAL-1 + EVAL-2). We recommend submitting a compressed archive of all generated WAV files via Google Drive. Each submission should clearly specify the <strong>track</strong> (Online or Offline), <strong>team name</strong>, and a <strong>brief system description</strong>.</li>
-              <li><strong>System description:</strong> All submissions must include <strong>detailed system descriptions</strong> for reproducibility.</li>
-              <li><strong>Number of submissions:</strong> Each team may submit up to <strong>three valid systems per track</strong>. However, <strong>only the best-performing submission</strong> from each team will appear on the final leaderboard and be considered for the official ranking.</li>
-              <li><strong>Final ranking:</strong> The organizing committee performs all metric calculations and ranking using the official evaluation pipeline. For each metric, valid submissions are ranked independently, and the final challenge ranking is determined by <strong>averaging the dense rankings across the four metrics</strong>.</li>
-              <li><strong>Track 1 (Online) additional requirement:</strong> Online-track submissions must additionally provide an end-to-end <strong>latency report</strong> covering both <em>Algorithmic Latency</em> and <em>Buffering Latency</em>. Participants should also estimate the Algorithmic Latency using the official <code>latency_verification.py</code> script and include the result in the submission report. The verification result is intended primarily as a <strong>consistency check</strong> for the organizers and is not the sole criterion for determining whether a system satisfies the latency requirement; reasonable and explainable deviations are acceptable.</li>
+              <li><strong>Package contents:</strong> For official evaluation, submit one <code>.zip</code> package containing outputs for both <strong>EVAL-1</strong> and <strong>EVAL-2</strong>. EVAL-1-only or EVAL-2-only submissions are not accepted.</li>
+              <li><strong>Evaluation target:</strong> On the submission page, select <strong>EVAL1+EVAL2</strong> as the evaluation target and follow the <strong>Zip structure</strong> instructions shown on the page.</li>
+              <li><strong>Brief system description:</strong> Each leaderboard submission must include a brief system description in the submission form. For Track 1, also include a brief latency description covering algorithmic latency, look-ahead, buffering, or any other latency-inducing components.</li>
+              <li><strong>Official system description:</strong> For a submission to be considered valid for the final challenge, a detailed official system description must be submitted to the organizers by <strong>1 July 2026 (AoE)</strong>.</li>
+              <li><strong>Evaluation status:</strong> Evaluation runs asynchronously after upload and may take around <strong>2-3 hours</strong>, depending on queue and system load. You can monitor progress in the submission history.</li>
+              <li><strong>Number of submissions:</strong> Each team may submit up to <strong>three valid systems per track</strong>. Only successful submissions are counted, and only the best-performing valid submission from each team will appear on the final leaderboard and be considered for the official ranking.</li>
+              <li><strong>Final ranking:</strong> The leaderboard uses the official REAL-TSE metrics: <strong>TER</strong>, <strong>Timing F1</strong>, <strong>SIM</strong>, and <strong>DNSMOS OVRL</strong>. The final ranking is computed by averaging dense ranks across the metrics.</li>
               <li><strong>Encouraged open source:</strong> Teams are encouraged to make their models or scripts <strong>publicly available</strong> after the challenge.</li>
             </ol>
+          </div>
+
+          <div class="alert alert-light border small mb-0" role="alert" style="background: #f8fafc;">
+            <p class="font-weight-bold mb-2"><i class="fas fa-life-ring text-primary mr-1"></i> Alternative submission</p>
+            <p class="text-muted mb-0">If you encounter technical issues with leaderboard registration, team approval, upload format, or evaluation status, please contact <a href="mailto:realtse.challenge@gmail.com">realtse.challenge@gmail.com</a>. As a fallback, the organizers can accept a Google Drive link to your submission package for manual evaluation, but manual results may be delayed by <strong>1-2 days</strong>.</p>
           </div>
 
           <p class="text-muted small mt-3 mb-0" style="font-size: 0.8rem; color: #94a3b8;">
@@ -852,6 +916,48 @@
               <div id="collapseThree" class="collapse" data-parent="#faqAccordion">
                 <div class="card-body text-muted pt-0 px-4 pb-4 small">
                   No. The official test set must not be used for training, fine-tuning, hyper-parameter tuning, or any form of model optimization. It is reserved exclusively for final evaluation. The development set may be used for hyper-parameter tuning and validation.
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 mb-3 shadow-sm overflow-hidden" style="border-radius: 10px;">
+              <div class="card-header bg-white border-0 p-0" id="headingFour">
+                <button class="btn btn-block text-left p-4 font-weight-bold text-dark d-flex justify-content-between align-items-center faq-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false">
+                  Do I need organizer approval before submitting on the leaderboard?
+                  <i class="fas fa-chevron-down transition-icon"></i>
+                </button>
+              </div>
+              <div id="collapseFour" class="collapse" data-parent="#faqAccordion">
+                <div class="card-body text-muted pt-0 px-4 pb-4 small">
+                  Yes. After creating and activating your leaderboard account, open the corresponding track page, click <strong>Participate</strong>, and submit your team application. Please use the same team name, affiliation, and member information as in the original Google Form. Submissions become available after organizer approval.
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 mb-3 shadow-sm overflow-hidden" style="border-radius: 10px;">
+              <div class="card-header bg-white border-0 p-0" id="headingFive">
+                <button class="btn btn-block text-left p-4 font-weight-bold text-dark d-flex justify-content-between align-items-center faq-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false">
+                  Can I submit only EVAL-1 or only EVAL-2?
+                  <i class="fas fa-chevron-down transition-icon"></i>
+                </button>
+              </div>
+              <div id="collapseFive" class="collapse" data-parent="#faqAccordion">
+                <div class="card-body text-muted pt-0 px-4 pb-4 small">
+                  No. Official leaderboard submissions must use one <code>.zip</code> package containing both EVAL-1 and EVAL-2 outputs. Please select <strong>EVAL1+EVAL2</strong> on the submission page and follow the Zip structure instructions shown there.
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 mb-3 shadow-sm overflow-hidden" style="border-radius: 10px;">
+              <div class="card-header bg-white border-0 p-0" id="headingSix">
+                <button class="btn btn-block text-left p-4 font-weight-bold text-dark d-flex justify-content-between align-items-center faq-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false">
+                  What if the leaderboard upload or evaluation fails?
+                  <i class="fas fa-chevron-down transition-icon"></i>
+                </button>
+              </div>
+              <div id="collapseSix" class="collapse" data-parent="#faqAccordion">
+                <div class="card-body text-muted pt-0 px-4 pb-4 small">
+                  Please contact <a href="mailto:realtse.challenge@gmail.com">realtse.challenge@gmail.com</a> with your team name, track, and a brief description of the issue. We recommend using the leaderboard whenever possible; if technical issues persist, the organizers can accept a Google Drive link to your submission package for manual evaluation, but the result may be delayed by 1-2 days.
                 </div>
               </div>
             </div>
@@ -982,5 +1088,4 @@
   </script>
 
 </body>
-</html>
 </html>
