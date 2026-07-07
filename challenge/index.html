@@ -315,6 +315,7 @@
       -moz-font-feature-settings: "tnum" 1;
       font-feature-settings: "tnum" 1;
     }
+
     .rankings-table tr.rankings-baseline td {
       color: #94a3b8;
       background: rgba(148, 163, 184, 0.10);
@@ -427,7 +428,8 @@
                   (deadline: <strong>July 1, 2026 (AoE)</strong>). Results currently shown on the <a
                     href="https://leaderboard.real-tse.com" target="_blank" rel="noopener noreferrer"
                     style="color: #991b1b; font-weight: 600; text-decoration: underline;">leaderboard</a> are
-                  <strong>under review</strong> by the organizers and are not yet final.</p>
+                  <strong>under review</strong> by the organizers and are not yet final.
+                </p>
               </div>
             </li>
             <li class="mb-3 d-flex align-items-start">
@@ -628,7 +630,8 @@
                     and <strong>in-vehicle conversations</strong> &mdash; recorded under a variety of conditions such as
                     <strong>near-field microphones</strong>, <strong>far-field microphones</strong>, and <strong>mobile
                       devices</strong>. EVAL-2 provides a comprehensive assessment of model generalization to previously
-                    unseen acoustic environments and interaction patterns.</p>
+                    unseen acoustic environments and interaction patterns.
+                  </p>
                 </div>
               </div>
             </div>
@@ -796,7 +799,8 @@
           <div style="line-height: 1.7; font-size: 0.8rem; color: #64748b;">
             <p class="mb-1" id="ref-1">[1] Y. Luo and J. Yu, &ldquo;Music source separation with band-split RNN,&rdquo;
               <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, vol. 31, pp. 1893&ndash;1901,
-              2023.</p>
+              2023.
+            </p>
             <p class="mb-1" id="ref-2">[2] J. Cosentino, M. Pariente, S. Cornell, A. Deleforge, and E. Vincent,
               &ldquo;LibriMix: An open-source dataset for generalizable speech separation,&rdquo; 2020.</p>
             <p class="mb-1" id="ref-3">[3] B. Desplanques, J. Thienpondt, and K. Demuynck, &ldquo;ECAPA-TDNN: Emphasized
@@ -868,7 +872,8 @@
                 <h6 class="font-weight-bold mb-2">Target Speaker Presence Rate — F1</h6>
                 <p class="text-muted small mb-2">Measures accuracy of extracting speech only from target-speaker active
                   regions via temporal <strong>precision</strong>, <strong>recall</strong>, and their harmonic mean
-                  <strong>F1</strong>.</p>
+                  <strong>F1</strong>.
+                </p>
                 <p class="text-muted small mb-0"><strong>All audio signals are normalized using a unified scaling
                     procedure before this metric is computed.</strong></p>
               </div>
@@ -1136,8 +1141,8 @@
               <a href="#rankings" class="btn btn-outline-primary btn-sm mr-2 mb-2 js-scroll-trigger">
                 <i class="fas fa-chart-bar mr-1"></i>Rankings
               </a>
-              <a href="../assets/pdf/Real_TSE_Challenge_Report.pdf"
-                class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank" rel="noopener noreferrer">
+              <a href="../assets/pdf/Real_TSE_Challenge_Report.pdf" class="btn btn-outline-primary btn-sm mr-2 mb-2"
+                target="_blank" rel="noopener noreferrer">
                 <i class="fas fa-file-pdf mr-1"></i>Challenge Report
               </a>
               <a href="https://leaderboard.real-tse.com/challenges/real-tse-track-1"
@@ -1169,7 +1174,8 @@
             leaderboard. The four reported metrics are <strong>TER</strong> (lower is better), <strong>F1</strong>,
             <strong>SIM</strong>, and <strong>DNSMOS-P808</strong> (higher is better). Only teams that submitted a
             system report are listed; <strong>BSRNN</strong> entries are the official baselines provided by the
-            organizers (no system report). Click <em>Report</em> to open a team&rsquo;s system description.</p>
+            organizers (no system report). Click <em>Report</em> to open a team&rsquo;s system description.
+          </p>
 
           <div class="card border-0 p-4 mb-4" style="background: #f8fafc;">
             <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-stopwatch text-primary mr-2"></i>Track 1
@@ -1365,7 +1371,7 @@
                 <tbody>
                   <tr>
                     <td class="text-center font-weight-bold align-middle">🥇 1</td>
-                    <td class="align-middle">MERL-SA</td>
+                    <td class="align-middle">MERL</td>
                     <td class="text-right align-middle">0.613</td>
                     <td class="text-right align-middle">0.861</td>
                     <td class="text-right align-middle">0.538</td>
@@ -1586,11 +1592,14 @@
                 hop-size, frame-shift, or temporal stride.</p>
               <ul class="text-muted small pl-3 mb-3">
                 <li><strong>Ex.1:</strong> A STFT-based processing has a buffering latency corresponding to the
-                  <strong>hop size</strong>.</li>
+                  <strong>hop size</strong>.
+                </li>
                 <li><strong>Ex.2:</strong> An overlap-save processing has a buffering latency corresponding to the
-                  <strong>frame size</strong>.</li>
+                  <strong>frame size</strong>.
+                </li>
                 <li><strong>Ex.3:</strong> A time-domain convolution with stride 1 introduces a buffering latency of
-                  <strong>1 sample</strong>.</li>
+                  <strong>1 sample</strong>.
+                </li>
               </ul>
 
               <p class="text-muted small mb-3">Algorithmic and buffering latency definitions and examples above follow
@@ -1659,7 +1668,8 @@
                   2026 (AoE)</strong>.</li>
               <li><strong>Evaluation status:</strong> Evaluation runs asynchronously after upload and may take around
                 <strong>2-3 hours</strong>, depending on queue and system load. You can monitor progress in the
-                submission history.</li>
+                submission history.
+              </li>
               <li><strong>Submission quota:</strong> <span style="color: #94a3b8; text-decoration: line-through;">Each
                   team may submit up to three submissions per track.</span> Each team may submit up to <strong>one
                   submission per track per day</strong>, but on the <strong>final deadline day (<span
@@ -1669,9 +1679,11 @@
                 team will appear on the final leaderboard and be considered for the official ranking.</li>
               <li><strong>Final ranking:</strong> The leaderboard uses the official REAL-TSE metrics:
                 <strong>TER</strong>, <strong>Timing F1</strong>, <strong>SIM</strong>, and <strong>DNSMOS
-                  OVRL</strong>. The final ranking is computed by averaging dense ranks across the metrics.</li>
+                  OVRL</strong>. The final ranking is computed by averaging dense ranks across the metrics.
+              </li>
               <li><strong>Encouraged open source:</strong> Teams are encouraged to make their models or scripts
-                <strong>publicly available</strong> after the challenge.</li>
+                <strong>publicly available</strong> after the challenge.
+              </li>
             </ol>
           </div>
 
@@ -1739,7 +1751,8 @@
                     <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong> are permitted, but their
                     <strong>development</strong> and <strong>test</strong> sets must not be used at any stage, including
                     pre-training, training, or data augmentation. Pre-trained models are allowed but must be clearly
-                    documented.</p>
+                    documented.
+                  </p>
                   <p class="mb-2"><strong>Note on AMI corpus splits:</strong> The AMI corpus has multiple partition
                     schemes (see <a href="https://groups.inf.ed.ac.uk/ami/corpus/datasets.shtml" target="_blank"
                       rel="noopener noreferrer">AMI dataset page</a>). We follow the <strong>Full-corpus-ASR partition
