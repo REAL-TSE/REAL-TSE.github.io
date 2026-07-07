@@ -1059,20 +1059,22 @@
                 submissions. Track links, team approval details, and submission instructions have been sent to all
                 participating teams via email.</p>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item completed">
               <div class="timeline-dot"></div>
               <p class="timeline-date font-weight-bold text-uppercase mb-2"><span
                   style="color: #94a3b8; text-decoration: line-through;">20 June 2026</span> 25 June 2026 <span
                   class="font-weight-normal"
                   style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
-              <h6 class="font-weight-bold mb-1">Leaderboard Freeze / Submission Deadline</h6>
+              <h6 class="font-weight-bold mb-1">Leaderboard Freeze / Submission Deadline<span
+                  class="timeline-status">Completed</span></h6>
               <p class="text-muted small mb-0">The leaderboard is frozen and evaluation output submissions close.</p>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item completed">
               <div class="timeline-dot"></div>
               <p class="timeline-date font-weight-bold text-uppercase mb-2">1 July 2026 <span class="font-weight-normal"
                   style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
-              <h6 class="font-weight-bold mb-1">System Report Submission Deadline</h6>
+              <h6 class="font-weight-bold mb-1">System Report Submission Deadline<span
+                  class="timeline-status">Completed</span></h6>
               <p class="text-muted small mb-0">Deadline for submitting the official system description paper. This
                 deadline remains unchanged.</p>
             </div>
@@ -1131,6 +1133,13 @@
                 track page.</li>
             </ul>
             <div class="d-flex flex-wrap">
+              <a href="#rankings" class="btn btn-outline-primary btn-sm mr-2 mb-2 js-scroll-trigger">
+                <i class="fas fa-chart-bar mr-1"></i>Rankings
+              </a>
+              <a href="../assets/pdf/Real_TSE_Challenge_Report.pdf"
+                class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-file-pdf mr-1"></i>Challenge Report
+              </a>
               <a href="https://leaderboard.real-tse.com/challenges/real-tse-track-1"
                 class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank" rel="noopener noreferrer">
                 <i class="fas fa-stopwatch mr-1"></i>Track 1 Leaderboard
@@ -1138,10 +1147,6 @@
               <a href="https://leaderboard.real-tse.com/challenges/real-tse-track-2"
                 class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank" rel="noopener noreferrer">
                 <i class="fas fa-globe mr-1"></i>Track 2 Leaderboard
-              </a>
-              <a href="https://leaderboard.real-tse.com" class="btn btn-outline-primary btn-sm mb-2" target="_blank"
-                rel="noopener noreferrer">
-                <i class="fas fa-trophy mr-1"></i>Leaderboard Home
               </a>
             </div>
           </div>
@@ -1158,10 +1163,13 @@
         </div>
         <div class="col-lg-9">
           <p class="text-muted small mb-4">Final verified Phase-1 rankings (official evaluation) for both tracks.
-            Metrics are reported to three decimal places &mdash; lower <strong>TER</strong> is better, while higher
-            <strong>F1</strong>, <strong>SIM</strong>, and <strong>DNSMOS-P808</strong> are better. Only teams that
-            submitted a system report are listed; <strong>BSRNN</strong> entries are the official baselines provided by
-            the organizers (no system report). Click <em>Report</em> to open a team&rsquo;s system description.</p>
+            As previously stated, submissions that do not meet the challenge requirements, or that do not include a
+            system description, are removed from the final official rankings. This page shows the final valid rankings
+            for all compliant systems after that reordering. The original ranking list can be found in the official
+            leaderboard. The four reported metrics are <strong>TER</strong> (lower is better), <strong>F1</strong>,
+            <strong>SIM</strong>, and <strong>DNSMOS-P808</strong> (higher is better). Only teams that submitted a
+            system report are listed; <strong>BSRNN</strong> entries are the official baselines provided by the
+            organizers (no system report). Click <em>Report</em> to open a team&rsquo;s system description.</p>
 
           <div class="card border-0 p-4 mb-4" style="background: #f8fafc;">
             <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-stopwatch text-primary mr-2"></i>Track 1
