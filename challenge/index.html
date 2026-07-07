@@ -667,6 +667,88 @@
             </div>
           </div>
 
+          <!-- Special Note: DNSMOS metric update (6 Jul 2026, AoE) -->
+          <div class="card border-0 mb-4" style="border-left: 4px solid var(--rt-blue); background: #f8fafc;">
+            <div class="card-body p-4">
+              <div class="d-flex flex-wrap align-items-center mb-3">
+                <h5 class="font-weight-bold mb-0 text-dark mr-3"><i class="fas fa-bullhorn text-primary mr-2"></i>Special Note &mdash; DNSMOS Metric Update</h5>
+                <span class="badge badge-pill" style="background: #dbeafe; color: #1d4ed8; font-size: 0.72rem; font-weight: 600; padding: 0.4em 0.8em;">Updated 6 July 2026 (AoE)</span>
+              </div>
+
+              <p class="text-muted small mb-3">
+                After reviewing the submitted results, we observed that a number of teams had <strong>severely overfit to the DNSMOS OVRL</strong> metric. As shown in the figure below, while most teams' DNSMOS OVRL and DNSMOS P808 scores are <strong>strongly correlated</strong>, a small number of teams obtain OVRL scores far above their P808 scores &mdash; in these cases OVRL <strong>no longer reliably reflects</strong> the true MOS quality of the audio.
+              </p>
+
+              <div class="text-center mb-3">
+                <img src="../assets/img/dnsmos-ovrl-vs-p808.png" alt="Scatter plot of per-team DNSMOS OVRL vs. DNSMOS P808 scores" class="img-fluid rounded border" style="max-width: 100%;">
+                <p class="text-muted small mt-2 mb-0"><em>Per-team DNSMOS OVRL vs. DNSMOS P808. Most teams lie along the diagonal (strong agreement); a few outliers show OVRL &Gt; P808, indicating OVRL inflation that diverges from perceptual quality.</em></p>
+              </div>
+
+              <p class="text-muted small mb-3">
+                To verify this, we sampled audio from several <strong>top-ranked teams</strong> and conducted <strong>subjective MOS listening tests</strong>, then compared the results against the existing DNSMOS metrics. The agreement between human MOS and each metric &mdash; measured by <strong>Linear Correlation Coefficient (LCC)</strong> and <strong>Spearman&rsquo;s Rank Correlation Coefficient (SRCC)</strong> &mdash; is summarized below (higher = better agreement with human perception):
+              </p>
+
+              <div class="table-responsive mb-1">
+                <table class="table table-sm table-borderless mb-0" style="font-size: 0.875rem;">
+                  <thead>
+                    <tr style="background: #f1f5f9;">
+                      <th rowspan="2" class="text-center align-middle" style="border-bottom: 2px solid var(--rt-border);">Scope</th>
+                      <th rowspan="2" class="text-center align-middle" style="border-bottom: 2px solid var(--rt-border);">n</th>
+                      <th colspan="2" class="text-center" style="border-bottom: 2px solid var(--rt-border);">DNSMOS-OVRL</th>
+                      <th colspan="2" class="text-center" style="border-bottom: 2px solid var(--rt-border); background: rgba(13, 148, 136, 0.10);">DNSMOS-P808</th>
+                      <th colspan="2" class="text-center" style="border-bottom: 2px solid var(--rt-border);">DNSMOS-PRO</th>
+                    </tr>
+                    <tr style="background: #f1f5f9;">
+                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border);">LCC</th>
+                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border);">SRCC</th>
+                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border); background: rgba(13, 148, 136, 0.10);">LCC</th>
+                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border); background: rgba(13, 148, 136, 0.10);">SRCC</th>
+                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border);">LCC</th>
+                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border);">SRCC</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-center font-weight-bold">Track 1</td>
+                      <td class="text-center text-muted">500</td>
+                      <td class="text-center text-muted">+0.003</td>
+                      <td class="text-center text-muted">+0.040</td>
+                      <td class="text-center font-weight-bold" style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.06);">+0.453</td>
+                      <td class="text-center font-weight-bold" style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.06);">+0.380</td>
+                      <td class="text-center text-muted">+0.156</td>
+                      <td class="text-center text-muted">+0.115</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center font-weight-bold">Track 2</td>
+                      <td class="text-center text-muted">600</td>
+                      <td class="text-center text-muted">+0.182</td>
+                      <td class="text-center text-muted">+0.186</td>
+                      <td class="text-center font-weight-bold" style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.06);">+0.466</td>
+                      <td class="text-center font-weight-bold" style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.06);">+0.463</td>
+                      <td class="text-center text-muted">+0.229</td>
+                      <td class="text-center text-muted">+0.234</td>
+                    </tr>
+                    <tr style="background: #f8fafc;">
+                      <td class="text-center font-weight-bold">Overall</td>
+                      <td class="text-center text-muted">1100</td>
+                      <td class="text-center text-muted">+0.165</td>
+                      <td class="text-center text-muted">+0.186</td>
+                      <td class="text-center font-weight-bold" style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.10);">+0.489</td>
+                      <td class="text-center font-weight-bold" style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.10);">+0.460</td>
+                      <td class="text-center text-muted">+0.233</td>
+                      <td class="text-center text-muted">+0.230</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-muted small mt-1 mb-3"><em>Correlation between human MOS and each DNSMOS metric. DNSMOS-P808, which achieves the highest agreement with human perception, is highlighted.</em></p>
+
+              <div class="alert border-0 small mb-0" style="background: #ecfdf5; color: #065f46;">
+                <i class="fas fa-check-circle mr-2"></i> As shown above, <strong>DNSMOS-P808</strong> achieves substantially higher correlation with human MOS than DNSMOS-OVRL (and DNSMOS-PRO) across both tracks and overall. Under the current conditions, <strong>DNSMOS-P808 better reflects human perceptual quality</strong>. We have therefore decided to <strong>adopt DNSMOS-P808 in place of DNSMOS-OVRL</strong> as the metric for measuring the perceptual quality of the extracted speech.
+              </div>
+            </div>
+          </div>
+
           <!-- Temporarily hidden: subjective MOS listening tests
           <div class="alert alert-primary border-0 small mb-0" style="background: #eff6ff; color: #1e3a8a;">
             <i class="fas fa-info-circle mr-2"></i> In addition to objective metrics, we will conduct <strong>subjective Mean Opinion Score (MOS) listening tests</strong> for a selected set of <strong>top-ranked submissions</strong>. The resulting human MOS scores will be used as an <strong>important indicator</strong> for ranking and for assessing perceptual quality in real-world conditions.
