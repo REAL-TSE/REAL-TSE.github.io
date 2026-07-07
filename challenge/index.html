@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +17,7 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-    
+
     :root {
       --rt-navy: #0f172a;
       /* Main copy: darker than Bootstrap text-muted (#6c757d) */
@@ -51,6 +52,7 @@
     .latency-detail-box h6 {
       font-size: 0.9rem !important;
     }
+
     .latency-detail-box .small,
     .latency-detail-box .alert.small {
       font-size: 0.875rem !important;
@@ -74,7 +76,12 @@
       font-size: 1.35rem;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       color: var(--rt-navy);
       font-weight: 700;
     }
@@ -102,7 +109,8 @@
     }
 
 
-    .nav-link:hover, .nav-link.active {
+    .nav-link:hover,
+    .nav-link.active {
       color: var(--rt-blue) !important;
     }
 
@@ -151,7 +159,7 @@
       background-color: #1e293b;
       border-color: #1e293b;
       transform: translateY(-1px);
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .btn-outline-primary {
@@ -179,7 +187,7 @@
       border-color: #333333;
       color: #ffffff;
       transform: translateY(-1px);
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .hero-link-group {
@@ -227,7 +235,7 @@
       border: 2px solid #fff;
     }
 
-    .timeline-item.completed > .timeline-dot {
+    .timeline-item.completed>.timeline-dot {
       background: #94a3b8;
     }
 
@@ -267,17 +275,26 @@
       transition: transform 0.3s ease;
       color: #94a3b8;
     }
-    
+
     .badge {
       padding: 0.4em 0.8em;
       font-weight: 600;
       border-radius: 6px;
     }
 
-    .badge-primary { background: #eff6ff; color: #2563eb; }
-    .badge-success { background: #f0fdf4; color: #0d9488; }
+    .badge-primary {
+      background: #eff6ff;
+      color: #2563eb;
+    }
 
-    .text-justify { text-align: justify; }
+    .badge-success {
+      background: #f0fdf4;
+      color: #0d9488;
+    }
+
+    .text-justify {
+      text-align: justify;
+    }
 
     code {
       color: var(--rt-slate);
@@ -289,6 +306,25 @@
 
     [id^="ref-"] {
       scroll-margin-top: 90px;
+    }
+
+    /* Rankings — char-aligned numeric columns + visually distinct baseline rows */
+    .rankings-table th,
+    .rankings-table td {
+      font-variant-numeric: tabular-nums;
+      -moz-font-feature-settings: "tnum" 1;
+      font-feature-settings: "tnum" 1;
+    }
+    .rankings-table tr.rankings-baseline td {
+      color: #94a3b8;
+      background: rgba(148, 163, 184, 0.10);
+    }
+
+    /* Rank column (#): right-align so the rank digits stack into a clean column,
+       with gold/silver/bronze medals sitting just to the left of the number for the top 3. */
+    .rankings-table th:first-child,
+    .rankings-table td:first-child {
+      text-align: right !important;
     }
 
     @media (max-width: 767.98px) {
@@ -318,6 +354,7 @@
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#evaluation">Evaluation</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#timeline">Timeline</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#register">Register</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#rankings">Rankings</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#rules">Rules</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#faq">FAQ</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#organizers">Organizers</a></li>
@@ -335,27 +372,35 @@
           <h1 class="display-4 font-weight-bold mb-3" style="letter-spacing: -1px;">REAL-TSE Challenge</h1>
           <h3 class="mb-4 text-muted" style="font-weight: 400;">Real-world Target Speaker Extraction Challenge</h3>
           <p class="lead mb-2 text-muted" style="max-width: 600px;">
-            Moving target speaker extraction research from simulated benchmarks toward real-world conversational applications
+            Moving target speaker extraction research from simulated benchmarks toward real-world conversational
+            applications
           </p>
           <p class="mb-0" style="font-size: 0.95rem; color: #64748b;">
-            <i class="fas fa-calendar-alt mr-1"></i> A satellite challenge of <a href="https://attend.ieee.org/slt-2026/" target="_blank" rel="noopener noreferrer"><strong>IEEE SLT 2026</strong></a>
+            <i class="fas fa-calendar-alt mr-1"></i> A satellite challenge of <a
+              href="https://attend.ieee.org/slt-2026/" target="_blank" rel="noopener noreferrer"><strong>IEEE SLT
+                2026</strong></a>
           </p>
           <div class="hero-link-group mt-3">
-            <a href="https://github.com/REAL-TSE/REAL-TSE-Challenge" class="btn btn-dark btn-lg hero-link px-4" target="_blank">
+            <a href="https://github.com/REAL-TSE/REAL-TSE-Challenge" class="btn btn-dark btn-lg hero-link px-4"
+              target="_blank">
               <i class="fab fa-github mr-2"></i>REAL-TSE
             </a>
-            <a href="https://github.com/REAL-TSE/wesep-real-tse" class="btn btn-outline-dark btn-lg hero-link px-4" style="color: #000; border-color: #000; border-width: 2px;" target="_blank">
+            <a href="https://github.com/REAL-TSE/wesep-real-tse" class="btn btn-outline-dark btn-lg hero-link px-4"
+              style="color: #000; border-color: #000; border-width: 2px;" target="_blank">
               <i class="fab fa-github mr-2"></i>Wesep Baseline
             </a>
-            <a href="https://leaderboard.real-tse.com" class="btn btn-outline-dark btn-lg hero-link px-4" style="color: #000; border-color: #000; border-width: 2px;" target="_blank" rel="noopener noreferrer">
+            <a href="https://leaderboard.real-tse.com" class="btn btn-outline-dark btn-lg hero-link px-4"
+              style="color: #000; border-color: #000; border-width: 2px;" target="_blank" rel="noopener noreferrer">
               <i class="fas fa-trophy mr-2"></i>Leaderboard
             </a>
           </div>
         </div>
         <div class="col-lg-4 col-xl-5 mt-5 mt-lg-0">
           <div class="d-flex flex-column align-items-lg-end align-items-start">
-            <img src="../assets/img/slt2026-logo.png" alt="SLT 2026" style="max-height: 56px; width: auto;" class="mb-4">
-            <img src="../assets/img/real-tse-caption.png" alt="REAL-TSE" style="max-height: 110px; width: auto;" class="mb-0">
+            <img src="../assets/img/slt2026-logo.png" alt="SLT 2026" style="max-height: 56px; width: auto;"
+              class="mb-4">
+            <img src="../assets/img/real-tse-caption.png" alt="REAL-TSE" style="max-height: 110px; width: auto;"
+              class="mb-0">
           </div>
         </div>
       </div>
@@ -372,42 +417,87 @@
         <div class="col-lg-9">
           <ul class="list-unstyled mb-0">
             <li class="mb-3 d-flex align-items-start">
-              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0" style="background: #fee2e2; color: #b91c1c; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Jun 25, 2026 (AoE)</span>
+              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0"
+                style="background: #fee2e2; color: #b91c1c; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Jun
+                25, 2026 (AoE)</span>
               <div class="small" style="color: #b91c1c;">
-                <p class="mb-2"><strong>Evaluation output submission deadline has passed.</strong> The deadline for both official tracks was <strong>June 25, 2026 (AoE)</strong>; audio submissions are now closed.</p>
-                <p class="mb-0">We are now awaiting participants&rsquo; <strong>system description reports</strong> (deadline: <strong>July 1, 2026 (AoE)</strong>). Results currently shown on the <a href="https://leaderboard.real-tse.com" target="_blank" rel="noopener noreferrer" style="color: #991b1b; font-weight: 600; text-decoration: underline;">leaderboard</a> are <strong>under review</strong> by the organizers and are not yet final.</p>
+                <p class="mb-2"><strong>Evaluation output submission deadline has passed.</strong> The deadline for both
+                  official tracks was <strong>June 25, 2026 (AoE)</strong>; audio submissions are now closed.</p>
+                <p class="mb-0">We are now awaiting participants&rsquo; <strong>system description reports</strong>
+                  (deadline: <strong>July 1, 2026 (AoE)</strong>). Results currently shown on the <a
+                    href="https://leaderboard.real-tse.com" target="_blank" rel="noopener noreferrer"
+                    style="color: #991b1b; font-weight: 600; text-decoration: underline;">leaderboard</a> are
+                  <strong>under review</strong> by the organizers and are not yet final.</p>
               </div>
             </li>
             <li class="mb-3 d-flex align-items-start">
-              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0" style="background: #dbeafe; color: #1d4ed8; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Jun 18, 2026 (AoE)</span>
+              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0"
+                style="background: #dbeafe; color: #1d4ed8; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Jun
+                18, 2026 (AoE)</span>
               <div class="text-muted small">
-                <p class="mb-2"><strong>Evaluation output submission deadline extended:</strong> The deadline for both official tracks has been extended from <span style="color: #94a3b8; text-decoration: line-through;">June 20, 2026 (AoE)</span> to <strong>June 25, 2026 (AoE)</strong>.</p>
-                <p class="mb-0">The system description paper deadline remains unchanged: <strong>July 1, 2026 (AoE)</strong>. The SLT 2026 Challenge Track paper deadline also remains unchanged: <strong>July 8, 2026</strong>.</p>
+                <p class="mb-2"><strong>Evaluation output submission deadline extended:</strong> The deadline for both
+                  official tracks has been extended from <span
+                    style="color: #94a3b8; text-decoration: line-through;">June 20, 2026 (AoE)</span> to <strong>June
+                    25, 2026 (AoE)</strong>.</p>
+                <p class="mb-0">The system description paper deadline remains unchanged: <strong>July 1, 2026
+                    (AoE)</strong>. The SLT 2026 Challenge Track paper deadline also remains unchanged: <strong>July 8,
+                    2026</strong>.</p>
               </div>
             </li>
             <li class="mb-3 d-flex align-items-start">
-              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0" style="background: #dcfce7; color: #166534; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Jun 11, 2026 (AoE)</span>
-              <span class="text-muted small"><strong>Rules updated:</strong> The submission quota is now <strong>one submission per track per day</strong>, but on the <strong>final deadline day (<span style="color: #94a3b8; text-decoration: line-through;">Jun 20, 2026</span> Jun 25, 2026, AoE)</strong>, each team may submit up to <strong>three submissions per track</strong>.</span>
+              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0"
+                style="background: #dcfce7; color: #166534; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Jun
+                11, 2026 (AoE)</span>
+              <span class="text-muted small"><strong>Rules updated:</strong> The submission quota is now <strong>one
+                  submission per track per day</strong>, but on the <strong>final deadline day (<span
+                    style="color: #94a3b8; text-decoration: line-through;">Jun 20, 2026</span> Jun 25, 2026,
+                  AoE)</strong>, each team may submit up to <strong>three submissions per track</strong>.</span>
             </li>
             <li class="mb-3 d-flex align-items-start">
-              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0" style="background: #dcfce7; color: #166534; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Jun 5, 2026 (AoE)</span>
-              <span class="text-muted small">The public <a href="https://leaderboard.real-tse.com" target="_blank" rel="noopener noreferrer"><strong>REAL-TSE leaderboard</strong></a> is now open. Submission instructions, track links, team approval details, and fallback submission instructions have been sent to all participating teams via email.</span>
+              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0"
+                style="background: #dcfce7; color: #166534; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Jun
+                5, 2026 (AoE)</span>
+              <span class="text-muted small">The public <a href="https://leaderboard.real-tse.com" target="_blank"
+                  rel="noopener noreferrer"><strong>REAL-TSE leaderboard</strong></a> is now open. Submission
+                instructions, track links, team approval details, and fallback submission instructions have been sent to
+                all participating teams via email.</span>
             </li>
             <li class="mb-3 d-flex align-items-start">
-              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0" style="background: #fef3c7; color: #b45309; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">May 31, 2026 (AoE)</span>
-              <span class="text-muted small">The official <strong>evaluation set</strong> has been released, comprising <strong>EVAL-1 (Seen, 2,000 pairs)</strong> and <strong>EVAL-2 (Unseen, 3,000 pairs)</strong> &mdash; a total of <strong>5,000 mix-enroll pairs</strong>. Download links and password have been sent to all registered teams via email; newly registered teams will receive them within 24 hours of registration. The audio submission deadline is <strong><span style="color: #94a3b8; text-decoration: line-through;">Jun 20, 2026</span> Jun 25, 2026 (AoE)</strong>. If you have not received the email after registration, please <a href="mailto:realtse.challenge@gmail.com">contact us</a>.</span>
+              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0"
+                style="background: #fef3c7; color: #b45309; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">May
+                31, 2026 (AoE)</span>
+              <span class="text-muted small">The official <strong>evaluation set</strong> has been released, comprising
+                <strong>EVAL-1 (Seen, 2,000 pairs)</strong> and <strong>EVAL-2 (Unseen, 3,000 pairs)</strong> &mdash; a
+                total of <strong>5,000 mix-enroll pairs</strong>. Download links and password have been sent to all
+                registered teams via email; newly registered teams will receive them within 24 hours of registration.
+                The audio submission deadline is <strong><span
+                    style="color: #94a3b8; text-decoration: line-through;">Jun 20, 2026</span> Jun 25, 2026
+                  (AoE)</strong>. If you have not received the email after registration, please <a
+                  href="mailto:realtse.challenge@gmail.com">contact us</a>.</span>
             </li>
             <li class="mb-3 d-flex align-items-start">
-              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0" style="background: #fee2e2; color: #b91c1c; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">May 31, 2026 (AoE)</span>
-              <span class="text-muted small"><strong>Team registration is now closed.</strong> No further teams can register for the REAL-TSE Challenge. Teams that registered prior to this date will continue to receive dataset access via email within 24 hours of their registration.</span>
+              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0"
+                style="background: #fee2e2; color: #b91c1c; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">May
+                31, 2026 (AoE)</span>
+              <span class="text-muted small"><strong>Team registration is now closed.</strong> No further teams can
+                register for the REAL-TSE Challenge. Teams that registered prior to this date will continue to receive
+                dataset access via email within 24 hours of their registration.</span>
             </li>
             <li class="mb-3 d-flex align-items-start">
-              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0" style="background: #e0f2fe; color: #0369a1; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Apr 10, 2026 (AoE)</span>
-              <span class="text-muted small">The development set and baseline checkpoints have been sent to all registered teams via email. Teams that register afterwards will also receive them (within 24 hours of registration). If you have not received them after registration, please <a href="mailto:realtse.challenge@gmail.com">contact us</a>.</span>
+              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0"
+                style="background: #e0f2fe; color: #0369a1; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Apr
+                10, 2026 (AoE)</span>
+              <span class="text-muted small">The development set and baseline checkpoints have been sent to all
+                registered teams via email. Teams that register afterwards will also receive them (within 24 hours of
+                registration). If you have not received them after registration, please <a
+                  href="mailto:realtse.challenge@gmail.com">contact us</a>.</span>
             </li>
             <li class="mb-0 d-flex align-items-start">
-              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0" style="background: #e0f2fe; color: #0369a1; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Apr 7, 2026 (AoE)</span>
-              <span class="text-muted small">Challenge registration is now open. Teams can register via the <a href="#register" class="js-scroll-trigger">Google Form</a>.</span>
+              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0"
+                style="background: #e0f2fe; color: #0369a1; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Apr
+                7, 2026 (AoE)</span>
+              <span class="text-muted small">Challenge registration is now open. Teams can register via the <a
+                  href="#register" class="js-scroll-trigger">Google Form</a>.</span>
             </li>
           </ul>
         </div>
@@ -424,7 +514,15 @@
         </div>
         <div class="col-lg-9">
           <p class="text-muted text-justify mb-0">
-            The <strong>REAL-TSE Challenge</strong>, organized as a satellite challenge of <a href="https://attend.ieee.org/slt-2026/" target="_blank" rel="noopener noreferrer"><strong>IEEE SLT 2026</strong></a>, focuses on <strong>Target Speaker Extraction (TSE)</strong> in real conversational environments. Given a multi-speaker mixture recorded in real-life settings such as meetings and dinner-party interactions, together with enrollment utterance(s) from a target speaker, the task is to recover the target speaker’s speech from the mixture. In contrast to conventional benchmarks built on simulated or read-speech data, REAL-TSE emphasizes naturally occurring overlap, authentic reverberation, ambient noise, and conversational dynamics in <strong>Mandarin</strong> and <strong>English</strong>, providing a more practical testbed for real-world TSE research.
+            The <strong>REAL-TSE Challenge</strong>, organized as a satellite challenge of <a
+              href="https://attend.ieee.org/slt-2026/" target="_blank" rel="noopener noreferrer"><strong>IEEE SLT
+                2026</strong></a>, focuses on <strong>Target Speaker Extraction (TSE)</strong> in real conversational
+            environments. Given a multi-speaker mixture recorded in real-life settings such as meetings and dinner-party
+            interactions, together with enrollment utterance(s) from a target speaker, the task is to recover the target
+            speaker’s speech from the mixture. In contrast to conventional benchmarks built on simulated or read-speech
+            data, REAL-TSE emphasizes naturally occurring overlap, authentic reverberation, ambient noise, and
+            conversational dynamics in <strong>Mandarin</strong> and <strong>English</strong>, providing a more
+            practical testbed for real-world TSE research.
           </p>
         </div>
       </div>
@@ -440,23 +538,39 @@
         </div>
         <div class="col-lg-9">
           <p class="text-muted mb-4">
-            The REAL-TSE Challenge provides an official <strong>development set</strong> and <strong>evaluation set</strong>, while model training is restricted to eligible <strong>external open-source data</strong> under the rules summarized below.
+            The REAL-TSE Challenge provides an official <strong>development set</strong> and <strong>evaluation
+              set</strong>, while model training is restricted to eligible <strong>external open-source data</strong>
+            under the rules summarized below.
           </p>
 
           <!-- Dataset Distribution Notice -->
           <div class="alert border-0 small mb-4" style="background: #eff6ff; color: #1e3a8a;">
             <i class="fas fa-info-circle mr-2"></i>
-            <strong>Dataset Distribution:</strong> The challenge datasets are available exclusively to registered teams. Only teams that have completed registration via the <a href="#register" class="js-scroll-trigger font-weight-bold">Google Form</a> will receive access. The dataset download link and password have been sent to registered teams, and will continue to be sent to newly registered teams. If you have not received the email after registration, please <a href="mailto:realtse.challenge@gmail.com">contact us</a>.
+            <strong>Dataset Distribution:</strong> The challenge datasets are available exclusively to registered teams.
+            Only teams that have completed registration via the <a href="#register"
+              class="js-scroll-trigger font-weight-bold">Google Form</a> will receive access. The dataset download link
+            and password have been sent to registered teams, and will continue to be sent to newly registered teams. If
+            you have not received the email after registration, please <a
+              href="mailto:realtse.challenge@gmail.com">contact us</a>.
           </div>
 
           <!-- Training policy (no official training partition) -->
           <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-database text-primary mr-2"></i>Training Set</h5>
           <div class="card p-4 border-0 mb-4" style="background: #f8fafc;">
             <p class="text-muted small mb-2">
-             The challenge does <strong>not</strong> define an official training set. Participants may use any open-source datasets for training, and pre-trained models are allowed, provided that all data sources and checkpoints are clearly documented.
+              The challenge does <strong>not</strong> define an official training set. Participants may use any
+              open-source datasets for training, and pre-trained models are allowed, provided that all data sources and
+              checkpoints are clearly documented.
             </p>
             <p class="text-muted small mb-0">
-              <strong>Usage:</strong> Every dataset and pre-trained model must be reported in the system description with citations or links. The <strong>development</strong> and <strong>test</strong> sets of <strong>AliMeeting</strong>, <strong>AISHELL-4</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong> must <strong>not</strong> be used at any stage, including pre-training, training, or data augmentation. However, the official training splits of these corpora are permitted. Note that some corpora (e.g., AMI) have multiple partition schemes — please refer to the <a href="#faq" onclick="setTimeout(function(){ $('#collapseTwo').collapse('show'); }, 300);">FAQ: What data can I use for training?</a> for details on which sessions are excluded.
+              <strong>Usage:</strong> Every dataset and pre-trained model must be reported in the system description
+              with citations or links. The <strong>development</strong> and <strong>test</strong> sets of
+              <strong>AliMeeting</strong>, <strong>AISHELL-4</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and
+              <strong>CHiME6</strong> must <strong>not</strong> be used at any stage, including pre-training, training,
+              or data augmentation. However, the official training splits of these corpora are permitted. Note that some
+              corpora (e.g., AMI) have multiple partition schemes — please refer to the <a href="#faq"
+                onclick="setTimeout(function(){ $('#collapseTwo').collapse('show'); }, 300);">FAQ: What data can I use
+                for training?</a> for details on which sessions are excluded.
             </p>
           </div>
 
@@ -464,13 +578,24 @@
           <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-flask text-primary mr-2"></i>Development Set</h5>
           <div class="card p-4 border-0 mb-4" style="background: #f8fafc;">
             <p class="text-muted small mb-2">
-             The development set is derived from <a href="https://real-tse.github.io/" target="_blank" rel="noopener noreferrer">REAL-T</a>, a real-world conversational dataset for target speaker extraction (<strong>to be released soon</strong>). The data originates from five speaker diarization corpora—<strong>AISHELL-4</strong>, <strong>AliMeeting</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong>—covering Mandarin and English in scenarios such as meetings and dinner parties. Each sample includes a multi-speaker mixture, enrollment utterance(s) for the target speaker, and the clean target reference.
+              The development set is derived from <a href="https://real-tse.github.io/" target="_blank"
+                rel="noopener noreferrer">REAL-T</a>, a real-world conversational dataset for target speaker extraction
+              (<strong>to be released soon</strong>). The data originates from five speaker diarization
+              corpora—<strong>AISHELL-4</strong>, <strong>AliMeeting</strong>, <strong>AMI</strong>,
+              <strong>DipCo</strong>, and <strong>CHiME6</strong>—covering Mandarin and English in scenarios such as
+              meetings and dinner parties. Each sample includes a multi-speaker mixture, enrollment utterance(s) for the
+              target speaker, and the clean target reference.
             </p>
             <p class="text-muted small mb-2">
-              The data is constructed through an automated pipeline that extracts naturally overlapping segments as mixtures and selects non-overlapping speech segments of at least 5 seconds as enrollment utterances. Unlike synthetic mixtures, it captures realistic overlap patterns, reverberation, ambient noise, and conversational turn-taking. The development set is intended for validation, model comparison, and hyper-parameter tuning only, and must not be used for training or fine-tuning.
+              The data is constructed through an automated pipeline that extracts naturally overlapping segments as
+              mixtures and selects non-overlapping speech segments of at least 5 seconds as enrollment utterances.
+              Unlike synthetic mixtures, it captures realistic overlap patterns, reverberation, ambient noise, and
+              conversational turn-taking. The development set is intended for validation, model comparison, and
+              hyper-parameter tuning only, and must not be used for training or fine-tuning.
             </p>
             <p class="text-muted small mb-0">
-              <strong>Usage:</strong> The development set may be used for hyper-parameter selection, model comparison, and validation, but must <strong>not</strong> be used for model training or fine-tuning.
+              <strong>Usage:</strong> The development set may be used for hyper-parameter selection, model comparison,
+              and validation, but must <strong>not</strong> be used for model training or fine-tuning.
             </p>
           </div>
 
@@ -478,32 +603,54 @@
           <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-award text-primary mr-2"></i>Evaluation Set</h5>
           <div class="card p-4 border-0 mb-0" style="background: #f8fafc;">
             <p class="text-muted small mb-3">
-              The evaluation set has been <strong>released</strong> and consists of two subsets that together assess both in-domain robustness and real-world generalization, with a total of <strong>5,000 mix-enroll pairs</strong>:
+              The evaluation set has been <strong>released</strong> and consists of two subsets that together assess
+              both in-domain robustness and real-world generalization, with a total of <strong>5,000 mix-enroll
+                pairs</strong>:
             </p>
             <div class="row mb-3">
               <div class="col-md-6 mb-3 mb-md-0">
                 <div class="rounded p-3" style="background: #fff; border: 1px solid var(--rt-border);">
-                  <h6 class="font-weight-bold mb-2"><span class="badge badge-primary mr-2">EVAL-1</span>Seen Set &mdash; 2,000 pairs</h6>
-                  <p class="text-muted small mb-0">Derived from the same open-source corpora as the development set, sharing similar acoustic conditions and conversation styles. There is <strong>no overlap</strong> between EVAL-1 and the development set. EVAL-1 measures system performance under familiar, in-domain settings.</p>
+                  <h6 class="font-weight-bold mb-2"><span class="badge badge-primary mr-2">EVAL-1</span>Seen Set &mdash;
+                    2,000 pairs</h6>
+                  <p class="text-muted small mb-0">Derived from the same open-source corpora as the development set,
+                    sharing similar acoustic conditions and conversation styles. There is <strong>no overlap</strong>
+                    between EVAL-1 and the development set. EVAL-1 measures system performance under familiar, in-domain
+                    settings.</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="rounded p-3" style="background: #fff; border: 1px solid var(--rt-border);">
-                  <h6 class="font-weight-bold mb-2"><span class="badge badge-success mr-2">EVAL-2</span>Unseen Set &mdash; 3,000 pairs</h6>
-                  <p class="text-muted small mb-0">Newly collected real-world conversational recordings specifically captured for the REAL-TSE Challenge. EVAL-2 covers diverse acoustic scenarios &mdash; including <strong>meeting rooms</strong>, <strong>caf&eacute;s</strong>, <strong>home environments</strong>, and <strong>in-vehicle conversations</strong> &mdash; recorded under a variety of conditions such as <strong>near-field microphones</strong>, <strong>far-field microphones</strong>, and <strong>mobile devices</strong>. EVAL-2 provides a comprehensive assessment of model generalization to previously unseen acoustic environments and interaction patterns.</p>
+                  <h6 class="font-weight-bold mb-2"><span class="badge badge-success mr-2">EVAL-2</span>Unseen Set
+                    &mdash; 3,000 pairs</h6>
+                  <p class="text-muted small mb-0">Newly collected real-world conversational recordings specifically
+                    captured for the REAL-TSE Challenge. EVAL-2 covers diverse acoustic scenarios &mdash; including
+                    <strong>meeting rooms</strong>, <strong>caf&eacute;s</strong>, <strong>home environments</strong>,
+                    and <strong>in-vehicle conversations</strong> &mdash; recorded under a variety of conditions such as
+                    <strong>near-field microphones</strong>, <strong>far-field microphones</strong>, and <strong>mobile
+                      devices</strong>. EVAL-2 provides a comprehensive assessment of model generalization to previously
+                    unseen acoustic environments and interaction patterns.</p>
                 </div>
               </div>
             </div>
             <div class="alert border-0 small mb-3" style="background: #fff7ed; color: #9a3412;">
               <i class="fas fa-shield-alt mr-2"></i>
-              <strong>Independent processing required:</strong> To ensure a fair evaluation, metadata such as scenario labels, speaker identities, and recording device information has been removed from the released evaluation set. Participants are only allowed to process each provided mix-enroll pair <strong>independently</strong>. Detailed statistics and analysis of the evaluation data will be published after the challenge.
+              <strong>Independent processing required:</strong> To ensure a fair evaluation, metadata such as scenario
+              labels, speaker identities, and recording device information has been removed from the released evaluation
+              set. Participants are only allowed to process each provided mix-enroll pair
+              <strong>independently</strong>. Detailed statistics and analysis of the evaluation data will be published
+              after the challenge.
             </div>
             <div class="alert border-0 small mb-3" style="background: #eff6ff; color: #1e3a8a;">
               <i class="fas fa-envelope mr-2"></i>
-              <strong>Access:</strong> The evaluation set is available exclusively to registered teams. Download links and password have been sent via email to registered teams, and will continue to be sent to newly registered teams (within 24 hours of registration). If you have not received the email after registration, please <a href="mailto:realtse.challenge@gmail.com">contact us</a>.
+              <strong>Access:</strong> The evaluation set is available exclusively to registered teams. Download links
+              and password have been sent via email to registered teams, and will continue to be sent to newly
+              registered teams (within 24 hours of registration). If you have not received the email after registration,
+              please <a href="mailto:realtse.challenge@gmail.com">contact us</a>.
             </div>
             <p class="text-muted small mb-0">
-              <strong>Usage:</strong> The evaluation set must <strong>not</strong> be used for training, fine-tuning, hyper-parameter tuning, or any form of model optimization. It is reserved <strong>exclusively for final evaluation</strong>.
+              <strong>Usage:</strong> The evaluation set must <strong>not</strong> be used for training, fine-tuning,
+              hyper-parameter tuning, or any form of model optimization. It is reserved <strong>exclusively for final
+                evaluation</strong>.
             </p>
           </div>
         </div>
@@ -520,32 +667,48 @@
         </div>
         <div class="col-lg-9">
           <div class="card p-4 border-0 mb-4">
-            <div class="d-flex justify-content-between align-items-center mb-3 pb-3" style="border-bottom: 1px solid var(--rt-border);">
+            <div class="d-flex justify-content-between align-items-center mb-3 pb-3"
+              style="border-bottom: 1px solid var(--rt-border);">
               <h5 class="font-weight-bold mb-0">Track 1: Online Target Speaker Extraction</h5>
               <span class="badge badge-primary">Low-Latency TSE</span>
             </div>
             <div class="row align-items-center">
               <div class="col-md-5 mb-3 mb-md-0">
-                <img src="../assets/img/track1.png" alt="Track 1: Online Target Speaker Extraction" class="img-fluid rounded" style="width: 100%;">
+                <img src="../assets/img/track1.png" alt="Track 1: Online Target Speaker Extraction"
+                  class="img-fluid rounded" style="width: 100%;">
               </div>
               <div class="col-md-7">
-                <p class="text-muted small mb-2"><strong>Scenario:</strong> Target speaker extraction in latency-sensitive applications such as assistive hearing, real-time communication, and interactive voice systems, where the system must produce temporally responsive outputs under overlapping speech and background noise, enabling continuous and natural listening.</p>
-                <p class="text-muted mb-0 small"><strong>Task:</strong> Evaluate target speaker extraction under strict end-to-end latency constraints. Effective latency is measured via the temporal response of outputs to localized input perturbations. Models must ensure input changes are reflected within a bounded delay (&le; 100 ms), balancing extraction quality and responsiveness.</p>
+                <p class="text-muted small mb-2"><strong>Scenario:</strong> Target speaker extraction in
+                  latency-sensitive applications such as assistive hearing, real-time communication, and interactive
+                  voice systems, where the system must produce temporally responsive outputs under overlapping speech
+                  and background noise, enabling continuous and natural listening.</p>
+                <p class="text-muted mb-0 small"><strong>Task:</strong> Evaluate target speaker extraction under strict
+                  end-to-end latency constraints. Effective latency is measured via the temporal response of outputs to
+                  localized input perturbations. Models must ensure input changes are reflected within a bounded delay
+                  (&le; 100 ms), balancing extraction quality and responsiveness.</p>
               </div>
             </div>
           </div>
           <div class="card p-4 border-0 mb-4">
-            <div class="d-flex justify-content-between align-items-center mb-3 pb-3" style="border-bottom: 1px solid var(--rt-border);">
+            <div class="d-flex justify-content-between align-items-center mb-3 pb-3"
+              style="border-bottom: 1px solid var(--rt-border);">
               <h5 class="font-weight-bold mb-0">Track 2: Offline Target Speaker Extraction</h5>
               <span class="badge badge-success">Full-Context TSE</span>
             </div>
             <div class="row align-items-center">
               <div class="col-md-5 mb-3 mb-md-0">
-                <img src="../assets/img/track2.png" alt="Track 2: Offline Target Speaker Extraction" class="img-fluid rounded" style="width: 100%;">
+                <img src="../assets/img/track2.png" alt="Track 2: Offline Target Speaker Extraction"
+                  class="img-fluid rounded" style="width: 100%;">
               </div>
               <div class="col-md-7">
-                <p class="text-muted small mb-2"><strong>Scenario:</strong> Target speaker extraction in offline scenarios such as speech transcription, meeting analysis, and audio post-processing, where the full utterance is available prior to inference.</p>
-                <p class="text-muted mb-0 small"><strong>Task:</strong> Evaluate target speaker extraction with full-utterance access and unconstrained inference. Systems may exploit global temporal dependencies and full-context modeling to maximize separation quality. This track targets the upper performance bounds of TSE systems, focusing on speech quality, interference suppression, and robustness without latency constraints.</p>
+                <p class="text-muted small mb-2"><strong>Scenario:</strong> Target speaker extraction in offline
+                  scenarios such as speech transcription, meeting analysis, and audio post-processing, where the full
+                  utterance is available prior to inference.</p>
+                <p class="text-muted mb-0 small"><strong>Task:</strong> Evaluate target speaker extraction with
+                  full-utterance access and unconstrained inference. Systems may exploit global temporal dependencies
+                  and full-context modeling to maximize separation quality. This track targets the upper performance
+                  bounds of TSE systems, focusing on speech quality, interference suppression, and robustness without
+                  latency constraints.</p>
               </div>
             </div>
           </div>
@@ -562,17 +725,24 @@
         </div>
         <div class="col-lg-9">
           <p class="text-muted mb-3">
-            We provide four pretrained baseline models, all based on the BSRNN architecture <a href="#ref-1">[1]</a> and trained on the Libri2Mix-100 dataset <a href="#ref-2">[2]</a>. These models differ in the type of speaker representation and whether low-latency constraints are considered.
+            We provide four pretrained baseline models, all based on the BSRNN architecture <a href="#ref-1">[1]</a> and
+            trained on the Libri2Mix-100 dataset <a href="#ref-2">[2]</a>. These models differ in the type of speaker
+            representation and whether low-latency constraints are considered.
           </p>
           <p class="text-muted mb-4">
-            Two models use speaker embeddings extracted from a pretrained ECAPA-TDNN model as speaker conditioning <a href="#ref-3">[3]</a><a href="#ref-4">[4]</a>. The other two adopt a combination of TF-Map and contextual embeddings <a href="#ref-5">[5]</a>. For each type of speaker representation, both an offline and an online (low-latency) variant are provided. All models are trained on 16 kHz audio for 150 epochs with an exponential decay learning rate schedule from 0.001 to 2.5e-5.
+            Two models use speaker embeddings extracted from a pretrained ECAPA-TDNN model as speaker conditioning <a
+              href="#ref-3">[3]</a><a href="#ref-4">[4]</a>. The other two adopt a combination of TF-Map and contextual
+            embeddings <a href="#ref-5">[5]</a>. For each type of speaker representation, both an offline and an online
+            (low-latency) variant are provided. All models are trained on 16 kHz audio for 150 epochs with an
+            exponential decay learning rate schedule from 0.001 to 2.5e-5.
           </p>
 
           <p class="font-weight-bold text-dark mb-2" style="font-size: 0.95rem;">Provided Checkpoints</p>
           <div class="row mb-2">
             <div class="col-md-6 mb-3">
               <div class="card h-100 p-4 border-0" style="background: #f8fafc;">
-                <h6 class="font-weight-bold mb-3"><i class="fas fa-user-circle text-primary mr-2"></i>Speaker Embedding</h6>
+                <h6 class="font-weight-bold mb-3"><i class="fas fa-user-circle text-primary mr-2"></i>Speaker Embedding
+                </h6>
                 <p class="text-muted small mb-2">ECAPA-TDNN speaker embeddings as conditioning.</p>
                 <ul class="text-muted small pl-3 mb-0" style="line-height: 1.8;">
                   <li><code>spk_emb_100</code> — Offline</li>
@@ -583,7 +753,8 @@
             <div class="col-md-6 mb-3">
               <div class="card h-100 p-4 border-0" style="background: #f8fafc;">
                 <h6 class="font-weight-bold mb-3"><i class="fas fa-map text-success mr-2"></i>TF-Map + Context</h6>
-                <p class="text-muted small mb-2">TF-Map and contextual embeddings as multi-level speaker representation.</p>
+                <p class="text-muted small mb-2">TF-Map and contextual embeddings as multi-level speaker representation.
+                </p>
                 <ul class="text-muted small pl-3 mb-0" style="line-height: 1.8;">
                   <li><code>tfmap_context_100</code> — Offline</li>
                   <li><code>tfmap_context_causal_100</code> — Online</li>
@@ -593,28 +764,49 @@
           </div>
 
           <p class="text-muted small mb-3">
-            The baseline systems can be run using <a href="https://github.com/REAL-TSE/wesep-real-tse" target="_blank" rel="noopener noreferrer">wesep-real-tse</a>, and have been integrated into the <a href="https://github.com/REAL-TSE/REAL-TSE-Challenge" target="_blank" rel="noopener noreferrer">REAL-TSE Challenge</a> repo for automated inference and evaluation.
+            The baseline systems can be run using <a href="https://github.com/REAL-TSE/wesep-real-tse" target="_blank"
+              rel="noopener noreferrer">wesep-real-tse</a>, and have been integrated into the <a
+              href="https://github.com/REAL-TSE/REAL-TSE-Challenge" target="_blank" rel="noopener noreferrer">REAL-TSE
+              Challenge</a> repo for automated inference and evaluation.
           </p>
           <div class="alert alert-secondary border-0 small mb-4" style="background: #f1f5f9; color: #475569;">
-            <i class="fas fa-envelope mr-2"></i> Pretrained baseline checkpoints have been sent via email to registered teams, and will continue to be sent to newly registered teams.
+            <i class="fas fa-envelope mr-2"></i> Pretrained baseline checkpoints have been sent via email to registered
+            teams, and will continue to be sent to newly registered teams.
           </div>
 
           <div class="alert border-0 small mb-4" style="background: #ecfdf5; color: #065f46;">
-            <i class="fas fa-chart-line mr-2"></i> <strong>Baseline results updated:</strong> Baseline numbers in the official repository have been updated to reflect the new ASR backbones. Results on the development set, EVAL-1, and EVAL-2 are available on the <a href="https://github.com/REAL-TSE/REAL-TSE-Challenge#4-results" target="_blank" rel="noopener noreferrer" style="color: #047857; font-weight: 600;">REAL-TSE-Challenge results page</a>.
+            <i class="fas fa-chart-line mr-2"></i> <strong>Baseline results updated:</strong> Baseline numbers in the
+            official repository have been updated to reflect the new ASR backbones. Results on the development set,
+            EVAL-1, and EVAL-2 are available on the <a href="https://github.com/REAL-TSE/REAL-TSE-Challenge#4-results"
+              target="_blank" rel="noopener noreferrer" style="color: #047857; font-weight: 600;">REAL-TSE-Challenge
+              results page</a>.
           </div>
 
-          <div class="card border-0 p-4 mb-4 small text-muted" style="background: #f8fafc; border-left: 3px solid var(--rt-border) !important;">
+          <div class="card border-0 p-4 mb-4 small text-muted"
+            style="background: #f8fafc; border-left: 3px solid var(--rt-border) !important;">
             <strong class="text-dark d-block mb-2">A note on baseline limitations</strong>
-            These baselines are trained on Libri2Mix — synthetic mixtures with full speaker overlap and fixed 3-second segments — which differs substantially from REAL-TSE's real conversational data. Baseline performance should therefore be interpreted as a lower bound rather than a representative ceiling. We encourage participants to explore training strategies, data simulation pipelines, and model architectures better suited to real-world conversational TSE.
+            These baselines are trained on Libri2Mix — synthetic mixtures with full speaker overlap and fixed 3-second
+            segments — which differs substantially from REAL-TSE's real conversational data. Baseline performance should
+            therefore be interpreted as a lower bound rather than a representative ceiling. We encourage participants to
+            explore training strategies, data simulation pipelines, and model architectures better suited to real-world
+            conversational TSE.
           </div>
 
           <h6 class="font-weight-bold mb-2" style="color: #64748b; font-size: 0.85rem;">References</h6>
           <div style="line-height: 1.7; font-size: 0.8rem; color: #64748b;">
-            <p class="mb-1" id="ref-1">[1] Y. Luo and J. Yu, &ldquo;Music source separation with band-split RNN,&rdquo; <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, vol. 31, pp. 1893&ndash;1901, 2023.</p>
-            <p class="mb-1" id="ref-2">[2] J. Cosentino, M. Pariente, S. Cornell, A. Deleforge, and E. Vincent, &ldquo;LibriMix: An open-source dataset for generalizable speech separation,&rdquo; 2020.</p>
-            <p class="mb-1" id="ref-3">[3] B. Desplanques, J. Thienpondt, and K. Demuynck, &ldquo;ECAPA-TDNN: Emphasized Channel Attention, Propagation and Aggregation in TDNN Based Speaker Verification,&rdquo; in <em>Proc. Interspeech 2020</em>, pp. 3830&ndash;3834.</p>
-            <p class="mb-1" id="ref-4">[4] H. Wang, C. Liang, S. Wang, Z. Chen, B. Zhang, X. Xiang, Y. Deng, and Y. Qian, &ldquo;WeSpeaker: A research and production oriented speaker embedding learning toolkit,&rdquo; in ICASSP 2023.</p>
-            <p class="mb-0" id="ref-5">[5] K. Zhang, J. Li, S. Wang, Y. Wei, Y. Wang, Y. Wang, and H. Li, &ldquo;Multi-level speaker representation for target speaker extraction,&rdquo; in ICASSP 2025.</p>
+            <p class="mb-1" id="ref-1">[1] Y. Luo and J. Yu, &ldquo;Music source separation with band-split RNN,&rdquo;
+              <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, vol. 31, pp. 1893&ndash;1901,
+              2023.</p>
+            <p class="mb-1" id="ref-2">[2] J. Cosentino, M. Pariente, S. Cornell, A. Deleforge, and E. Vincent,
+              &ldquo;LibriMix: An open-source dataset for generalizable speech separation,&rdquo; 2020.</p>
+            <p class="mb-1" id="ref-3">[3] B. Desplanques, J. Thienpondt, and K. Demuynck, &ldquo;ECAPA-TDNN: Emphasized
+              Channel Attention, Propagation and Aggregation in TDNN Based Speaker Verification,&rdquo; in <em>Proc.
+                Interspeech 2020</em>, pp. 3830&ndash;3834.</p>
+            <p class="mb-1" id="ref-4">[4] H. Wang, C. Liang, S. Wang, Z. Chen, B. Zhang, X. Xiang, Y. Deng, and Y.
+              Qian, &ldquo;WeSpeaker: A research and production oriented speaker embedding learning toolkit,&rdquo; in
+              ICASSP 2023.</p>
+            <p class="mb-0" id="ref-5">[5] K. Zhang, J. Li, S. Wang, Y. Wei, Y. Wang, Y. Wang, and H. Li,
+              &ldquo;Multi-level speaker representation for target speaker extraction,&rdquo; in ICASSP 2025.</p>
           </div>
         </div>
       </div>
@@ -629,12 +821,21 @@
         </div>
         <div class="col-lg-9">
           <div class="card p-4 border-0 mb-4" style="background: #f8fafc;">
-            <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-calculator text-primary mr-2"></i>Composite Score</h5>
+            <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-calculator text-primary mr-2"></i>Composite
+              Score</h5>
             <p class="text-muted small mb-2">
-              The four metrics described below are computed by the official evaluation pipeline. For each metric, valid submissions are ranked independently using <strong>dense ranking</strong>, and the final challenge ranking is determined by <strong>averaging the dense rankings across the four metrics</strong>.
+              The four metrics described below are computed by the official evaluation pipeline. For each metric, valid
+              submissions are ranked independently using <strong>dense ranking</strong>, and the final challenge ranking
+              is determined by <strong>averaging the dense rankings across the four metrics</strong>.
             </p>
             <p class="text-muted small mb-0">
-              <span style="color: #94a3b8; text-decoration: line-through;">Each team may submit up to three submissions per track.</span> Each team may submit up to one submission per track per day, but on the final deadline day (<span style="color: #94a3b8; text-decoration: line-through;">Jun 20, 2026</span> Jun 25, 2026, AoE), this quota increases to three submissions per track. Only the <strong>best-performing submission</strong> from each team appears on the final leaderboard and is considered for the official ranking. Detailed formulations for each sub-metric will be specified in the challenge description paper and released with the official scoring toolkit.
+              <span style="color: #94a3b8; text-decoration: line-through;">Each team may submit up to three submissions
+                per track.</span> Each team may submit up to one submission per track per day, but on the final deadline
+              day (<span style="color: #94a3b8; text-decoration: line-through;">Jun 20, 2026</span> Jun 25, 2026, AoE),
+              this quota increases to three submissions per track. Only the <strong>best-performing submission</strong>
+              from each team appears on the final leaderboard and is considered for the official ranking. Detailed
+              formulations for each sub-metric will be specified in the challenge description paper and released with
+              the official scoring toolkit.
             </p>
           </div>
 
@@ -642,27 +843,34 @@
             <div class="col-md-6 mb-3">
               <div class="card h-100 p-4 border-0">
                 <h6 class="font-weight-bold mb-2">Intelligibility — WER</h6>
-                <p class="text-muted small mb-2">Word Error Rate (<strong>WER</strong>) measures how accurately the extracted speech can be transcribed. A lower WER indicates better intelligibility.</p>
-                <p class="text-muted small mb-0"><strong>Official ASR backbones: Zipformer-EN / Zipformer-ZH, chosen for stable transcription with reduced hallucinations.</strong></p>
+                <p class="text-muted small mb-2">Word Error Rate (<strong>WER</strong>) measures how accurately the
+                  extracted speech can be transcribed. A lower WER indicates better intelligibility.</p>
+                <p class="text-muted small mb-0"><strong>Official ASR backbones: Zipformer-EN / Zipformer-ZH, chosen for
+                    stable transcription with reduced hallucinations.</strong></p>
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <div class="card h-100 p-4 border-0">
                 <h6 class="font-weight-bold mb-2">Speaker Consistency — SpkSim</h6>
-                <p class="text-muted small mb-0">Cosine similarity between speaker embeddings of the extracted and reference speech. Higher similarity indicates better speaker fidelity.</p>
+                <p class="text-muted small mb-0">Cosine similarity between speaker embeddings of the extracted and
+                  reference speech. Higher similarity indicates better speaker fidelity.</p>
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <div class="card h-100 p-4 border-0">
                 <h6 class="font-weight-bold mb-2">Perceptual Quality — DNSMOS</h6>
-                <p class="text-muted small mb-0">Neural Mean Opinion Score estimator (<strong>DNSMOS</strong>) evaluating the overall perceptual quality of the extracted speech.</p>
+                <p class="text-muted small mb-0">Neural Mean Opinion Score estimator (<strong>DNSMOS</strong>)
+                  evaluating the overall perceptual quality of the extracted speech.</p>
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <div class="card h-100 p-4 border-0">
                 <h6 class="font-weight-bold mb-2">Target Speaker Presence Rate — F1</h6>
-                <p class="text-muted small mb-2">Measures accuracy of extracting speech only from target-speaker active regions via temporal <strong>precision</strong>, <strong>recall</strong>, and their harmonic mean <strong>F1</strong>.</p>
-                <p class="text-muted small mb-0"><strong>All audio signals are normalized using a unified scaling procedure before this metric is computed.</strong></p>
+                <p class="text-muted small mb-2">Measures accuracy of extracting speech only from target-speaker active
+                  regions via temporal <strong>precision</strong>, <strong>recall</strong>, and their harmonic mean
+                  <strong>F1</strong>.</p>
+                <p class="text-muted small mb-0"><strong>All audio signals are normalized using a unified scaling
+                    procedure before this metric is computed.</strong></p>
               </div>
             </div>
           </div>
@@ -671,40 +879,69 @@
           <div class="card border-0 mb-4" style="border-left: 4px solid var(--rt-blue); background: #f8fafc;">
             <div class="card-body p-4">
               <div class="d-flex flex-wrap align-items-center mb-3">
-                <h5 class="font-weight-bold mb-0 text-dark mr-3"><i class="fas fa-bullhorn text-primary mr-2"></i>Special Note &mdash; DNSMOS Metric Update</h5>
-                <span class="badge badge-pill" style="background: #dbeafe; color: #1d4ed8; font-size: 0.72rem; font-weight: 600; padding: 0.4em 0.8em;">Updated 6 July 2026 (AoE)</span>
+                <h5 class="font-weight-bold mb-0 text-dark mr-3"><i
+                    class="fas fa-bullhorn text-primary mr-2"></i>Special Note &mdash; DNSMOS Metric Update</h5>
+                <span class="badge badge-pill"
+                  style="background: #dbeafe; color: #1d4ed8; font-size: 0.72rem; font-weight: 600; padding: 0.4em 0.8em;">Updated
+                  6 July 2026 (AoE)</span>
               </div>
 
               <p class="text-muted small mb-3">
-                After reviewing the submitted results, we observed that a number of teams had <strong>severely overfit to the DNSMOS OVRL</strong> metric. As shown in the figure below, while most teams' DNSMOS OVRL and DNSMOS P808 scores are <strong>strongly correlated</strong>, a small number of teams obtain OVRL scores far above their P808 scores &mdash; in these cases OVRL <strong>no longer reliably reflects</strong> the true MOS quality of the audio.
+                After reviewing the submitted results, we observed that a number of teams had <strong>severely overfit
+                  to the DNSMOS OVRL</strong> metric. As shown in the figure below, while most teams' DNSMOS OVRL and
+                DNSMOS P808 scores are <strong>strongly correlated</strong>, a small number of teams obtain OVRL scores
+                far above their P808 scores &mdash; in these cases OVRL <strong>no longer reliably reflects</strong> the
+                true MOS quality of the audio.
               </p>
 
               <div class="text-center mb-3">
-                <img src="../assets/img/dnsmos-ovrl-vs-p808.png" alt="Scatter plot of per-team DNSMOS OVRL vs. DNSMOS P808 scores" class="img-fluid rounded border" style="max-width: 100%;">
-                <p class="text-muted small mt-2 mb-0"><em>Per-team DNSMOS OVRL vs. DNSMOS P808. Most teams lie along the diagonal (strong agreement); a few outliers show OVRL &Gt; P808, indicating OVRL inflation that diverges from perceptual quality.</em></p>
+                <img src="../assets/img/dnsmos-ovrl-vs-p808.png"
+                  alt="Scatter plot of per-team DNSMOS OVRL vs. DNSMOS P808 scores" class="img-fluid rounded border"
+                  style="max-width: 100%;">
+                <p class="text-muted small mt-2 mb-0"><em>Per-team DNSMOS OVRL vs. DNSMOS P808. Most teams lie along the
+                    diagonal (strong agreement); a few outliers show OVRL &Gt; P808, indicating OVRL inflation that
+                    diverges from perceptual quality.</em></p>
               </div>
 
               <p class="text-muted small mb-3">
-                To verify this, we sampled audio from several <strong>top-ranked teams</strong> and conducted <strong>subjective MOS listening tests</strong>, then compared the results against the existing DNSMOS metrics. The agreement between human MOS and each metric &mdash; measured by <strong>Linear Correlation Coefficient (LCC)</strong> and <strong>Spearman&rsquo;s Rank Correlation Coefficient (SRCC)</strong> &mdash; is summarized below (higher = better agreement with human perception):
+                To verify this, we sampled audio from several <strong>top-ranked teams</strong> and conducted
+                <strong>subjective MOS listening tests</strong>, then compared the results against the existing DNSMOS
+                metrics. The agreement between human MOS and each metric &mdash; measured by <strong>Linear Correlation
+                  Coefficient (LCC)</strong> and <strong>Spearman&rsquo;s Rank Correlation Coefficient (SRCC)</strong>
+                &mdash; is summarized below (higher = better agreement with human perception):
               </p>
 
               <div class="table-responsive mb-1">
                 <table class="table table-sm table-borderless mb-0" style="font-size: 0.875rem;">
                   <thead>
                     <tr style="background: #f1f5f9;">
-                      <th rowspan="2" class="text-center align-middle" style="border-bottom: 2px solid var(--rt-border);">Scope</th>
-                      <th rowspan="2" class="text-center align-middle" style="border-bottom: 2px solid var(--rt-border);">n</th>
-                      <th colspan="2" class="text-center" style="border-bottom: 2px solid var(--rt-border);">DNSMOS-OVRL</th>
-                      <th colspan="2" class="text-center" style="border-bottom: 2px solid var(--rt-border); background: rgba(13, 148, 136, 0.10);">DNSMOS-P808</th>
-                      <th colspan="2" class="text-center" style="border-bottom: 2px solid var(--rt-border);">DNSMOS-PRO</th>
+                      <th rowspan="2" class="text-center align-middle"
+                        style="border-bottom: 2px solid var(--rt-border);">Scope</th>
+                      <th rowspan="2" class="text-center align-middle"
+                        style="border-bottom: 2px solid var(--rt-border);">n</th>
+                      <th colspan="2" class="text-center" style="border-bottom: 2px solid var(--rt-border);">DNSMOS-OVRL
+                      </th>
+                      <th colspan="2" class="text-center"
+                        style="border-bottom: 2px solid var(--rt-border); background: rgba(13, 148, 136, 0.10);">
+                        DNSMOS-P808</th>
+                      <th colspan="2" class="text-center" style="border-bottom: 2px solid var(--rt-border);">DNSMOS-PRO
+                      </th>
                     </tr>
                     <tr style="background: #f1f5f9;">
-                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border);">LCC</th>
-                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border);">SRCC</th>
-                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border); background: rgba(13, 148, 136, 0.10);">LCC</th>
-                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border); background: rgba(13, 148, 136, 0.10);">SRCC</th>
-                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border);">LCC</th>
-                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border);">SRCC</th>
+                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border);">LCC
+                      </th>
+                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border);">SRCC
+                      </th>
+                      <th class="text-center font-weight-normal"
+                        style="border-bottom: 2px solid var(--rt-border); background: rgba(13, 148, 136, 0.10);">LCC
+                      </th>
+                      <th class="text-center font-weight-normal"
+                        style="border-bottom: 2px solid var(--rt-border); background: rgba(13, 148, 136, 0.10);">SRCC
+                      </th>
+                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border);">LCC
+                      </th>
+                      <th class="text-center font-weight-normal" style="border-bottom: 2px solid var(--rt-border);">SRCC
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -713,8 +950,10 @@
                       <td class="text-center text-muted">500</td>
                       <td class="text-center text-muted">+0.003</td>
                       <td class="text-center text-muted">+0.040</td>
-                      <td class="text-center font-weight-bold" style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.06);">+0.453</td>
-                      <td class="text-center font-weight-bold" style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.06);">+0.380</td>
+                      <td class="text-center font-weight-bold"
+                        style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.06);">+0.453</td>
+                      <td class="text-center font-weight-bold"
+                        style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.06);">+0.380</td>
                       <td class="text-center text-muted">+0.156</td>
                       <td class="text-center text-muted">+0.115</td>
                     </tr>
@@ -723,8 +962,10 @@
                       <td class="text-center text-muted">600</td>
                       <td class="text-center text-muted">+0.182</td>
                       <td class="text-center text-muted">+0.186</td>
-                      <td class="text-center font-weight-bold" style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.06);">+0.466</td>
-                      <td class="text-center font-weight-bold" style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.06);">+0.463</td>
+                      <td class="text-center font-weight-bold"
+                        style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.06);">+0.466</td>
+                      <td class="text-center font-weight-bold"
+                        style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.06);">+0.463</td>
                       <td class="text-center text-muted">+0.229</td>
                       <td class="text-center text-muted">+0.234</td>
                     </tr>
@@ -733,18 +974,25 @@
                       <td class="text-center text-muted">1100</td>
                       <td class="text-center text-muted">+0.165</td>
                       <td class="text-center text-muted">+0.186</td>
-                      <td class="text-center font-weight-bold" style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.10);">+0.489</td>
-                      <td class="text-center font-weight-bold" style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.10);">+0.460</td>
+                      <td class="text-center font-weight-bold"
+                        style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.10);">+0.489</td>
+                      <td class="text-center font-weight-bold"
+                        style="color: var(--rt-teal); background: rgba(13, 148, 136, 0.10);">+0.460</td>
                       <td class="text-center text-muted">+0.233</td>
                       <td class="text-center text-muted">+0.230</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <p class="text-muted small mt-1 mb-3"><em>Correlation between human MOS and each DNSMOS metric. DNSMOS-P808, which achieves the highest agreement with human perception, is highlighted.</em></p>
+              <p class="text-muted small mt-1 mb-3"><em>Correlation between human MOS and each DNSMOS metric.
+                  DNSMOS-P808, which achieves the highest agreement with human perception, is highlighted.</em></p>
 
               <div class="alert border-0 small mb-0" style="background: #ecfdf5; color: #065f46;">
-                <i class="fas fa-check-circle mr-2"></i> As shown above, <strong>DNSMOS-P808</strong> achieves substantially higher correlation with human MOS than DNSMOS-OVRL (and DNSMOS-PRO) across both tracks and overall. Under the current conditions, <strong>DNSMOS-P808 better reflects human perceptual quality</strong>. We have therefore decided to <strong>adopt DNSMOS-P808 in place of DNSMOS-OVRL</strong> as the metric for measuring the perceptual quality of the extracted speech.
+                <i class="fas fa-check-circle mr-2"></i> As shown above, <strong>DNSMOS-P808</strong> achieves
+                substantially higher correlation with human MOS than DNSMOS-OVRL (and DNSMOS-PRO) across both tracks and
+                overall. Under the current conditions, <strong>DNSMOS-P808 better reflects human perceptual
+                  quality</strong>. We have therefore decided to <strong>adopt DNSMOS-P808 in place of
+                  DNSMOS-OVRL</strong> as the metric for measuring the perceptual quality of the extracted speech.
               </div>
             </div>
           </div>
@@ -766,55 +1014,85 @@
           <h2 class="section-title">Timeline</h2>
         </div>
         <div class="col-lg-9">
-          <p class="text-muted mb-4">Key dates for the REAL-TSE Challenge at IEEE SLT 2026. All times follow the official challenge announcement unless stated otherwise.</p>
+          <p class="text-muted mb-4">Key dates for the REAL-TSE Challenge at IEEE SLT 2026. All times follow the
+            official challenge announcement unless stated otherwise.</p>
           <div class="pl-2">
             <div class="timeline-item completed">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2">7 April 2026 <span class="font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">7 April 2026 <span
+                  class="font-weight-normal"
+                  style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
               <h6 class="font-weight-bold mb-1">Registration Opens<span class="timeline-status">Completed</span></h6>
               <p class="text-muted small mb-0">Team registration for the challenge opens.</p>
             </div>
             <div class="timeline-item completed">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2">10 April 2026 <span class="font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
-              <h6 class="font-weight-bold mb-1">Development Set &amp; Baselines Released<span class="timeline-status">Completed</span></h6>
-              <p class="text-muted small mb-0">The development dataset and baseline systems are released. Dataset access is restricted to <a href="#register" class="js-scroll-trigger">registered teams</a> only; download links and passwords have been sent to registered teams, and will continue to be sent to newly registered teams (within 24 hours of registration).</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">10 April 2026 <span
+                  class="font-weight-normal"
+                  style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
+              <h6 class="font-weight-bold mb-1">Development Set &amp; Baselines Released<span
+                  class="timeline-status">Completed</span></h6>
+              <p class="text-muted small mb-0">The development dataset and baseline systems are released. Dataset access
+                is restricted to <a href="#register" class="js-scroll-trigger">registered teams</a> only; download links
+                and passwords have been sent to registered teams, and will continue to be sent to newly registered teams
+                (within 24 hours of registration).</p>
             </div>
             <div class="timeline-item completed">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2">31 May 2026 <span class="font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
-              <h6 class="font-weight-bold mb-1">Evaluation Set Released &amp; Registration Closes<span class="timeline-status">Completed</span></h6>
-              <p class="text-muted small mb-0">The evaluation set has been released to <a href="#register" class="js-scroll-trigger">registered teams</a> via email, comprising EVAL-1 (Seen, 2,000 pairs) and EVAL-2 (Unseen, 3,000 pairs) &mdash; 5,000 mix-enroll pairs in total. Team registration is now closed.</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">31 May 2026 <span class="font-weight-normal"
+                  style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
+              <h6 class="font-weight-bold mb-1">Evaluation Set Released &amp; Registration Closes<span
+                  class="timeline-status">Completed</span></h6>
+              <p class="text-muted small mb-0">The evaluation set has been released to <a href="#register"
+                  class="js-scroll-trigger">registered teams</a> via email, comprising EVAL-1 (Seen, 2,000 pairs) and
+                EVAL-2 (Unseen, 3,000 pairs) &mdash; 5,000 mix-enroll pairs in total. Team registration is now closed.
+              </p>
             </div>
             <div class="timeline-item completed">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2">5 June 2026 <span class="font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
-              <h6 class="font-weight-bold mb-1">Public Leaderboard Opens<span class="timeline-status">Completed</span></h6>
-              <p class="text-muted small mb-0">The public <a href="https://leaderboard.real-tse.com" target="_blank" rel="noopener noreferrer">leaderboard</a> is open for participating teams to monitor and compare submissions. Track links, team approval details, and submission instructions have been sent to all participating teams via email.</p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">5 June 2026 <span class="font-weight-normal"
+                  style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
+              <h6 class="font-weight-bold mb-1">Public Leaderboard Opens<span class="timeline-status">Completed</span>
+              </h6>
+              <p class="text-muted small mb-0">The public <a href="https://leaderboard.real-tse.com" target="_blank"
+                  rel="noopener noreferrer">leaderboard</a> is open for participating teams to monitor and compare
+                submissions. Track links, team approval details, and submission instructions have been sent to all
+                participating teams via email.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2"><span style="color: #94a3b8; text-decoration: line-through;">20 June 2026</span> 25 June 2026 <span class="font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2"><span
+                  style="color: #94a3b8; text-decoration: line-through;">20 June 2026</span> 25 June 2026 <span
+                  class="font-weight-normal"
+                  style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
               <h6 class="font-weight-bold mb-1">Leaderboard Freeze / Submission Deadline</h6>
               <p class="text-muted small mb-0">The leaderboard is frozen and evaluation output submissions close.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2">1 July 2026 <span class="font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">1 July 2026 <span class="font-weight-normal"
+                  style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
               <h6 class="font-weight-bold mb-1">System Report Submission Deadline</h6>
-              <p class="text-muted small mb-0">Deadline for submitting the official system description paper. This deadline remains unchanged.</p>
+              <p class="text-muted small mb-0">Deadline for submitting the official system description paper. This
+                deadline remains unchanged.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2">8 July 2026 <span class="font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">8 July 2026 <span class="font-weight-normal"
+                  style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE)</span></p>
               <h6 class="font-weight-bold mb-1">SLT Challenge Paper Track: Paper Submission Deadline</h6>
-              <p class="text-muted small mb-0">Deadline for submitting challenge-related papers to the SLT Challenge Paper Track. Please follow the official SLT 2026 authors' instructions.</p>
+              <p class="text-muted small mb-0">Deadline for submitting challenge-related papers to the SLT Challenge
+                Paper Track. Please follow the official SLT 2026 authors' instructions.</p>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <p class="timeline-date font-weight-bold text-uppercase mb-2">1 September 2026 <span class="font-weight-normal" style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE, tentative)</span></p>
+              <p class="timeline-date font-weight-bold text-uppercase mb-2">1 September 2026 <span
+                  class="font-weight-normal"
+                  style="font-size: 0.7rem; color: #94a3b8; letter-spacing: 0; text-transform: none;">(AoE,
+                  tentative)</span></p>
               <h6 class="font-weight-bold mb-1">SLT Challenge Paper Track: Notification of Acceptance</h6>
-              <p class="text-muted small mb-0">Acceptance decisions for papers submitted to the SLT Challenge Paper Track are announced.</p>
+              <p class="text-muted small mb-0">Acceptance decisions for papers submitted to the SLT Challenge Paper
+                Track are announced.</p>
             </div>
           </div>
         </div>
@@ -831,32 +1109,414 @@
         <div class="col-lg-9">
           <div class="card border-0 p-5">
             <p class="mb-2 small" style="color: #94a3b8; text-decoration: line-through;">
-              Please register via <a href="https://forms.gle/usEL2i1TfvzuG8367" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; text-decoration: line-through;">this form</a>.
+              Please register via <a href="https://forms.gle/usEL2i1TfvzuG8367" target="_blank"
+                rel="noopener noreferrer" style="color: #94a3b8; text-decoration: line-through;">this form</a>.
               We will send you a successful registration email within three days after your registration.
-              If you have not received it, please <a href="mailto:realtse.challenge@gmail.com" style="color: #94a3b8; text-decoration: line-through;">contact us</a>.
+              If you have not received it, please <a href="mailto:realtse.challenge@gmail.com"
+                style="color: #94a3b8; text-decoration: line-through;">contact us</a>.
             </p>
             <p class="mb-3 small" style="color: var(--rt-slate);">
-              Team registration is now closed (as of May 31, 2026, AoE). No further teams can register for the REAL-TSE Challenge.
+              Team registration is now closed (as of May 31, 2026, AoE). No further teams can register for the REAL-TSE
+              Challenge.
             </p>
             <p class="text-muted small mb-3">
-              Leaderboard account registration is open for participating teams. Please create and activate an account on the leaderboard website, complete your profile if prompted, open the corresponding track page, and click <strong>Participate</strong> to submit your team application.
+              Leaderboard account registration is open for participating teams. Please create and activate an account on
+              the leaderboard website, complete your profile if prompted, open the corresponding track page, and click
+              <strong>Participate</strong> to submit your team application.
             </p>
             <ul class="text-muted small pl-3 mb-3" style="line-height: 1.8;">
-              <li>Please make sure your team name, affiliation, and member information match the information previously submitted through the Google Form.</li>
-              <li>Wait for organizer approval. After approval, you will be able to submit results on the corresponding track page.</li>
+              <li>Please make sure your team name, affiliation, and member information match the information previously
+                submitted through the Google Form.</li>
+              <li>Wait for organizer approval. After approval, you will be able to submit results on the corresponding
+                track page.</li>
             </ul>
             <div class="d-flex flex-wrap">
-              <a href="https://leaderboard.real-tse.com/challenges/real-tse-track-1" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank" rel="noopener noreferrer">
+              <a href="https://leaderboard.real-tse.com/challenges/real-tse-track-1"
+                class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank" rel="noopener noreferrer">
                 <i class="fas fa-stopwatch mr-1"></i>Track 1 Leaderboard
               </a>
-              <a href="https://leaderboard.real-tse.com/challenges/real-tse-track-2" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank" rel="noopener noreferrer">
+              <a href="https://leaderboard.real-tse.com/challenges/real-tse-track-2"
+                class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank" rel="noopener noreferrer">
                 <i class="fas fa-globe mr-1"></i>Track 2 Leaderboard
               </a>
-              <a href="https://leaderboard.real-tse.com" class="btn btn-outline-primary btn-sm mb-2" target="_blank" rel="noopener noreferrer">
+              <a href="https://leaderboard.real-tse.com" class="btn btn-outline-primary btn-sm mb-2" target="_blank"
+                rel="noopener noreferrer">
                 <i class="fas fa-trophy mr-1"></i>Leaderboard Home
               </a>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Rankings -->
+  <section class="page-section" id="rankings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 mb-4 mb-lg-0">
+          <h2 class="section-title">Rankings</h2>
+        </div>
+        <div class="col-lg-9">
+          <p class="text-muted small mb-4">Final verified Phase-1 rankings (official evaluation) for both tracks.
+            Metrics are reported to three decimal places &mdash; lower <strong>TER</strong> is better, while higher
+            <strong>F1</strong>, <strong>SIM</strong>, and <strong>DNSMOS-P808</strong> are better. Only teams that
+            submitted a system report are listed; <strong>BSRNN</strong> entries are the official baselines provided by
+            the organizers (no system report). Click <em>Report</em> to open a team&rsquo;s system description.</p>
+
+          <div class="card border-0 p-4 mb-4" style="background: #f8fafc;">
+            <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-stopwatch text-primary mr-2"></i>Track 1
+              &mdash; Online Target Speaker Extraction</h5>
+            <div class="table-responsive">
+              <table class="table table-sm table-borderless mb-0 rankings-table" style="font-size: 0.9rem;">
+                <thead>
+                  <tr style="background: #f1f5f9;">
+                    <th class="text-center align-middle"
+                      style="border-bottom: 2px solid var(--rt-border); width: 3rem;">#</th>
+                    <th class="align-middle" style="border-bottom: 2px solid var(--rt-border);">Team</th>
+                    <th class="text-right align-middle" style="border-bottom: 2px solid var(--rt-border);">TER &darr;
+                    </th>
+                    <th class="text-right align-middle" style="border-bottom: 2px solid var(--rt-border);">F1 &uarr;
+                    </th>
+                    <th class="text-right align-middle" style="border-bottom: 2px solid var(--rt-border);">SIM &uarr;
+                    </th>
+                    <th class="text-right align-middle" style="border-bottom: 2px solid var(--rt-border);">DNSMOS-P808
+                      &uarr;</th>
+                    <th class="text-center align-middle" style="border-bottom: 2px solid var(--rt-border);">Report</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">🥇 1</td>
+                    <td class="align-middle">CARTSE</td>
+                    <td class="text-right align-middle">0.699</td>
+                    <td class="text-right align-middle">0.848</td>
+                    <td class="text-right align-middle">0.504</td>
+                    <td class="text-right align-middle">3.069</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/CARTSE-Track1.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">🥈 2</td>
+                    <td class="align-middle">DeepSound</td>
+                    <td class="text-right align-middle">0.713</td>
+                    <td class="text-right align-middle">0.849</td>
+                    <td class="text-right align-middle">0.524</td>
+                    <td class="text-right align-middle">2.965</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/DeepSound-Track1.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">🥉 3</td>
+                    <td class="align-middle">SonicAGI</td>
+                    <td class="text-right align-middle">0.719</td>
+                    <td class="text-right align-middle">0.847</td>
+                    <td class="text-right align-middle">0.480</td>
+                    <td class="text-right align-middle">3.111</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/SonicAGI-Track1-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">🥉 3</td>
+                    <td class="align-middle">WasedaM</td>
+                    <td class="text-right align-middle">0.719</td>
+                    <td class="text-right align-middle">0.855</td>
+                    <td class="text-right align-middle">0.446</td>
+                    <td class="text-right align-middle">3.169</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/WasedaM-Track1-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">4</td>
+                    <td class="align-middle">smellycat</td>
+                    <td class="text-right align-middle">0.740</td>
+                    <td class="text-right align-middle">0.856</td>
+                    <td class="text-right align-middle">0.473</td>
+                    <td class="text-right align-middle">3.023</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/smellycat-Track-1.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">5</td>
+                    <td class="align-middle">WHU_IASP</td>
+                    <td class="text-right align-middle">0.750</td>
+                    <td class="text-right align-middle">0.852</td>
+                    <td class="text-right align-middle">0.442</td>
+                    <td class="text-right align-middle">3.175</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/WHUIASP-Track1-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">6</td>
+                    <td class="align-middle">insta360</td>
+                    <td class="text-right align-middle">0.725</td>
+                    <td class="text-right align-middle">0.840</td>
+                    <td class="text-right align-middle">0.482</td>
+                    <td class="text-right align-middle">2.994</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/insta360-Track1.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">7</td>
+                    <td class="align-middle">ChuEst</td>
+                    <td class="text-right align-middle">0.756</td>
+                    <td class="text-right align-middle">0.837</td>
+                    <td class="text-right align-middle">0.535</td>
+                    <td class="text-right align-middle">2.947</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/ChuEst-Track1-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">8</td>
+                    <td class="align-middle">AIVOX</td>
+                    <td class="text-right align-middle">0.751</td>
+                    <td class="text-right align-middle">0.847</td>
+                    <td class="text-right align-middle">0.493</td>
+                    <td class="text-right align-middle">2.841</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/AIVOX-Track1.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">9</td>
+                    <td class="align-middle">SHNU-TSE</td>
+                    <td class="text-right align-middle">0.797</td>
+                    <td class="text-right align-middle">0.842</td>
+                    <td class="text-right align-middle">0.462</td>
+                    <td class="text-right align-middle">3.037</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/SHNU-TSE-Track1-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr class="rankings-baseline">
+                    <td class="text-center font-weight-bold align-middle">11</td>
+                    <td class="align-middle">BSRNN_TFMAP_CAUSAL <span class="badge badge-pill ml-1"
+                        style="background:#f1f5f9;color:#64748b;font-size:0.62rem;font-weight:600;padding:0.3em 0.55em;vertical-align:middle;">Baseline</span>
+                    </td>
+                    <td class="text-right align-middle">0.805</td>
+                    <td class="text-right align-middle">0.836</td>
+                    <td class="text-right align-middle">0.456</td>
+                    <td class="text-right align-middle">2.785</td>
+                    <td class="text-center align-middle">&mdash;</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">12</td>
+                    <td class="align-middle">Team-Fly</td>
+                    <td class="text-right align-middle">0.807</td>
+                    <td class="text-right align-middle">0.834</td>
+                    <td class="text-right align-middle">0.438</td>
+                    <td class="text-right align-middle">2.857</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/Team-Fly-Track1.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr class="rankings-baseline">
+                    <td class="text-center font-weight-bold align-middle">13</td>
+                    <td class="align-middle">BSRNN_EMB_CAUSAL <span class="badge badge-pill ml-1"
+                        style="background:#f1f5f9;color:#64748b;font-size:0.62rem;font-weight:600;padding:0.3em 0.55em;vertical-align:middle;">Baseline</span>
+                    </td>
+                    <td class="text-right align-middle">0.809</td>
+                    <td class="text-right align-middle">0.821</td>
+                    <td class="text-right align-middle">0.422</td>
+                    <td class="text-right align-middle">2.738</td>
+                    <td class="text-center align-middle">&mdash;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card border-0 p-4 mb-4" style="background: #f8fafc;">
+            <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-globe text-success mr-2"></i>Track 2 &mdash;
+              Offline Target Speaker Extraction</h5>
+            <div class="table-responsive">
+              <table class="table table-sm table-borderless mb-0 rankings-table" style="font-size: 0.9rem;">
+                <thead>
+                  <tr style="background: #f1f5f9;">
+                    <th class="text-center align-middle"
+                      style="border-bottom: 2px solid var(--rt-border); width: 3rem;">#</th>
+                    <th class="align-middle" style="border-bottom: 2px solid var(--rt-border);">Team</th>
+                    <th class="text-right align-middle" style="border-bottom: 2px solid var(--rt-border);">TER &darr;
+                    </th>
+                    <th class="text-right align-middle" style="border-bottom: 2px solid var(--rt-border);">F1 &uarr;
+                    </th>
+                    <th class="text-right align-middle" style="border-bottom: 2px solid var(--rt-border);">SIM &uarr;
+                    </th>
+                    <th class="text-right align-middle" style="border-bottom: 2px solid var(--rt-border);">DNSMOS-P808
+                      &uarr;</th>
+                    <th class="text-center align-middle" style="border-bottom: 2px solid var(--rt-border);">Report</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">🥇 1</td>
+                    <td class="align-middle">MERL-SA</td>
+                    <td class="text-right align-middle">0.613</td>
+                    <td class="text-right align-middle">0.861</td>
+                    <td class="text-right align-middle">0.538</td>
+                    <td class="text-right align-middle">3.371</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/MERL-SA-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">🥈 2</td>
+                    <td class="align-middle">YiJiaHe</td>
+                    <td class="text-right align-middle">0.639</td>
+                    <td class="text-right align-middle">0.871</td>
+                    <td class="text-right align-middle">0.565</td>
+                    <td class="text-right align-middle">3.128</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/YiJiaHe-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">🥉 3</td>
+                    <td class="align-middle">CARTSE</td>
+                    <td class="text-right align-middle">0.651</td>
+                    <td class="text-right align-middle">0.857</td>
+                    <td class="text-right align-middle">0.544</td>
+                    <td class="text-right align-middle">3.138</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/CARTSE-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">4</td>
+                    <td class="align-middle">WasedaM</td>
+                    <td class="text-right align-middle">0.675</td>
+                    <td class="text-right align-middle">0.858</td>
+                    <td class="text-right align-middle">0.480</td>
+                    <td class="text-right align-middle">3.232</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/WasedaM-Track1-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">5</td>
+                    <td class="align-middle">SonicAGI</td>
+                    <td class="text-right align-middle">0.680</td>
+                    <td class="text-right align-middle">0.851</td>
+                    <td class="text-right align-middle">0.471</td>
+                    <td class="text-right align-middle">3.258</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/SonicAGI-Track1-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">6</td>
+                    <td class="align-middle">WAKA</td>
+                    <td class="text-right align-middle">0.670</td>
+                    <td class="text-right align-middle">0.847</td>
+                    <td class="text-right align-middle">0.471</td>
+                    <td class="text-right align-middle">3.150</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/WAKA-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">6</td>
+                    <td class="align-middle">SHNU-TSE</td>
+                    <td class="text-right align-middle">0.731</td>
+                    <td class="text-right align-middle">0.840</td>
+                    <td class="text-right align-middle">0.507</td>
+                    <td class="text-right align-middle">3.362</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/SHNU-TSE-Track1-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">7</td>
+                    <td class="align-middle">ChuEst</td>
+                    <td class="text-right align-middle">0.710</td>
+                    <td class="text-right align-middle">0.831</td>
+                    <td class="text-right align-middle">0.532</td>
+                    <td class="text-right align-middle">3.064</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/ChuEst-Track1-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">8</td>
+                    <td class="align-middle">pyannoteAI</td>
+                    <td class="text-right align-middle">0.728</td>
+                    <td class="text-right align-middle">0.855</td>
+                    <td class="text-right align-middle">0.464</td>
+                    <td class="text-right align-middle">2.904</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/pyannoteAI-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">9</td>
+                    <td class="align-middle">AGH-JHU</td>
+                    <td class="text-right align-middle">0.743</td>
+                    <td class="text-right align-middle">0.837</td>
+                    <td class="text-right align-middle">0.434</td>
+                    <td class="text-right align-middle">3.335</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/AGH-JHU-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">10</td>
+                    <td class="align-middle">WHU_IASP</td>
+                    <td class="text-right align-middle">0.757</td>
+                    <td class="text-right align-middle">0.850</td>
+                    <td class="text-right align-middle">0.465</td>
+                    <td class="text-right align-middle">2.961</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/WHUIASP-Track1-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center font-weight-bold align-middle">11</td>
+                    <td class="align-middle">CUDA_OUT_OF_MEMORY</td>
+                    <td class="text-right align-middle">0.827</td>
+                    <td class="text-right align-middle">0.819</td>
+                    <td class="text-right align-middle">0.364</td>
+                    <td class="text-right align-middle">3.435</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/CUDA_OUT_OF_MEMORY-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
+                          class="fas fa-file-pdf mr-1"></i>Report</a></td>
+                  </tr>
+                  <tr class="rankings-baseline">
+                    <td class="text-center font-weight-bold align-middle">12</td>
+                    <td class="align-middle">BSRNN_EMB <span class="badge badge-pill ml-1"
+                        style="background:#f1f5f9;color:#64748b;font-size:0.62rem;font-weight:600;padding:0.3em 0.55em;vertical-align:middle;">Baseline</span>
+                    </td>
+                    <td class="text-right align-middle">0.829</td>
+                    <td class="text-right align-middle">0.829</td>
+                    <td class="text-right align-middle">0.417</td>
+                    <td class="text-right align-middle">2.875</td>
+                    <td class="text-center align-middle">&mdash;</td>
+                  </tr>
+                  <tr class="rankings-baseline">
+                    <td class="text-center font-weight-bold align-middle">12</td>
+                    <td class="align-middle">BSRNN_TFMAP <span class="badge badge-pill ml-1"
+                        style="background:#f1f5f9;color:#64748b;font-size:0.62rem;font-weight:600;padding:0.3em 0.55em;vertical-align:middle;">Baseline</span>
+                    </td>
+                    <td class="text-right align-middle">0.838</td>
+                    <td class="text-right align-middle">0.829</td>
+                    <td class="text-right align-middle">0.443</td>
+                    <td class="text-right align-middle">2.756</td>
+                    <td class="text-center align-middle">&mdash;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <p class="text-muted small mb-0">See the live, continuously updated results on the public <a
+              href="https://leaderboard.real-tse.com" target="_blank" rel="noopener noreferrer"><strong>REAL-TSE
+                leaderboard</strong></a>.</p>
         </div>
       </div>
     </div>
@@ -869,57 +1529,89 @@
           <h2 class="section-title">Rules for Participation</h2>
         </div>
         <div class="col-lg-9">
-          
+
           <h5 class="font-weight-bold mb-3 text-dark">Tracks</h5>
-          <p class="text-muted small mb-3">Participants may submit results for <strong>one or both tracks</strong> of the Challenge.</p>
+          <p class="text-muted small mb-3">Participants may submit results for <strong>one or both tracks</strong> of
+            the Challenge.</p>
 
           <div class="card p-4 border-0 mb-4">
-            <h6 class="font-weight-bold mb-3"><i class="fas fa-stopwatch text-primary mr-2"></i>Online Track — Low-Latency TSE</h6>
+            <h6 class="font-weight-bold mb-3"><i class="fas fa-stopwatch text-primary mr-2"></i>Online Track —
+              Low-Latency TSE</h6>
 
             <p class="text-muted small mb-2"><strong>Key Requirements</strong></p>
             <ol class="text-muted small pl-3 mb-4" style="line-height: 1.8;">
-              <li><strong>Latency constraint:</strong> The end-to-end algorithmic latency must not exceed 100 ms. Systems may use limited future context (lookahead) as long as this latency budget is satisfied.</li>
-              <li><strong>Streaming output:</strong> Models should support frame-wise or chunk-wise input with continuous output generation, without relying on full-utterance buffering.</li>
+              <li><strong>Latency constraint:</strong> The end-to-end algorithmic latency must not exceed 100 ms.
+                Systems may use limited future context (lookahead) as long as this latency budget is satisfied.</li>
+              <li><strong>Streaming output:</strong> Models should support frame-wise or chunk-wise input with
+                continuous output generation, without relying on full-utterance buffering.</li>
             </ol>
 
             <p class="text-muted small mb-2"><strong>Latency</strong></p>
             <div class="bg-light p-4 rounded latency-detail-box">
-              <h6 class="font-weight-bold mb-2 text-dark"><i class="fas fa-clock text-primary mr-1"></i> Algorithmic Latency</h6>
-              <p class="text-muted small mb-2">The offset introduced by the whole processing chain including STFT, iSTFT, overlap-add, additional lookahead frames, etc., compared to just passing the signal through without modification. This does <strong>not</strong> include buffering latency.</p>
+              <h6 class="font-weight-bold mb-2 text-dark"><i class="fas fa-clock text-primary mr-1"></i> Algorithmic
+                Latency</h6>
+              <p class="text-muted small mb-2">The offset introduced by the whole processing chain including STFT,
+                iSTFT, overlap-add, additional lookahead frames, etc., compared to just passing the signal through
+                without modification. This does <strong>not</strong> include buffering latency.</p>
               <ul class="text-muted small pl-3 mb-4">
-                <li><strong>Ex.1:</strong> A STFT-based processing with window length = 20 ms and hop length = 10 ms introduces an algorithmic delay of window length − hop length = <strong>10 ms</strong>.</li>
-                <li><strong>Ex.2:</strong> A STFT-based processing with window length = 32 ms and hop length = 8 ms introduces an algorithmic delay of window length − hop length = <strong>24 ms</strong>.
-                  <span class="latency-baseline-note">For reference, the online BSRNN baselines we provide (tfmap_context_causal_100 and spk_emb_causal_100) use this STFT configuration.</span>
+                <li><strong>Ex.1:</strong> A STFT-based processing with window length = 20 ms and hop length = 10 ms
+                  introduces an algorithmic delay of window length − hop length = <strong>10 ms</strong>.</li>
+                <li><strong>Ex.2:</strong> A STFT-based processing with window length = 32 ms and hop length = 8 ms
+                  introduces an algorithmic delay of window length − hop length = <strong>24 ms</strong>.
+                  <span class="latency-baseline-note">For reference, the online BSRNN baselines we provide
+                    (tfmap_context_causal_100 and spk_emb_causal_100) use this STFT configuration.</span>
                 </li>
-                <li><strong>Ex.3:</strong> An overlap-save based processing algorithm introduces <strong>no additional</strong> algorithmic latency.</li>
-                <li><strong>Ex.4:</strong> A time-domain convolution with a filter kernel size = 16 samples introduces an algorithmic latency of kernel size − 1 = <strong>15 samples</strong>. Using one-sided (left) padding with kernel size − 1 samples, the operation introduces <strong>no</strong> additional algorithmic latency.</li>
-                <li><strong>Ex.5:</strong> A STFT-based processing with window_length = 20 ms and hop_length = 10 ms using 2 future frames information introduces an algorithmic latency of (window_length − hop_length) + 2 × hop_length = <strong>30 ms</strong>.</li>
+                <li><strong>Ex.3:</strong> An overlap-save based processing algorithm introduces <strong>no
+                    additional</strong> algorithmic latency.</li>
+                <li><strong>Ex.4:</strong> A time-domain convolution with a filter kernel size = 16 samples introduces
+                  an algorithmic latency of kernel size − 1 = <strong>15 samples</strong>. Using one-sided (left)
+                  padding with kernel size − 1 samples, the operation introduces <strong>no</strong> additional
+                  algorithmic latency.</li>
+                <li><strong>Ex.5:</strong> A STFT-based processing with window_length = 20 ms and hop_length = 10 ms
+                  using 2 future frames information introduces an algorithmic latency of (window_length − hop_length) +
+                  2 × hop_length = <strong>30 ms</strong>.</li>
               </ul>
 
-              <h6 class="font-weight-bold mb-2 text-dark"><i class="fas fa-layer-group text-primary mr-1"></i> Buffering Latency</h6>
-              <p class="text-muted small mb-2">The latency introduced by block-wise processing, often referred to as hop-size, frame-shift, or temporal stride.</p>
+              <h6 class="font-weight-bold mb-2 text-dark"><i class="fas fa-layer-group text-primary mr-1"></i> Buffering
+                Latency</h6>
+              <p class="text-muted small mb-2">The latency introduced by block-wise processing, often referred to as
+                hop-size, frame-shift, or temporal stride.</p>
               <ul class="text-muted small pl-3 mb-3">
-                <li><strong>Ex.1:</strong> A STFT-based processing has a buffering latency corresponding to the <strong>hop size</strong>.</li>
-                <li><strong>Ex.2:</strong> An overlap-save processing has a buffering latency corresponding to the <strong>frame size</strong>.</li>
-                <li><strong>Ex.3:</strong> A time-domain convolution with stride 1 introduces a buffering latency of <strong>1 sample</strong>.</li>
+                <li><strong>Ex.1:</strong> A STFT-based processing has a buffering latency corresponding to the
+                  <strong>hop size</strong>.</li>
+                <li><strong>Ex.2:</strong> An overlap-save processing has a buffering latency corresponding to the
+                  <strong>frame size</strong>.</li>
+                <li><strong>Ex.3:</strong> A time-domain convolution with stride 1 introduces a buffering latency of
+                  <strong>1 sample</strong>.</li>
               </ul>
 
-              <p class="text-muted small mb-3">Algorithmic and buffering latency definitions and examples above follow the <a href="https://www.microsoft.com/en-us/research/academic-program/deep-noise-suppression-challenge-icassp-2023/" target="_blank" rel="noopener noreferrer">ICASSP 2023 Deep Noise Suppression Challenge</a> (Microsoft Research).</p>
+              <p class="text-muted small mb-3">Algorithmic and buffering latency definitions and examples above follow
+                the <a
+                  href="https://www.microsoft.com/en-us/research/academic-program/deep-noise-suppression-challenge-icassp-2023/"
+                  target="_blank" rel="noopener noreferrer">ICASSP 2023 Deep Noise Suppression Challenge</a> (Microsoft
+                Research).</p>
 
               <div class="alert alert-primary mb-0 small border-0" style="background: #eff6ff; color: #1e3a8a;">
-                <i class="fas fa-info-circle mr-1"></i> In addition to the reported algorithmic latency, the effective system latency will be evaluated by measuring the output response delay to a controlled input perturbation. This evaluation is designed to reflect real streaming behavior without requiring participants to explicitly implement a streaming inference pipeline.
+                <i class="fas fa-info-circle mr-1"></i> In addition to the reported algorithmic latency, the effective
+                system latency will be evaluated by measuring the output response delay to a controlled input
+                perturbation. This evaluation is designed to reflect real streaming behavior without requiring
+                participants to explicitly implement a streaming inference pipeline.
               </div>
             </div>
           </div>
 
           <div class="card p-4 border-0 mb-4">
-            <h6 class="font-weight-bold mb-3"><i class="fas fa-globe text-success mr-2"></i>Offline Track — Full-Context TSE</h6>
+            <h6 class="font-weight-bold mb-3"><i class="fas fa-globe text-success mr-2"></i>Offline Track — Full-Context
+              TSE</h6>
 
             <p class="text-muted small mb-2"><strong>Key Requirements</strong></p>
             <ol class="text-muted small pl-3 mb-0" style="line-height: 1.8;">
-              <li><strong>Full context access:</strong> Systems may utilize the entire utterance and global context information.</li>
-              <li><strong>No restriction on architecture:</strong> There is no limitation on model type, inference duration, or computational cost.</li>
-              <li><strong>Encouraged exploration:</strong> Participants are encouraged to explore high-performance architectures, long-context modeling, and generation-based methods.</li>
+              <li><strong>Full context access:</strong> Systems may utilize the entire utterance and global context
+                information.</li>
+              <li><strong>No restriction on architecture:</strong> There is no limitation on model type, inference
+                duration, or computational cost.</li>
+              <li><strong>Encouraged exploration:</strong> Participants are encouraged to explore high-performance
+                architectures, long-context modeling, and generation-based methods.</li>
             </ol>
           </div>
 
@@ -927,7 +1619,10 @@
 
           <div class="card p-4 border-0 mb-4">
             <p class="text-muted small mb-0">
-              Detailed data usage constraints—including allowed training sources, prohibited corpora, and the usage scope of the development and evaluation sets—are specified in the <a href="#data" class="js-scroll-trigger font-weight-bold">Data</a> section above. All participants must comply with those requirements.
+              Detailed data usage constraints—including allowed training sources, prohibited corpora, and the usage
+              scope of the development and evaluation sets—are specified in the <a href="#data"
+                class="js-scroll-trigger font-weight-bold">Data</a> section above. All participants must comply with
+              those requirements.
             </p>
           </div>
 
@@ -936,23 +1631,50 @@
           <div class="card p-4 border-0 mb-4">
             <h6 class="font-weight-bold mb-3"><i class="fas fa-trophy text-primary mr-2"></i>Leaderboard Submission</h6>
             <p class="text-muted small mb-3">
-              We recommend using the public leaderboard for official submissions. Track pages are available for <a href="https://leaderboard.real-tse.com/challenges/real-tse-track-1" target="_blank" rel="noopener noreferrer">Track 1: Online Target Speaker Extraction</a> and <a href="https://leaderboard.real-tse.com/challenges/real-tse-track-2" target="_blank" rel="noopener noreferrer">Track 2: Offline Target Speaker Extraction</a>.
+              We recommend using the public leaderboard for official submissions. Track pages are available for <a
+                href="https://leaderboard.real-tse.com/challenges/real-tse-track-1" target="_blank"
+                rel="noopener noreferrer">Track 1: Online Target Speaker Extraction</a> and <a
+                href="https://leaderboard.real-tse.com/challenges/real-tse-track-2" target="_blank"
+                rel="noopener noreferrer">Track 2: Offline Target Speaker Extraction</a>.
             </p>
             <ol class="text-muted small pl-3 mb-0" style="line-height: 1.8;">
-              <li><strong>Package contents:</strong> For official evaluation, submit one <code>.zip</code> package containing outputs for both <strong>EVAL-1</strong> and <strong>EVAL-2</strong>. EVAL-1-only or EVAL-2-only submissions are not accepted.</li>
-              <li><strong>Evaluation target:</strong> On the submission page, select <strong>EVAL1+EVAL2</strong> as the evaluation target and follow the <strong>Zip structure</strong> instructions shown on the page.</li>
-              <li><strong>Brief system description:</strong> Each leaderboard submission must include a brief system description in the submission form. For Track 1, also include a brief latency description covering algorithmic latency, look-ahead, buffering, or any other latency-inducing components.</li>
-              <li><strong>Official system description:</strong> For a submission to be considered valid for the final challenge, a detailed official system description must be submitted to the organizers by <strong>1 July 2026 (AoE)</strong>.</li>
-              <li><strong>Evaluation status:</strong> Evaluation runs asynchronously after upload and may take around <strong>2-3 hours</strong>, depending on queue and system load. You can monitor progress in the submission history.</li>
-              <li><strong>Submission quota:</strong> <span style="color: #94a3b8; text-decoration: line-through;">Each team may submit up to three submissions per track.</span> Each team may submit up to <strong>one submission per track per day</strong>, but on the <strong>final deadline day (<span style="color: #94a3b8; text-decoration: line-through;">Jun 20, 2026</span> Jun 25, 2026, AoE)</strong>, each team may submit up to <strong>three submissions per track</strong>. Only successful submissions count toward this quota, and only the best-performing valid submission from each team will appear on the final leaderboard and be considered for the official ranking.</li>
-              <li><strong>Final ranking:</strong> The leaderboard uses the official REAL-TSE metrics: <strong>TER</strong>, <strong>Timing F1</strong>, <strong>SIM</strong>, and <strong>DNSMOS OVRL</strong>. The final ranking is computed by averaging dense ranks across the metrics.</li>
-              <li><strong>Encouraged open source:</strong> Teams are encouraged to make their models or scripts <strong>publicly available</strong> after the challenge.</li>
+              <li><strong>Package contents:</strong> For official evaluation, submit one <code>.zip</code> package
+                containing outputs for both <strong>EVAL-1</strong> and <strong>EVAL-2</strong>. EVAL-1-only or
+                EVAL-2-only submissions are not accepted.</li>
+              <li><strong>Evaluation target:</strong> On the submission page, select <strong>EVAL1+EVAL2</strong> as the
+                evaluation target and follow the <strong>Zip structure</strong> instructions shown on the page.</li>
+              <li><strong>Brief system description:</strong> Each leaderboard submission must include a brief system
+                description in the submission form. For Track 1, also include a brief latency description covering
+                algorithmic latency, look-ahead, buffering, or any other latency-inducing components.</li>
+              <li><strong>Official system description:</strong> For a submission to be considered valid for the final
+                challenge, a detailed official system description must be submitted to the organizers by <strong>1 July
+                  2026 (AoE)</strong>.</li>
+              <li><strong>Evaluation status:</strong> Evaluation runs asynchronously after upload and may take around
+                <strong>2-3 hours</strong>, depending on queue and system load. You can monitor progress in the
+                submission history.</li>
+              <li><strong>Submission quota:</strong> <span style="color: #94a3b8; text-decoration: line-through;">Each
+                  team may submit up to three submissions per track.</span> Each team may submit up to <strong>one
+                  submission per track per day</strong>, but on the <strong>final deadline day (<span
+                    style="color: #94a3b8; text-decoration: line-through;">Jun 20, 2026</span> Jun 25, 2026,
+                  AoE)</strong>, each team may submit up to <strong>three submissions per track</strong>. Only
+                successful submissions count toward this quota, and only the best-performing valid submission from each
+                team will appear on the final leaderboard and be considered for the official ranking.</li>
+              <li><strong>Final ranking:</strong> The leaderboard uses the official REAL-TSE metrics:
+                <strong>TER</strong>, <strong>Timing F1</strong>, <strong>SIM</strong>, and <strong>DNSMOS
+                  OVRL</strong>. The final ranking is computed by averaging dense ranks across the metrics.</li>
+              <li><strong>Encouraged open source:</strong> Teams are encouraged to make their models or scripts
+                <strong>publicly available</strong> after the challenge.</li>
             </ol>
           </div>
 
           <div class="alert alert-light border small mb-0" role="alert" style="background: #f8fafc;">
-            <p class="font-weight-bold mb-2"><i class="fas fa-life-ring text-primary mr-1"></i> Alternative submission</p>
-            <p class="text-muted mb-0">If you encounter technical issues with leaderboard registration, team approval, upload format, or evaluation status, please contact <a href="mailto:realtse.challenge@gmail.com">realtse.challenge@gmail.com</a>. As a fallback, the organizers can accept a Google Drive link to your submission package for manual evaluation, but manual results may be delayed by <strong>1-2 days</strong>.</p>
+            <p class="font-weight-bold mb-2"><i class="fas fa-life-ring text-primary mr-1"></i> Alternative submission
+            </p>
+            <p class="text-muted mb-0">If you encounter technical issues with leaderboard registration, team approval,
+              upload format, or evaluation status, please contact <a
+                href="mailto:realtse.challenge@gmail.com">realtse.challenge@gmail.com</a>. As a fallback, the organizers
+              can accept a Google Drive link to your submission package for manual evaluation, but manual results may be
+              delayed by <strong>1-2 days</strong>.</p>
           </div>
 
           <p class="text-muted small mt-3 mb-0" style="font-size: 0.8rem; color: #94a3b8;">
@@ -972,34 +1694,52 @@
         </div>
         <div class="col-lg-9">
           <div class="accordion" id="faqAccordion">
-            
+
             <div class="card border-0 mb-3 shadow-sm overflow-hidden" style="border-radius: 10px;">
               <div class="card-header bg-white border-0 p-0" id="headingOne">
-                <button class="btn btn-block text-left p-4 font-weight-bold text-dark d-flex justify-content-between align-items-center faq-btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">
+                <button
+                  class="btn btn-block text-left p-4 font-weight-bold text-dark d-flex justify-content-between align-items-center faq-btn"
+                  type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">
                   Can I participate in multiple tracks?
                   <i class="fas fa-chevron-down transition-icon"></i>
                 </button>
               </div>
               <div id="collapseOne" class="collapse show" data-parent="#faqAccordion">
                 <div class="card-body text-muted pt-0 px-4 pb-4 small">
-                  Yes, participants may submit results for one or both tracks of the Challenge. <span style="color: #94a3b8; text-decoration: line-through;">Each team may submit up to three submissions per track.</span> The submission quota is one submission per track per day, but on the final deadline day (<span style="color: #94a3b8; text-decoration: line-through;">Jun 20, 2026</span> Jun 25, 2026, AoE), each team may submit up to three submissions per track.
+                  Yes, participants may submit results for one or both tracks of the Challenge. <span
+                    style="color: #94a3b8; text-decoration: line-through;">Each team may submit up to three submissions
+                    per track.</span> The submission quota is one submission per track per day, but on the final
+                  deadline day (<span style="color: #94a3b8; text-decoration: line-through;">Jun 20, 2026</span> Jun 25,
+                  2026, AoE), each team may submit up to three submissions per track.
                 </div>
               </div>
             </div>
-            
+
             <div class="card border-0 mb-3 shadow-sm overflow-hidden" style="border-radius: 10px;">
               <div class="card-header bg-white border-0 p-0" id="headingTwo">
-                <button class="btn btn-block text-left p-4 font-weight-bold text-dark d-flex justify-content-between align-items-center faq-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false">
+                <button
+                  class="btn btn-block text-left p-4 font-weight-bold text-dark d-flex justify-content-between align-items-center faq-btn collapsed"
+                  type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false">
                   What data can I use for training?
                   <i class="fas fa-chevron-down transition-icon"></i>
                 </button>
               </div>
               <div id="collapseTwo" class="collapse" data-parent="#faqAccordion">
                 <div class="card-body text-muted pt-0 px-4 pb-4 small">
-                  <p class="mb-2">Teams may use only openly available (open-source) datasets for model training. The official training splits of <strong>AliMeeting</strong>, <strong>AISHELL-4</strong>, <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong> are permitted, but their <strong>development</strong> and <strong>test</strong> sets must not be used at any stage, including pre-training, training, or data augmentation. Pre-trained models are allowed but must be clearly documented.</p>
-                  <p class="mb-2"><strong>Note on AMI corpus splits:</strong> The AMI corpus has multiple partition schemes (see <a href="https://groups.inf.ed.ac.uk/ami/corpus/datasets.shtml" target="_blank" rel="noopener noreferrer">AMI dataset page</a>). We follow the <strong>Full-corpus-ASR partition of meetings</strong>. Under this partition, the following sessions are considered development or test data and must <strong>not</strong> be used:</p>
+                  <p class="mb-2">Teams may use only openly available (open-source) datasets for model training. The
+                    official training splits of <strong>AliMeeting</strong>, <strong>AISHELL-4</strong>,
+                    <strong>AMI</strong>, <strong>DipCo</strong>, and <strong>CHiME6</strong> are permitted, but their
+                    <strong>development</strong> and <strong>test</strong> sets must not be used at any stage, including
+                    pre-training, training, or data augmentation. Pre-trained models are allowed but must be clearly
+                    documented.</p>
+                  <p class="mb-2"><strong>Note on AMI corpus splits:</strong> The AMI corpus has multiple partition
+                    schemes (see <a href="https://groups.inf.ed.ac.uk/ami/corpus/datasets.shtml" target="_blank"
+                      rel="noopener noreferrer">AMI dataset page</a>). We follow the <strong>Full-corpus-ASR partition
+                      of meetings</strong>. Under this partition, the following sessions are considered development or
+                    test data and must <strong>not</strong> be used:</p>
                   <ul class="mb-0 pl-4">
-                    <li><strong>Dev (SB):</strong> ES2011, IS1008, TS3004, IB4001, IB4002, IB4003, IB4004, IB4010, IB4011</li>
+                    <li><strong>Dev (SB):</strong> ES2011, IS1008, TS3004, IB4001, IB4002, IB4003, IB4004, IB4010,
+                      IB4011</li>
                     <li><strong>Test (SC / Unseen Eval):</strong> ES2004, IS1009, TS3003, EN2002</li>
                   </ul>
                 </div>
@@ -1008,56 +1748,74 @@
 
             <div class="card border-0 mb-3 shadow-sm overflow-hidden" style="border-radius: 10px;">
               <div class="card-header bg-white border-0 p-0" id="headingThree">
-                <button class="btn btn-block text-left p-4 font-weight-bold text-dark d-flex justify-content-between align-items-center faq-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false">
+                <button
+                  class="btn btn-block text-left p-4 font-weight-bold text-dark d-flex justify-content-between align-items-center faq-btn collapsed"
+                  type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false">
                   Is the test set available for tuning?
                   <i class="fas fa-chevron-down transition-icon"></i>
                 </button>
               </div>
               <div id="collapseThree" class="collapse" data-parent="#faqAccordion">
                 <div class="card-body text-muted pt-0 px-4 pb-4 small">
-                  No. The official test set must not be used for training, fine-tuning, hyper-parameter tuning, or any form of model optimization. It is reserved exclusively for final evaluation. The development set may be used for hyper-parameter tuning and validation.
+                  No. The official test set must not be used for training, fine-tuning, hyper-parameter tuning, or any
+                  form of model optimization. It is reserved exclusively for final evaluation. The development set may
+                  be used for hyper-parameter tuning and validation.
                 </div>
               </div>
             </div>
 
             <div class="card border-0 mb-3 shadow-sm overflow-hidden" style="border-radius: 10px;">
               <div class="card-header bg-white border-0 p-0" id="headingFour">
-                <button class="btn btn-block text-left p-4 font-weight-bold text-dark d-flex justify-content-between align-items-center faq-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false">
+                <button
+                  class="btn btn-block text-left p-4 font-weight-bold text-dark d-flex justify-content-between align-items-center faq-btn collapsed"
+                  type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false">
                   Do I need organizer approval before submitting on the leaderboard?
                   <i class="fas fa-chevron-down transition-icon"></i>
                 </button>
               </div>
               <div id="collapseFour" class="collapse" data-parent="#faqAccordion">
                 <div class="card-body text-muted pt-0 px-4 pb-4 small">
-                  Yes. After creating and activating your leaderboard account, open the corresponding track page, click <strong>Participate</strong>, and submit your team application. Please use the same team name, affiliation, and member information as in the original Google Form. Submissions become available after organizer approval.
+                  Yes. After creating and activating your leaderboard account, open the corresponding track page, click
+                  <strong>Participate</strong>, and submit your team application. Please use the same team name,
+                  affiliation, and member information as in the original Google Form. Submissions become available after
+                  organizer approval.
                 </div>
               </div>
             </div>
 
             <div class="card border-0 mb-3 shadow-sm overflow-hidden" style="border-radius: 10px;">
               <div class="card-header bg-white border-0 p-0" id="headingFive">
-                <button class="btn btn-block text-left p-4 font-weight-bold text-dark d-flex justify-content-between align-items-center faq-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false">
+                <button
+                  class="btn btn-block text-left p-4 font-weight-bold text-dark d-flex justify-content-between align-items-center faq-btn collapsed"
+                  type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false">
                   Can I submit only EVAL-1 or only EVAL-2?
                   <i class="fas fa-chevron-down transition-icon"></i>
                 </button>
               </div>
               <div id="collapseFive" class="collapse" data-parent="#faqAccordion">
                 <div class="card-body text-muted pt-0 px-4 pb-4 small">
-                  No. Official leaderboard submissions must use one <code>.zip</code> package containing both EVAL-1 and EVAL-2 outputs. Please select <strong>EVAL1+EVAL2</strong> on the submission page and follow the Zip structure instructions shown there.
+                  No. Official leaderboard submissions must use one <code>.zip</code> package containing both EVAL-1 and
+                  EVAL-2 outputs. Please select <strong>EVAL1+EVAL2</strong> on the submission page and follow the Zip
+                  structure instructions shown there.
                 </div>
               </div>
             </div>
 
             <div class="card border-0 mb-3 shadow-sm overflow-hidden" style="border-radius: 10px;">
               <div class="card-header bg-white border-0 p-0" id="headingSix">
-                <button class="btn btn-block text-left p-4 font-weight-bold text-dark d-flex justify-content-between align-items-center faq-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false">
+                <button
+                  class="btn btn-block text-left p-4 font-weight-bold text-dark d-flex justify-content-between align-items-center faq-btn collapsed"
+                  type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false">
                   What if the leaderboard upload or evaluation fails?
                   <i class="fas fa-chevron-down transition-icon"></i>
                 </button>
               </div>
               <div id="collapseSix" class="collapse" data-parent="#faqAccordion">
                 <div class="card-body text-muted pt-0 px-4 pb-4 small">
-                  Please contact <a href="mailto:realtse.challenge@gmail.com">realtse.challenge@gmail.com</a> with your team name, track, and a brief description of the issue. We recommend using the leaderboard whenever possible; if technical issues persist, the organizers can accept a Google Drive link to your submission package for manual evaluation, but the result may be delayed by 1-2 days.
+                  Please contact <a href="mailto:realtse.challenge@gmail.com">realtse.challenge@gmail.com</a> with your
+                  team name, track, and a brief description of the issue. We recommend using the leaderboard whenever
+                  possible; if technical issues persist, the organizers can accept a Google Drive link to your
+                  submission package for manual evaluation, but the result may be delayed by 1-2 days.
                 </div>
               </div>
             </div>
@@ -1140,7 +1898,8 @@
         </div>
         <div class="col-lg-9">
           <p class="text-muted mb-2">For any questions or inquiries, please feel free to reach out to us at:</p>
-          <a href="mailto:realtse.challenge@gmail.com" style="font-size: 1.05rem; color: var(--rt-blue); font-weight: 600;">
+          <a href="mailto:realtse.challenge@gmail.com"
+            style="font-size: 1.05rem; color: var(--rt-blue); font-weight: 600;">
             <i class="fas fa-envelope mr-2"></i>realtse.challenge@gmail.com
           </a>
         </div>
@@ -1162,7 +1921,7 @@
 
   <script>
     // Smooth scrolling using jQuery easing
-    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
       if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
         var target = $(this.hash);
         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -1176,7 +1935,7 @@
     });
 
     // Closes responsive menu when a scroll trigger link is clicked
-    $('.js-scroll-trigger').click(function() {
+    $('.js-scroll-trigger').click(function () {
       $('.navbar-collapse').collapse('hide');
     });
 
@@ -1188,4 +1947,5 @@
   </script>
 
 </body>
+
 </html>
