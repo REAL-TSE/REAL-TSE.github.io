@@ -191,21 +191,23 @@
     }
 
     .hero-link-group {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.75rem;
-      max-width: 660px;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0.5rem;
+      max-width: 100%;
     }
 
     .hero-link-group .hero-link {
-      width: 100%;
+      min-width: 0;
       min-height: 3.35rem;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 999px !important;
-      font-size: 1rem;
+      font-size: 0.92rem;
       white-space: nowrap;
+      padding-left: 0.95rem !important;
+      padding-right: 0.95rem !important;
     }
 
     .hero-link-group .hero-link i {
@@ -346,7 +348,12 @@
 
     @media (max-width: 767.98px) {
       .hero-link-group {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+      }
+
+      .hero-link-group .hero-link {
+        width: 100%;
+        font-size: 1rem;
       }
     }
   </style>
@@ -406,9 +413,13 @@
               style="color: #000; border-color: #000; border-width: 2px;" target="_blank">
               <i class="fab fa-github mr-2"></i>Wesep Baseline
             </a>
-            <a href="https://leaderboard.real-tse.com" class="btn btn-outline-dark btn-lg hero-link px-4"
+            <a href="#rankings" class="btn btn-outline-dark btn-lg hero-link px-4 js-scroll-trigger"
+              style="color: #000; border-color: #000; border-width: 2px;">
+              <i class="fas fa-trophy mr-2"></i>Rankings
+            </a>
+            <a href="../assets/pdf/Real_TSE_Challenge_Report.pdf" class="btn btn-outline-dark btn-lg hero-link px-4"
               style="color: #000; border-color: #000; border-width: 2px;" target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-trophy mr-2"></i>Leaderboard
+              <i class="fas fa-file-pdf mr-2"></i>Challenge Report
             </a>
           </div>
         </div>
