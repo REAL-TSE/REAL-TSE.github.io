@@ -328,6 +328,13 @@
       text-align: right !important;
     }
 
+    .rankings-table .metric-subrank {
+      color: #94a3b8;
+      font-size: 0.82em;
+      font-weight: 400;
+      margin-left: 0.15em;
+    }
+
     @media (max-width: 767.98px) {
       .hero-link-group {
         grid-template-columns: 1fr;
@@ -1172,7 +1179,9 @@
             system description, are removed from the final official rankings. This page shows the final valid rankings
             for all compliant systems after that reordering. The original ranking list can be found in the official
             leaderboard. The four reported metrics are <strong>TER</strong> (lower is better), <strong>F1</strong>,
-            <strong>SIM</strong>, and <strong>DNSMOS-P808</strong> (higher is better). Only teams that submitted a
+            <strong>SIM</strong>, and <strong>DNSMOS-P808</strong> (higher is better). Numbers in parentheses show each
+            team&rsquo;s <strong>dense rank</strong> on that metric within the track. <strong>Score</strong> is the
+            average of the four metric dense ranks (lower is better). Only teams that submitted a
             system report are listed; <strong>BSRNN</strong> entries are the official baselines provided by the
             organizers (no system report). Click <em>Report</em> to open a team&rsquo;s system description.
           </p>
@@ -1195,6 +1204,8 @@
                     </th>
                     <th class="text-right align-middle" style="border-bottom: 2px solid var(--rt-border);">DNSMOS-P808
                       &uarr;</th>
+                    <th class="text-right align-middle" style="border-bottom: 2px solid var(--rt-border);">Score &darr;
+                    </th>
                     <th class="text-center align-middle" style="border-bottom: 2px solid var(--rt-border);">Report</th>
                   </tr>
                 </thead>
@@ -1202,10 +1213,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">🥇 1</td>
                     <td class="align-middle">CARTSE</td>
-                    <td class="text-right align-middle">0.699</td>
-                    <td class="text-right align-middle">0.848</td>
-                    <td class="text-right align-middle">0.504</td>
-                    <td class="text-right align-middle">3.069</td>
+                    <td class="text-right align-middle">0.699 <span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle">0.848 <span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle">0.504 <span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle">3.069 <span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle font-weight-bold">2.7500</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/CARTSE-Track1.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1213,10 +1225,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">🥈 2</td>
                     <td class="align-middle">DeepSound</td>
-                    <td class="text-right align-middle">0.713</td>
-                    <td class="text-right align-middle">0.849</td>
-                    <td class="text-right align-middle">0.524</td>
-                    <td class="text-right align-middle">2.965</td>
+                    <td class="text-right align-middle">0.713 <span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle">0.849 <span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle">0.524 <span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle">2.965 <span class="metric-subrank">(8)</span></td>
+                    <td class="text-right align-middle font-weight-bold">4.5000</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/DeepSound-Track1.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1224,10 +1237,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">🥉 3</td>
                     <td class="align-middle">SonicAGI</td>
-                    <td class="text-right align-middle">0.719</td>
-                    <td class="text-right align-middle">0.847</td>
-                    <td class="text-right align-middle">0.480</td>
-                    <td class="text-right align-middle">3.111</td>
+                    <td class="text-right align-middle">0.719 <span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle">0.847 <span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle">0.480 <span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle">3.111 <span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle font-weight-bold">5.2500</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/SonicAGI-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1235,10 +1249,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">🥉 3</td>
                     <td class="align-middle">WasedaM</td>
-                    <td class="text-right align-middle">0.719</td>
-                    <td class="text-right align-middle">0.855</td>
-                    <td class="text-right align-middle">0.446</td>
-                    <td class="text-right align-middle">3.169</td>
+                    <td class="text-right align-middle">0.719 <span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle">0.855 <span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle">0.446 <span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle">3.169 <span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle font-weight-bold">6.7500</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/WasedaM-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1246,10 +1261,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">4</td>
                     <td class="align-middle">smellycat</td>
-                    <td class="text-right align-middle">0.740</td>
-                    <td class="text-right align-middle">0.856</td>
-                    <td class="text-right align-middle">0.473</td>
-                    <td class="text-right align-middle">3.023</td>
+                    <td class="text-right align-middle">0.740 <span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle">0.856 <span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle">0.473 <span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle">3.023 <span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle font-weight-bold">6.5000</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/smellycat-Track-1.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1257,10 +1273,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">5</td>
                     <td class="align-middle">WHU_IASP</td>
-                    <td class="text-right align-middle">0.750</td>
-                    <td class="text-right align-middle">0.852</td>
-                    <td class="text-right align-middle">0.442</td>
-                    <td class="text-right align-middle">3.175</td>
+                    <td class="text-right align-middle">0.750 <span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle">0.852 <span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle">0.442 <span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle">3.175 <span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle font-weight-bold">7.5000</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/WHUIASP-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1268,10 +1285,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">6</td>
                     <td class="align-middle">insta360</td>
-                    <td class="text-right align-middle">0.725</td>
-                    <td class="text-right align-middle">0.840</td>
-                    <td class="text-right align-middle">0.482</td>
-                    <td class="text-right align-middle">2.994</td>
+                    <td class="text-right align-middle">0.725 <span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle">0.840 <span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle">0.482 <span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle">2.994 <span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle font-weight-bold">6.5000</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/insta360-Track1.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1279,10 +1297,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">7</td>
                     <td class="align-middle">ChuEst</td>
-                    <td class="text-right align-middle">0.756</td>
-                    <td class="text-right align-middle">0.837</td>
-                    <td class="text-right align-middle">0.535</td>
-                    <td class="text-right align-middle">2.947</td>
+                    <td class="text-right align-middle">0.756 <span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle">0.837 <span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle">0.535 <span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle">2.947 <span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle font-weight-bold">7.7500</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/ChuEst-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1290,10 +1309,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">8</td>
                     <td class="align-middle">AIVOX</td>
-                    <td class="text-right align-middle">0.751</td>
-                    <td class="text-right align-middle">0.847</td>
-                    <td class="text-right align-middle">0.493</td>
-                    <td class="text-right align-middle">2.841</td>
+                    <td class="text-right align-middle">0.751 <span class="metric-subrank">(8)</span></td>
+                    <td class="text-right align-middle">0.847 <span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle">0.493 <span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle">2.841 <span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle font-weight-bold">8.7500</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/AIVOX-Track1.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1301,10 +1321,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">9</td>
                     <td class="align-middle">SHNU-TSE</td>
-                    <td class="text-right align-middle">0.797</td>
-                    <td class="text-right align-middle">0.842</td>
-                    <td class="text-right align-middle">0.462</td>
-                    <td class="text-right align-middle">3.037</td>
+                    <td class="text-right align-middle">0.797 <span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle">0.842 <span class="metric-subrank">(8)</span></td>
+                    <td class="text-right align-middle">0.462 <span class="metric-subrank">(8)</span></td>
+                    <td class="text-right align-middle">3.037 <span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle font-weight-bold">9.5000</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/SHNU-TSE-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1314,19 +1335,21 @@
                     <td class="align-middle">BSRNN_TFMAP_CAUSAL <span class="badge badge-pill ml-1"
                         style="background:#f1f5f9;color:#64748b;font-size:0.62rem;font-weight:600;padding:0.3em 0.55em;vertical-align:middle;">Baseline</span>
                     </td>
-                    <td class="text-right align-middle">0.805</td>
-                    <td class="text-right align-middle">0.836</td>
-                    <td class="text-right align-middle">0.456</td>
-                    <td class="text-right align-middle">2.785</td>
+                    <td class="text-right align-middle">0.805 <span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle">0.836 <span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle">0.456 <span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle">2.785 <span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle font-weight-bold">14.2500</td>
                     <td class="text-center align-middle">&mdash;</td>
                   </tr>
                   <tr>
                     <td class="text-center font-weight-bold align-middle">12</td>
                     <td class="align-middle">Team-Fly</td>
-                    <td class="text-right align-middle">0.807</td>
-                    <td class="text-right align-middle">0.834</td>
-                    <td class="text-right align-middle">0.438</td>
-                    <td class="text-right align-middle">2.857</td>
+                    <td class="text-right align-middle">0.807 <span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle">0.834 <span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle">0.438 <span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle">2.857 <span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle font-weight-bold">13.5000</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/Team-Fly-Track1.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1336,10 +1359,11 @@
                     <td class="align-middle">BSRNN_EMB_CAUSAL <span class="badge badge-pill ml-1"
                         style="background:#f1f5f9;color:#64748b;font-size:0.62rem;font-weight:600;padding:0.3em 0.55em;vertical-align:middle;">Baseline</span>
                     </td>
-                    <td class="text-right align-middle">0.809</td>
-                    <td class="text-right align-middle">0.821</td>
-                    <td class="text-right align-middle">0.422</td>
-                    <td class="text-right align-middle">2.738</td>
+                    <td class="text-right align-middle">0.809 <span class="metric-subrank">(13)</span></td>
+                    <td class="text-right align-middle">0.821 <span class="metric-subrank">(13)</span></td>
+                    <td class="text-right align-middle">0.422 <span class="metric-subrank">(13)</span></td>
+                    <td class="text-right align-middle">2.738 <span class="metric-subrank">(13)</span></td>
+                    <td class="text-right align-middle font-weight-bold">17.5000</td>
                     <td class="text-center align-middle">&mdash;</td>
                   </tr>
                 </tbody>
@@ -1365,6 +1389,8 @@
                     </th>
                     <th class="text-right align-middle" style="border-bottom: 2px solid var(--rt-border);">DNSMOS-P808
                       &uarr;</th>
+                    <th class="text-right align-middle" style="border-bottom: 2px solid var(--rt-border);">Score &darr;
+                    </th>
                     <th class="text-center align-middle" style="border-bottom: 2px solid var(--rt-border);">Report</th>
                   </tr>
                 </thead>
@@ -1372,10 +1398,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">🥇 1</td>
                     <td class="align-middle">MERL</td>
-                    <td class="text-right align-middle">0.613</td>
-                    <td class="text-right align-middle">0.861</td>
-                    <td class="text-right align-middle">0.538</td>
-                    <td class="text-right align-middle">3.371</td>
+                    <td class="text-right align-middle">0.613 <span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle">0.861 <span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle">0.538 <span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle">3.371 <span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle font-weight-bold">2.2500</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/MERL-SA-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1383,10 +1410,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">🥈 2</td>
                     <td class="align-middle">YiJiaHe</td>
-                    <td class="text-right align-middle">0.639</td>
-                    <td class="text-right align-middle">0.871</td>
-                    <td class="text-right align-middle">0.565</td>
-                    <td class="text-right align-middle">3.128</td>
+                    <td class="text-right align-middle">0.639 <span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle">0.871 <span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle">0.565 <span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle">3.128 <span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle font-weight-bold">1.2500</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/YiJiaHe-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1394,10 +1422,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">🥉 3</td>
                     <td class="align-middle">CARTSE</td>
-                    <td class="text-right align-middle">0.651</td>
-                    <td class="text-right align-middle">0.857</td>
-                    <td class="text-right align-middle">0.544</td>
-                    <td class="text-right align-middle">3.138</td>
+                    <td class="text-right align-middle">0.651 <span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle">0.857 <span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle">0.544 <span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle">3.138 <span class="metric-subrank">(8)</span></td>
+                    <td class="text-right align-middle font-weight-bold">2.7500</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/CARTSE-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1405,10 +1434,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">4</td>
                     <td class="align-middle">WasedaM</td>
-                    <td class="text-right align-middle">0.675</td>
-                    <td class="text-right align-middle">0.858</td>
-                    <td class="text-right align-middle">0.480</td>
-                    <td class="text-right align-middle">3.232</td>
+                    <td class="text-right align-middle">0.675 <span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle">0.858 <span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle">0.480 <span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle">3.232 <span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle font-weight-bold">6.5000</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/WasedaM-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1416,10 +1446,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">5</td>
                     <td class="align-middle">SonicAGI</td>
-                    <td class="text-right align-middle">0.680</td>
-                    <td class="text-right align-middle">0.851</td>
-                    <td class="text-right align-middle">0.471</td>
-                    <td class="text-right align-middle">3.258</td>
+                    <td class="text-right align-middle">0.680 <span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle">0.851 <span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle">0.471 <span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle">3.258 <span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle font-weight-bold">7.2500</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/SonicAGI-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1427,10 +1458,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">6</td>
                     <td class="align-middle">WAKA</td>
-                    <td class="text-right align-middle">0.670</td>
-                    <td class="text-right align-middle">0.847</td>
-                    <td class="text-right align-middle">0.471</td>
-                    <td class="text-right align-middle">3.150</td>
+                    <td class="text-right align-middle">0.670 <span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle">0.847 <span class="metric-subrank">(8)</span></td>
+                    <td class="text-right align-middle">0.471 <span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle">3.150 <span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle font-weight-bold">7.2500</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/WAKA-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1438,10 +1470,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">6</td>
                     <td class="align-middle">SHNU-TSE</td>
-                    <td class="text-right align-middle">0.731</td>
-                    <td class="text-right align-middle">0.840</td>
-                    <td class="text-right align-middle">0.507</td>
-                    <td class="text-right align-middle">3.362</td>
+                    <td class="text-right align-middle">0.731 <span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle">0.840 <span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle">0.507 <span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle">3.362 <span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle font-weight-bold">7.2500</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/SHNU-TSE-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1449,10 +1482,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">7</td>
                     <td class="align-middle">ChuEst</td>
-                    <td class="text-right align-middle">0.710</td>
-                    <td class="text-right align-middle">0.831</td>
-                    <td class="text-right align-middle">0.532</td>
-                    <td class="text-right align-middle">3.064</td>
+                    <td class="text-right align-middle">0.710 <span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle">0.831 <span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle">0.532 <span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle">3.064 <span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle font-weight-bold">9.7500</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/ChuEst-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1460,10 +1494,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">8</td>
                     <td class="align-middle">pyannoteAI</td>
-                    <td class="text-right align-middle">0.728</td>
-                    <td class="text-right align-middle">0.855</td>
-                    <td class="text-right align-middle">0.464</td>
-                    <td class="text-right align-middle">2.904</td>
+                    <td class="text-right align-middle">0.728 <span class="metric-subrank">(8)</span></td>
+                    <td class="text-right align-middle">0.855 <span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle">0.464 <span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle">2.904 <span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle font-weight-bold">9.7500</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/pyannoteAI-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1471,10 +1506,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">9</td>
                     <td class="align-middle">AGH-JHU</td>
-                    <td class="text-right align-middle">0.743</td>
-                    <td class="text-right align-middle">0.837</td>
-                    <td class="text-right align-middle">0.434</td>
-                    <td class="text-right align-middle">3.335</td>
+                    <td class="text-right align-middle">0.743 <span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle">0.837 <span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle">0.434 <span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle">3.335 <span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle font-weight-bold">12.5000</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/AGH-JHU-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1482,10 +1518,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">10</td>
                     <td class="align-middle">WHU_IASP</td>
-                    <td class="text-right align-middle">0.757</td>
-                    <td class="text-right align-middle">0.850</td>
-                    <td class="text-right align-middle">0.465</td>
-                    <td class="text-right align-middle">2.961</td>
+                    <td class="text-right align-middle">0.757 <span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle">0.850 <span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle">0.465 <span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle">2.961 <span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle font-weight-bold">12.5000</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/WHUIASP-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1493,10 +1530,11 @@
                   <tr>
                     <td class="text-center font-weight-bold align-middle">11</td>
                     <td class="align-middle">CUDA_OUT_OF_MEMORY</td>
-                    <td class="text-right align-middle">0.827</td>
-                    <td class="text-right align-middle">0.819</td>
-                    <td class="text-right align-middle">0.364</td>
-                    <td class="text-right align-middle">3.435</td>
+                    <td class="text-right align-middle">0.827 <span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle">0.819 <span class="metric-subrank">(14)</span></td>
+                    <td class="text-right align-middle">0.364 <span class="metric-subrank">(14)</span></td>
+                    <td class="text-right align-middle">3.435 <span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle font-weight-bold">14.7500</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/CUDA_OUT_OF_MEMORY-Track2.pdf"
                         class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener"><i
                           class="fas fa-file-pdf mr-1"></i>Report</a></td>
@@ -1506,10 +1544,11 @@
                     <td class="align-middle">BSRNN_EMB <span class="badge badge-pill ml-1"
                         style="background:#f1f5f9;color:#64748b;font-size:0.62rem;font-weight:600;padding:0.3em 0.55em;vertical-align:middle;">Baseline</span>
                     </td>
-                    <td class="text-right align-middle">0.829</td>
-                    <td class="text-right align-middle">0.829</td>
-                    <td class="text-right align-middle">0.417</td>
-                    <td class="text-right align-middle">2.875</td>
+                    <td class="text-right align-middle">0.829 <span class="metric-subrank">(13)</span></td>
+                    <td class="text-right align-middle">0.829 <span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle">0.417 <span class="metric-subrank">(13)</span></td>
+                    <td class="text-right align-middle">2.875 <span class="metric-subrank">(13)</span></td>
+                    <td class="text-right align-middle font-weight-bold">17.5000</td>
                     <td class="text-center align-middle">&mdash;</td>
                   </tr>
                   <tr class="rankings-baseline">
@@ -1517,10 +1556,11 @@
                     <td class="align-middle">BSRNN_TFMAP <span class="badge badge-pill ml-1"
                         style="background:#f1f5f9;color:#64748b;font-size:0.62rem;font-weight:600;padding:0.3em 0.55em;vertical-align:middle;">Baseline</span>
                     </td>
-                    <td class="text-right align-middle">0.838</td>
-                    <td class="text-right align-middle">0.829</td>
-                    <td class="text-right align-middle">0.443</td>
-                    <td class="text-right align-middle">2.756</td>
+                    <td class="text-right align-middle">0.838 <span class="metric-subrank">(14)</span></td>
+                    <td class="text-right align-middle">0.829 <span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle">0.443 <span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle">2.756 <span class="metric-subrank">(14)</span></td>
+                    <td class="text-right align-middle font-weight-bold">17.2500</td>
                     <td class="text-center align-middle">&mdash;</td>
                   </tr>
                 </tbody>
