@@ -386,6 +386,12 @@
       margin-left: 0.15em;
     }
 
+    /* System reports belong to the challenge-period (5,000) ranking only. */
+    .rankings-table:not(.is-original) > thead > tr > th:last-child,
+    .rankings-table:not(.is-original) > tbody > tr > td:last-child {
+      display: none;
+    }
+
     .rankings-table a.rankings-report-btn {
       display: inline-flex !important;
       flex-direction: row;
@@ -1565,8 +1571,8 @@
             and <strong>DNSMOS-P808</strong> (higher is better). Numbers in parentheses show each team&rsquo;s
             <strong>dense rank</strong> on that metric within the track. <strong>Score</strong> is the average of the
             four metric dense ranks (lower is better). <strong>BSRNN</strong> entries are the official baselines
-            provided by the organizers (no system report). Click <em>Report</em> to open a team&rsquo;s system
-            description.
+            provided by the organizers (no system report). Click <em>Report</em> on the Original ranking to open a
+            team&rsquo;s system description.
           </p>
 
           <!-- Special Note: corrected rankings (25 Oct 2026, AoE) -->
@@ -2687,7 +2693,10 @@
         $('[data-ranking-show]').each(function () {
           this.hidden = this.getAttribute('data-ranking-show') !== version;
         });
-        tables.forEach(function (table) { render(table, version); });
+        tables.forEach(function (table) {
+          table.classList.toggle('is-original', version === 'original');
+          render(table, version);
+        });
       }
 
       $('[data-ranking-version]').on('click', function () {
