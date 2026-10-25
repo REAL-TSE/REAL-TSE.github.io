@@ -343,6 +343,10 @@
     }
 
     /* Rankings — centered cells, inline report buttons, distinct baseline rows */
+    .rankings-table {
+      font-size: 0.9rem;
+    }
+
     .rankings-table th,
     .rankings-table td {
       font-variant-numeric: tabular-nums;
@@ -351,7 +355,12 @@
       text-align: center !important;
       vertical-align: middle !important;
       white-space: nowrap;
-      padding: 0.7rem 0.55rem;
+      padding: 0.7rem 0.45rem;
+    }
+
+    /* Team column: the Baseline badge may drop below the name instead of forcing a horizontal scroll */
+    .rankings-table tbody td:nth-child(2) {
+      white-space: normal;
     }
 
     .rankings-table thead th {
@@ -362,7 +371,7 @@
     }
 
     .rankings-table tbody tr:not(.rankings-baseline):hover td {
-      background: rgba(15, 23, 42, 0.03);
+      background: rgba(37, 99, 235, 0.06);
     }
 
     .rankings-table tr.rankings-baseline td {
@@ -395,6 +404,232 @@
       margin: 0 !important;
       line-height: 1;
       flex-shrink: 0;
+    }
+
+    /* Rankings — Corrected / Original switch, change highlight, comparison tooltips */
+    .rankings-switch .btn {
+      border: 1px solid var(--rt-border);
+      background: #fff;
+      color: #475569;
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 0.3rem 0.85rem;
+    }
+
+    .rankings-switch .btn:hover {
+      background: var(--rt-bg);
+      color: var(--rt-navy);
+    }
+
+    .rankings-switch .btn.active,
+    .rankings-switch .btn.active:hover {
+      background: var(--rt-navy);
+      border-color: var(--rt-navy);
+      color: #fff;
+    }
+
+    .rankings-caption {
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+
+    @media (hover: none) {
+      .rankings-table [data-cmp] {
+        cursor: pointer;
+      }
+    }
+
+    @media (max-width: 1199.98px) {
+      .rankings-table {
+        font-size: 0.8rem;
+      }
+
+      .rankings-table th,
+      .rankings-table td {
+        padding: 0.55rem 0.3rem;
+      }
+
+      .rankings-table thead th {
+        font-size: 0.76rem;
+      }
+
+      .rankings-table a.rankings-report-btn {
+        gap: 0.3rem;
+        padding: 0.18rem 0.5rem;
+        font-size: 0.74rem;
+      }
+    }
+
+    .rankings-table tbody tr.is-changed td {
+      animation: rankings-changed 1.8s ease-out;
+    }
+
+    @keyframes rankings-changed {
+      0%,
+      35% {
+        background-color: rgba(250, 204, 21, 0.3);
+      }
+    }
+
+    .rankings-tip.show {
+      opacity: 1;
+    }
+
+    .rankings-tip .tooltip-inner {
+      max-width: 320px;
+      padding: 0.55rem 0.75rem;
+      text-align: left;
+      background: rgba(15, 23, 42, 0.82);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    .rankings-tip.bs-tooltip-top .arrow::before {
+      border-top-color: rgba(15, 23, 42, 0.82);
+    }
+
+    .rankings-tip.bs-tooltip-bottom .arrow::before {
+      border-bottom-color: rgba(15, 23, 42, 0.82);
+    }
+
+    .rankings-tip .rt-tip-title {
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+
+    .rankings-tip .rt-tip-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.25rem;
+      color: #aab6c6;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .rankings-tip .rt-tip-row.is-current {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .rankings-tip .rt-tip-delta,
+    .rankings-tip .rt-tip-note {
+      margin-top: 0.3rem;
+      padding-top: 0.3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+    }
+
+    /* Corrected-rankings note */
+    #corrected-rankings {
+      scroll-margin-top: 90px;
+    }
+
+    .rescore-flow {
+      display: flex;
+      align-items: stretch;
+      gap: 0.5rem;
+    }
+
+    .rescore-step {
+      flex: 1 1 0;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.8rem 0.9rem;
+      background: #fff;
+      border: 1px solid var(--rt-border);
+      border-radius: 10px;
+    }
+
+    .rescore-step.is-corrected {
+      border-color: rgba(37, 99, 235, 0.45);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.15);
+    }
+
+    .rescore-step-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      line-height: 1.3;
+      color: var(--rt-navy);
+    }
+
+    .rescore-step-count {
+      margin-bottom: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    .rescore-step-desc {
+      flex-grow: 1;
+      margin-bottom: 0.6rem;
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+
+    .rescore-tag {
+      display: inline-block;
+      padding: 0.25em 0.7em;
+      border-radius: 999px;
+      background: #e2e8f0;
+      color: #334155;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .rescore-tag-muted {
+      background: transparent;
+      border: 1px dashed #cbd5e1;
+      color: #94a3b8;
+    }
+
+    .rescore-tag-corrected {
+      background: var(--rt-blue);
+      color: #fff;
+    }
+
+    .rescore-arrow {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2rem;
+      color: #94a3b8;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .rescore-table {
+      font-size: 0.85rem;
+    }
+
+    .rescore-table th,
+    .rescore-table td {
+      vertical-align: middle !important;
+    }
+
+    .rescore-details-toggle[aria-expanded="true"] .transition-icon {
+      transform: rotate(180deg);
+    }
+
+    @media (max-width: 767.98px) {
+      .rescore-flow {
+        flex-direction: column;
+      }
+
+      .rescore-arrow {
+        flex-direction: row;
+        gap: 0.4rem;
+      }
+
+      .rescore-arrow i {
+        transform: rotate(90deg);
+      }
     }
 
     @media (max-width: 767.98px) {
@@ -506,6 +741,17 @@
         </div>
         <div class="col-lg-9">
           <ul class="list-unstyled mb-0">
+            <li class="mb-3 d-flex align-items-start">
+              <span class="badge badge-pill mr-3 mt-1 flex-shrink-0"
+                style="background: #dbeafe; color: #1d4ed8; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Oct
+                25, 2026 (AoE)</span>
+              <span class="text-muted small"><strong>Rankings corrected:</strong> The final rankings have been
+                re-scored on the <a href="https://huggingface.co/datasets/REAL-TSE/REAL-T" target="_blank"
+                  rel="noopener noreferrer">REAL-T v1.0.0</a> release, with the corrected TER normalization and the 70
+                relabeled AMI IB4002 samples excluded (4,930 samples). The original
+                challenge-period rankings remain available for comparison. See <a href="#corrected-rankings"
+                  class="js-scroll-trigger"><strong>Rankings</strong></a> for details.</span>
+            </li>
             <li class="mb-3 d-flex align-items-start">
               <span class="badge badge-pill mr-3 mt-1 flex-shrink-0"
                 style="background: #dcfce7; color: #166534; font-size: 0.75rem; font-weight: 600; padding: 0.35em 0.75em;">Aug
@@ -680,7 +926,10 @@
             dataset: part of metadata's annotations have been revised, errors inherited from the original AMI dataset in
             EVAL-1 have been fixed, and the normalization issue in WER computation has been corrected. As a result,
             results computed on this release will differ from those of the challenge; going forward, this dataset
-            should be used as the standard.
+            should be used as the standard. The final rankings have been re-scored on this release, excluding the 70
+            relabeled AMI IB4002 samples in EVAL-1; see <a href="#corrected-rankings"
+              class="js-scroll-trigger font-weight-bold" style="color: #14532d; text-decoration: underline;">Corrected
+              Rankings</a>.
           </div>
 
           <!-- Training policy (no official training partition) -->
@@ -977,11 +1226,16 @@
           <div class="row mb-4">
             <div class="col-md-6 mb-3">
               <div class="card h-100 p-4 border-0">
-                <h6 class="font-weight-bold mb-2">Intelligibility — WER</h6>
-                <p class="text-muted small mb-2">Word Error Rate (<strong>WER</strong>) measures how accurately the
-                  extracted speech can be transcribed. A lower WER indicates better intelligibility.</p>
-                <p class="text-muted small mb-0"><strong>Official ASR backbones: Zipformer-EN / Zipformer-ZH, chosen for
+                <h6 class="font-weight-bold mb-2">Intelligibility — TER (WER / CER)</h6>
+                <p class="text-muted small mb-2"><strong>TER</strong> measures how accurately the extracted speech can
+                  be transcribed: it is the Word Error Rate (<strong>WER</strong>) for English and the Character Error
+                  Rate (<strong>CER</strong>) for Chinese. A lower TER indicates better intelligibility.</p>
+                <p class="text-muted small mb-2"><strong>Official ASR backbones: Zipformer-EN / Zipformer-ZH, chosen for
                     stable transcription with reduced hallucinations.</strong></p>
+                <p class="text-muted small mb-0">The text normalization used for TER was corrected after the challenge
+                  (<a href="https://github.com/REAL-TSE/REAL-TSE-Challenge/pull/8/files#diff-438413807e56cd850b93799ce8781d33609d712feba176147f08403cfbe4f071"
+                    target="_blank" rel="noopener noreferrer">PR #8</a>); see <a href="#corrected-rankings"
+                    class="js-scroll-trigger">Corrected Rankings</a>.</p>
               </div>
             </div>
             <div class="col-md-6 mb-3">
@@ -1301,21 +1555,199 @@
         <div class="col-lg-9">
           <p class="text-muted small mb-4">Final verified Phase-1 rankings (official evaluation) for both tracks.
             As previously stated, submissions that do not meet the challenge requirements, or that do not include a
-            system description, are removed from the final official rankings. This page shows the final valid rankings
-            for all compliant systems after that reordering. The original ranking list can be found in the official
-            leaderboard. The four reported metrics are <strong>TER</strong> (lower is better), <strong>F1</strong>,
-            <strong>SIM</strong>, and <strong>DNSMOS-P808</strong> (higher is better). Numbers in parentheses show each
-            team&rsquo;s <strong>dense rank</strong> on that metric within the track. <strong>Score</strong> is the
-            average of the four metric dense ranks (lower is better). Only teams that submitted a
-            system report are listed; <strong>BSRNN</strong> entries are the official baselines provided by the
-            organizers (no system report). Click <em>Report</em> to open a team&rsquo;s system description.
+            system description, are removed from the final official rankings; only compliant systems are listed. Each
+            track is shown in two versions: the <strong>Corrected ranking</strong> (shown by default), re-scored on the
+            <a href="https://huggingface.co/datasets/REAL-TSE/REAL-T" target="_blank" rel="noopener noreferrer">REAL-T
+              v1.0.0</a> release, and the <strong>Original ranking</strong> announced at the end of the challenge
+            (see the <a href="#corrected-rankings" class="js-scroll-trigger">note below</a>). Use the switch above
+            each table to change version, and hover over or tap any cell to compare it with the other version. The four
+            reported metrics are <strong>TER</strong> (lower is better), <strong>F1</strong>, <strong>SIM</strong>,
+            and <strong>DNSMOS-P808</strong> (higher is better). Numbers in parentheses show each team&rsquo;s
+            <strong>dense rank</strong> on that metric within the track. <strong>Score</strong> is the average of the
+            four metric dense ranks (lower is better). <strong>BSRNN</strong> entries are the official baselines
+            provided by the organizers (no system report). Click <em>Report</em> to open a team&rsquo;s system
+            description.
           </p>
 
+          <!-- Special Note: corrected rankings (25 Oct 2026, AoE) -->
+          <div class="card border-0 mb-4" id="corrected-rankings"
+            style="border-left: 4px solid var(--rt-blue); background: #f8fafc;">
+            <div class="card-body p-4">
+              <div class="d-flex flex-wrap align-items-center mb-3">
+                <h5 class="font-weight-bold mb-0 text-dark mr-3"><i
+                    class="fas fa-bullhorn text-primary mr-2"></i>Special Note &mdash; Corrected Rankings</h5>
+                <span class="badge badge-pill"
+                  style="background: #dbeafe; color: #1d4ed8; font-size: 0.72rem; font-weight: 600; padding: 0.4em 0.8em;">Updated
+                  25 October 2026 (AoE)</span>
+              </div>
+
+              <p class="text-muted small mb-3">
+                After the challenge, the REAL-T dataset was publicly released on Hugging Face as <a
+                  href="https://huggingface.co/datasets/REAL-TSE/REAL-T" target="_blank"
+                  rel="noopener noreferrer"><strong>v1.0.0</strong></a>. The release fixes two problems in the evaluation data used during the
+                challenge, so we re-scored every listed system. The TSE outputs submitted by the teams and the ASR
+                transcripts produced by the evaluation server were <strong>not</strong> re-generated; only the
+                reference transcripts, the TER normalization, and the set of scored samples changed.
+              </p>
+
+              <div class="rescore-flow mb-4">
+                <div class="rescore-step">
+                  <div class="rescore-step-title">Challenge-period data</div>
+                  <div class="rescore-step-count">5,000 samples</div>
+                  <p class="rescore-step-desc">References and scoring used during the challenge.</p>
+                  <span class="rescore-tag">Original ranking</span>
+                </div>
+                <div class="rescore-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
+                <div class="rescore-step">
+                  <div class="rescore-step-title"><a href="https://huggingface.co/datasets/REAL-TSE/REAL-T"
+                      target="_blank" rel="noopener noreferrer">REAL-T v1.0.0 (Hugging Face)</a></div>
+                  <div class="rescore-step-count">5,000 samples</div>
+                  <p class="rescore-step-desc">Normalized references, corrected AMI IB4002 labels, and 13 fixed language
+                    labels.</p>
+                  <span class="rescore-tag rescore-tag-muted">Not ranked</span>
+                </div>
+                <div class="rescore-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i><span>&minus;70</span>
+                </div>
+                <div class="rescore-step is-corrected">
+                  <div class="rescore-step-title">v1.0.0 without AMI IB4002</div>
+                  <div class="rescore-step-count">4,930 samples</div>
+                  <p class="rescore-step-desc">The 70 relabeled AMI IB4002 samples are excluded.</p>
+                  <span class="rescore-tag rescore-tag-corrected">Corrected ranking</span>
+                </div>
+              </div>
+
+              <h6 class="font-weight-bold text-dark mb-2">1. TER normalization</h6>
+              <p class="text-muted small mb-4">
+                The text normalization used to compute TER has been corrected in the official toolkit (<a
+                  href="https://github.com/REAL-TSE/REAL-TSE-Challenge/pull/8/files#diff-438413807e56cd850b93799ce8781d33609d712feba176147f08403cfbe4f071"
+                  target="_blank" rel="noopener noreferrer">REAL-TSE-Challenge PR #8</a>). The Corrected ranking
+                applies the corrected normalization to the existing ASR transcripts, which lowers TER for every system.
+              </p>
+
+              <h6 class="font-weight-bold text-dark mb-2">2. AMI IB4002 samples: 4,930 instead of 5,000</h6>
+              <p class="text-muted small mb-4">
+                EVAL-1 inherited an error from the original AMI corpus: the audio channel mapping of meeting IB4002 is
+                wrong, as documented on the AMI Corpus <a href="https://groups.inf.ed.ac.uk/ami/corpus/dataproblems.shtml"
+                  target="_blank" rel="noopener noreferrer">Data Problems</a> page, so the speaker labels of the whole
+                meeting were shifted. v1.0.0
+                corrects the enrollment utterance, target speaker, or reference transcript of the 70 affected samples.
+                For these samples, the outputs submitted during the challenge were extracted for a speaker who is no
+                longer the target, so scoring them against the corrected references would be meaningless. The Corrected
+                ranking therefore excludes them and uses the remaining <strong>5,000 &minus; 70 = 4,930</strong>
+                samples.
+              </p>
+
+              <h6 class="font-weight-bold text-dark mb-2">3. Effect on the rankings</h6>
+              <ul class="text-muted small mb-3 pl-3">
+                <li class="mb-1"><strong>Track 1:</strong> CARTSE remains first. SonicAGI moves from a tie for third
+                  (with WasedaM) to a tie for second (with DeepSound), and WasedaM is third alone. All other places are
+                  unchanged.</li>
+                <li class="mb-1"><strong>Track 2:</strong> The top five are unchanged. WAKA and SHNU-TSE are no longer
+                  tied for sixth: SHNU-TSE is sixth and WAKA seventh. AGH-JHU and WHU_IASP now tie for tenth, and the
+                  two baselines are no longer tied.</li>
+                <li>F1, SIM, and P808 were not re-computed. Their averages change by at most 0.003, only because the 70
+                  excluded samples are no longer included. Because ranks are dense, splitting or forming a tie shifts the rank number of every team below it,
+                  even when their order is unchanged (e.g., ChuEst and pyannoteAI in Track 2).</li>
+              </ul>
+
+              <a class="small font-weight-bold rescore-details-toggle" data-toggle="collapse"
+                href="#corrected-rankings-details" role="button" aria-expanded="false"
+                aria-controls="corrected-rankings-details"><i class="fas fa-chevron-down mr-1 transition-icon"></i>Full
+                comparison and details</a>
+              <div class="collapse" id="corrected-rankings-details">
+                <div class="table-responsive mt-3 mb-3">
+                  <table class="table table-sm table-borderless mb-0 rescore-table">
+                    <thead>
+                      <tr style="background: #f1f5f9;">
+                        <th style="border-bottom: 2px solid var(--rt-border);"></th>
+                        <th style="border-bottom: 2px solid var(--rt-border);">Original ranking</th>
+                        <th style="border-bottom: 2px solid var(--rt-border); background: rgba(37, 99, 235, 0.08);">
+                          Corrected ranking</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="font-weight-bold">Evaluation data</td>
+                        <td>Challenge-period EVAL-1 + EVAL-2</td>
+                        <td><a href="https://huggingface.co/datasets/REAL-TSE/REAL-T" target="_blank"
+                            rel="noopener noreferrer">REAL-T v1.0.0</a> EVAL-1 + EVAL-2</td>
+                      </tr>
+                      <tr>
+                        <td class="font-weight-bold">Scored samples</td>
+                        <td>5,000</td>
+                        <td>4,930 (70 AMI IB4002 samples excluded)</td>
+                      </tr>
+                      <tr>
+                        <td class="font-weight-bold">Reference transcripts</td>
+                        <td>Challenge-period</td>
+                        <td>v1.0.0</td>
+                      </tr>
+                      <tr>
+                        <td class="font-weight-bold">TER normalization</td>
+                        <td>Challenge-period</td>
+                        <td>Corrected (<a
+                            href="https://github.com/REAL-TSE/REAL-TSE-Challenge/pull/8/files#diff-438413807e56cd850b93799ce8781d33609d712feba176147f08403cfbe4f071"
+                            target="_blank" rel="noopener noreferrer">PR #8</a>)</td>
+                      </tr>
+                      <tr>
+                        <td class="font-weight-bold">Language labels</td>
+                        <td>Challenge-period</td>
+                        <td>v1.0.0 (13 EVAL-2 samples relabeled Chinese &rarr; English)</td>
+                      </tr>
+                      <tr>
+                        <td class="font-weight-bold">TSE outputs, ASR transcripts</td>
+                        <td colspan="2">Identical in both versions (not re-generated)</td>
+                      </tr>
+                      <tr>
+                        <td class="font-weight-bold">F1, SIM, P808</td>
+                        <td colspan="2">Not re-computed: each sample keeps the same score. The Original ranking
+                          averages 5,000 samples and the Corrected ranking 4,930, so the averages differ by at most
+                          0.003.</td>
+                      </tr>
+                      <tr>
+                        <td class="font-weight-bold">Baselines</td>
+                        <td>Published organizer numbers</td>
+                        <td>Organizers&rsquo; challenge-period run, scored exactly like the teams</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <ul class="text-muted small mb-0 pl-3">
+                  <li class="mb-1">The 13 relabeled EVAL-2 samples are English speech that had been labeled Chinese. The
+                    Corrected ranking scores them as English, but their ASR transcripts are still the Chinese ASR
+                    outputs from the evaluation server, so their TER usually remains high.</li>
+                  <li class="mb-1">Three EVAL-2 enrollment files were renamed in v1.0.0. Apart from these renames, the
+                    mixture and enrollment audio is byte-identical in both versions.</li>
+                  <li class="mb-1">Samples with an empty ASR transcript are scored as if every reference token were
+                    deleted, in both versions, as in the official evaluation.</li>
+                  <li>In both versions, each metric is averaged over samples and rounded to three decimals before dense
+                    ranking.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           <div class="card border-0 p-4 mb-4" style="background: #f8fafc;">
-            <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-stopwatch text-primary mr-2"></i>Track 1
-              &mdash; Online Target Speaker Extraction</h5>
+            <div class="d-flex flex-wrap align-items-center justify-content-between mb-1">
+              <h5 class="font-weight-bold mb-2 mr-3 text-dark"><i class="fas fa-stopwatch text-primary mr-2"></i>Track 1
+                &mdash; Online Target Speaker Extraction</h5>
+              <div class="btn-group btn-group-sm rankings-switch mb-2" role="group" aria-label="Ranking version">
+                <button type="button" class="btn active" data-ranking-version="corrected" aria-pressed="true">Corrected
+                  &middot; 4,930</button>
+                <button type="button" class="btn" data-ranking-version="original" aria-pressed="false">Original
+                  &middot; 5,000</button>
+              </div>
+            </div>
+            <p class="rankings-caption mb-3">
+              <span data-ranking-show="corrected">Corrected ranking: <a
+                  href="https://huggingface.co/datasets/REAL-TSE/REAL-T" target="_blank" rel="noopener noreferrer">REAL-T
+                  v1.0.0</a> without the 70 AMI IB4002 samples (4,930 samples). Hover over or tap a cell to compare with the Original ranking.</span>
+              <span data-ranking-show="original" hidden>Original ranking: challenge-period data and scoring (5,000
+                samples), as announced at the end of the challenge. Hover over or tap a cell to compare with the
+                Corrected ranking.</span>
+            </p>
             <div class="table-responsive">
-              <table class="table table-sm table-borderless mb-0 rankings-table" style="font-size: 0.9rem;">
+              <table class="table table-sm table-borderless mb-0 rankings-table" data-ranking-table>
                 <thead>
                   <tr style="background: #f1f5f9;">
                     <th style="border-bottom: 2px solid var(--rt-border);">#</th>
@@ -1328,159 +1760,159 @@
                     <th style="border-bottom: 2px solid var(--rt-border);">Report</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">🥇&nbsp;1</td>
-                    <td class="align-middle">CARTSE</td>
-                    <td class="text-right align-middle">0.699&nbsp;<span class="metric-subrank">(1)</span></td>
-                    <td class="text-right align-middle">0.848&nbsp;<span class="metric-subrank">(5)</span></td>
-                    <td class="text-right align-middle">0.504&nbsp;<span class="metric-subrank">(3)</span></td>
-                    <td class="text-right align-middle">3.069&nbsp;<span class="metric-subrank">(4)</span></td>
-                    <td class="text-right align-middle font-weight-bold">3.25</td>
+                <tbody data-ranking-body="track1">
+                  <tr data-team="CARTSE" data-rank-corrected="1" data-rank-original="1" data-pos-corrected="1" data-pos-original="1">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">🥇&nbsp;1</td>
+                    <td class="align-middle" data-cmp="rank">CARTSE</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.593" data-corrected-rank="2" data-original="0.699" data-original-rank="1">0.593&nbsp;<span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.849" data-corrected-rank="4" data-original="0.848" data-original-rank="5">0.849&nbsp;<span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.503" data-corrected-rank="3" data-original="0.504" data-original-rank="3">0.503&nbsp;<span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.070" data-corrected-rank="4" data-original="3.069" data-original-rank="4">3.070&nbsp;<span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="3.25" data-original="3.25">3.25</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/CARTSE-Track1.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">🥈&nbsp;2</td>
-                    <td class="align-middle">DeepSound</td>
-                    <td class="text-right align-middle">0.713&nbsp;<span class="metric-subrank">(2)</span></td>
-                    <td class="text-right align-middle">0.849&nbsp;<span class="metric-subrank">(4)</span></td>
-                    <td class="text-right align-middle">0.524&nbsp;<span class="metric-subrank">(2)</span></td>
-                    <td class="text-right align-middle">2.965&nbsp;<span class="metric-subrank">(8)</span></td>
-                    <td class="text-right align-middle font-weight-bold">4.00</td>
+                  <tr data-team="DeepSound" data-rank-corrected="2" data-rank-original="2" data-pos-corrected="2" data-pos-original="2">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">🥈&nbsp;2</td>
+                    <td class="align-middle" data-cmp="rank">DeepSound</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.590" data-corrected-rank="1" data-original="0.713" data-original-rank="2">0.590&nbsp;<span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.849" data-corrected-rank="4" data-original="0.849" data-original-rank="4">0.849&nbsp;<span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.525" data-corrected-rank="2" data-original="0.524" data-original-rank="2">0.525&nbsp;<span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="2.963" data-corrected-rank="8" data-original="2.965" data-original-rank="8">2.963&nbsp;<span class="metric-subrank">(8)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="3.75" data-original="4.00">3.75</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/DeepSound-Track1.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">🥉&nbsp;3</td>
-                    <td class="align-middle">SonicAGI</td>
-                    <td class="text-right align-middle">0.719&nbsp;<span class="metric-subrank">(3)</span></td>
-                    <td class="text-right align-middle">0.847&nbsp;<span class="metric-subrank">(6)</span></td>
-                    <td class="text-right align-middle">0.480&nbsp;<span class="metric-subrank">(6)</span></td>
-                    <td class="text-right align-middle">3.111&nbsp;<span class="metric-subrank">(3)</span></td>
-                    <td class="text-right align-middle font-weight-bold">4.50</td>
+                  <tr data-team="SonicAGI" data-rank-corrected="2" data-rank-original="3" data-pos-corrected="3" data-pos-original="3">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">🥈&nbsp;2</td>
+                    <td class="align-middle" data-cmp="rank">SonicAGI</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.590" data-corrected-rank="1" data-original="0.719" data-original-rank="3">0.590&nbsp;<span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.848" data-corrected-rank="5" data-original="0.847" data-original-rank="6">0.848&nbsp;<span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.480" data-corrected-rank="6" data-original="0.480" data-original-rank="6">0.480&nbsp;<span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.111" data-corrected-rank="3" data-original="3.111" data-original-rank="3">3.111&nbsp;<span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="3.75" data-original="4.50">3.75</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/SonicAGI-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">🥉&nbsp;3</td>
-                    <td class="align-middle">WasedaM</td>
-                    <td class="text-right align-middle">0.719&nbsp;<span class="metric-subrank">(3)</span></td>
-                    <td class="text-right align-middle">0.855&nbsp;<span class="metric-subrank">(2)</span></td>
-                    <td class="text-right align-middle">0.446&nbsp;<span class="metric-subrank">(11)</span></td>
-                    <td class="text-right align-middle">3.169&nbsp;<span class="metric-subrank">(2)</span></td>
-                    <td class="text-right align-middle font-weight-bold">4.50</td>
+                  <tr data-team="WasedaM" data-rank-corrected="3" data-rank-original="3" data-pos-corrected="4" data-pos-original="4">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">🥉&nbsp;3</td>
+                    <td class="align-middle" data-cmp="rank">WasedaM</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.594" data-corrected-rank="3" data-original="0.719" data-original-rank="3">0.594&nbsp;<span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.855" data-corrected-rank="2" data-original="0.855" data-original-rank="2">0.855&nbsp;<span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.447" data-corrected-rank="11" data-original="0.446" data-original-rank="11">0.447&nbsp;<span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.168" data-corrected-rank="2" data-original="3.169" data-original-rank="2">3.168&nbsp;<span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="4.50" data-original="4.50">4.50</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/WasedaM-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">4</td>
-                    <td class="align-middle">smellycat</td>
-                    <td class="text-right align-middle">0.740&nbsp;<span class="metric-subrank">(5)</span></td>
-                    <td class="text-right align-middle">0.856&nbsp;<span class="metric-subrank">(1)</span></td>
-                    <td class="text-right align-middle">0.473&nbsp;<span class="metric-subrank">(7)</span></td>
-                    <td class="text-right align-middle">3.023&nbsp;<span class="metric-subrank">(6)</span></td>
-                    <td class="text-right align-middle font-weight-bold">4.75</td>
+                  <tr data-team="smellycat" data-rank-corrected="4" data-rank-original="4" data-pos-corrected="5" data-pos-original="5">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">4</td>
+                    <td class="align-middle" data-cmp="rank">smellycat</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.616" data-corrected-rank="5" data-original="0.740" data-original-rank="5">0.616&nbsp;<span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.856" data-corrected-rank="1" data-original="0.856" data-original-rank="1">0.856&nbsp;<span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.473" data-corrected-rank="7" data-original="0.473" data-original-rank="7">0.473&nbsp;<span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.023" data-corrected-rank="6" data-original="3.023" data-original-rank="6">3.023&nbsp;<span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="4.75" data-original="4.75">4.75</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/smellycat-Track-1.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">5</td>
-                    <td class="align-middle">WHU_IASP</td>
-                    <td class="text-right align-middle">0.750&nbsp;<span class="metric-subrank">(6)</span></td>
-                    <td class="text-right align-middle">0.852&nbsp;<span class="metric-subrank">(3)</span></td>
-                    <td class="text-right align-middle">0.442&nbsp;<span class="metric-subrank">(12)</span></td>
-                    <td class="text-right align-middle">3.175&nbsp;<span class="metric-subrank">(1)</span></td>
-                    <td class="text-right align-middle font-weight-bold">5.50</td>
+                  <tr data-team="WHU_IASP" data-rank-corrected="5" data-rank-original="5" data-pos-corrected="6" data-pos-original="6">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">5</td>
+                    <td class="align-middle" data-cmp="rank">WHU_IASP</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.629" data-corrected-rank="6" data-original="0.750" data-original-rank="6">0.629&nbsp;<span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.853" data-corrected-rank="3" data-original="0.852" data-original-rank="3">0.853&nbsp;<span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.442" data-corrected-rank="12" data-original="0.442" data-original-rank="12">0.442&nbsp;<span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.173" data-corrected-rank="1" data-original="3.175" data-original-rank="1">3.173&nbsp;<span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="5.50" data-original="5.50">5.50</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/WHUIASP-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">6</td>
-                    <td class="align-middle">insta360</td>
-                    <td class="text-right align-middle">0.725&nbsp;<span class="metric-subrank">(4)</span></td>
-                    <td class="text-right align-middle">0.840&nbsp;<span class="metric-subrank">(8)</span></td>
-                    <td class="text-right align-middle">0.482&nbsp;<span class="metric-subrank">(5)</span></td>
-                    <td class="text-right align-middle">2.994&nbsp;<span class="metric-subrank">(7)</span></td>
-                    <td class="text-right align-middle font-weight-bold">6.00</td>
+                  <tr data-team="insta360" data-rank-corrected="6" data-rank-original="6" data-pos-corrected="7" data-pos-original="7">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">6</td>
+                    <td class="align-middle" data-cmp="rank">insta360</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.614" data-corrected-rank="4" data-original="0.725" data-original-rank="4">0.614&nbsp;<span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.840" data-corrected-rank="8" data-original="0.840" data-original-rank="8">0.840&nbsp;<span class="metric-subrank">(8)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.483" data-corrected-rank="5" data-original="0.482" data-original-rank="5">0.483&nbsp;<span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="2.994" data-corrected-rank="7" data-original="2.994" data-original-rank="7">2.994&nbsp;<span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="6.00" data-original="6.00">6.00</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/insta360-Track1.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">7</td>
-                    <td class="align-middle">ChuEst</td>
-                    <td class="text-right align-middle">0.756&nbsp;<span class="metric-subrank">(8)</span></td>
-                    <td class="text-right align-middle">0.837&nbsp;<span class="metric-subrank">(9)</span></td>
-                    <td class="text-right align-middle">0.535&nbsp;<span class="metric-subrank">(1)</span></td>
-                    <td class="text-right align-middle">2.947&nbsp;<span class="metric-subrank">(9)</span></td>
-                    <td class="text-right align-middle font-weight-bold">6.75</td>
+                  <tr data-team="ChuEst" data-rank-corrected="7" data-rank-original="7" data-pos-corrected="8" data-pos-original="8">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">7</td>
+                    <td class="align-middle" data-cmp="rank">ChuEst</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.661" data-corrected-rank="8" data-original="0.756" data-original-rank="8">0.661&nbsp;<span class="metric-subrank">(8)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.837" data-corrected-rank="9" data-original="0.837" data-original-rank="9">0.837&nbsp;<span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.535" data-corrected-rank="1" data-original="0.535" data-original-rank="1">0.535&nbsp;<span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="2.946" data-corrected-rank="9" data-original="2.947" data-original-rank="9">2.946&nbsp;<span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="6.75" data-original="6.75">6.75</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/ChuEst-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">8</td>
-                    <td class="align-middle">AIVOX</td>
-                    <td class="text-right align-middle">0.751&nbsp;<span class="metric-subrank">(7)</span></td>
-                    <td class="text-right align-middle">0.847&nbsp;<span class="metric-subrank">(6)</span></td>
-                    <td class="text-right align-middle">0.493&nbsp;<span class="metric-subrank">(4)</span></td>
-                    <td class="text-right align-middle">2.841&nbsp;<span class="metric-subrank">(11)</span></td>
-                    <td class="text-right align-middle font-weight-bold">7.00</td>
+                  <tr data-team="AIVOX" data-rank-corrected="8" data-rank-original="8" data-pos-corrected="9" data-pos-original="9">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">8</td>
+                    <td class="align-middle" data-cmp="rank">AIVOX</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.640" data-corrected-rank="7" data-original="0.751" data-original-rank="7">0.640&nbsp;<span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.847" data-corrected-rank="6" data-original="0.847" data-original-rank="6">0.847&nbsp;<span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.494" data-corrected-rank="4" data-original="0.493" data-original-rank="4">0.494&nbsp;<span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="2.841" data-corrected-rank="11" data-original="2.841" data-original-rank="11">2.841&nbsp;<span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="7.00" data-original="7.00">7.00</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/AIVOX-Track1.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">9</td>
-                    <td class="align-middle">SHNU-TSE</td>
-                    <td class="text-right align-middle">0.797&nbsp;<span class="metric-subrank">(9)</span></td>
-                    <td class="text-right align-middle">0.842&nbsp;<span class="metric-subrank">(7)</span></td>
-                    <td class="text-right align-middle">0.462&nbsp;<span class="metric-subrank">(8)</span></td>
-                    <td class="text-right align-middle">3.037&nbsp;<span class="metric-subrank">(5)</span></td>
-                    <td class="text-right align-middle font-weight-bold">7.25</td>
+                  <tr data-team="SHNU-TSE" data-rank-corrected="9" data-rank-original="9" data-pos-corrected="10" data-pos-original="10">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">9</td>
+                    <td class="align-middle" data-cmp="rank">SHNU-TSE</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.699" data-corrected-rank="9" data-original="0.797" data-original-rank="9">0.699&nbsp;<span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.841" data-corrected-rank="7" data-original="0.842" data-original-rank="7">0.841&nbsp;<span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.462" data-corrected-rank="8" data-original="0.462" data-original-rank="8">0.462&nbsp;<span class="metric-subrank">(8)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.035" data-corrected-rank="5" data-original="3.037" data-original-rank="5">3.035&nbsp;<span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="7.25" data-original="7.25">7.25</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/SHNU-TSE-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr class="rankings-baseline">
-                    <td class="text-center font-weight-bold align-middle">10</td>
-                    <td class="align-middle">BSRNN_TFMAP_CAUSAL <span class="badge badge-pill ml-1"
+                  <tr class="rankings-baseline" data-team="BSRNN_TFMAP_CAUSAL" data-rank-corrected="10" data-rank-original="10" data-pos-corrected="11" data-pos-original="11">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">10</td>
+                    <td class="align-middle" data-cmp="rank">BSRNN_TFMAP_CAUSAL <span class="badge badge-pill ml-1"
                         style="background:#f1f5f9;color:#64748b;font-size:0.62rem;font-weight:600;padding:0.3em 0.55em;vertical-align:middle;">Baseline</span></td>
-                    <td class="text-right align-middle">0.805&nbsp;<span class="metric-subrank">(11)</span></td>
-                    <td class="text-right align-middle">0.836&nbsp;<span class="metric-subrank">(10)</span></td>
-                    <td class="text-right align-middle">0.456&nbsp;<span class="metric-subrank">(10)</span></td>
-                    <td class="text-right align-middle">2.785&nbsp;<span class="metric-subrank">(12)</span></td>
-                    <td class="text-right align-middle font-weight-bold">10.75</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.713" data-corrected-rank="11" data-original="0.805" data-original-rank="11">0.713&nbsp;<span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.835" data-corrected-rank="10" data-original="0.836" data-original-rank="10">0.835&nbsp;<span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.456" data-corrected-rank="10" data-original="0.456" data-original-rank="10">0.456&nbsp;<span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="2.785" data-corrected-rank="12" data-original="2.785" data-original-rank="12">2.785&nbsp;<span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="10.75" data-original="10.75">10.75</td>
                     <td class="text-center align-middle">&mdash;</td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">11</td>
-                    <td class="align-middle">NCNU</td>
-                    <td class="text-right align-middle">0.802&nbsp;<span class="metric-subrank">(10)</span></td>
-                    <td class="text-right align-middle">0.831&nbsp;<span class="metric-subrank">(12)</span></td>
-                    <td class="text-right align-middle">0.457&nbsp;<span class="metric-subrank">(9)</span></td>
-                    <td class="text-right align-middle">2.776&nbsp;<span class="metric-subrank">(13)</span></td>
-                    <td class="text-right align-middle font-weight-bold">11.00</td>
+                  <tr data-team="NCNU" data-rank-corrected="11" data-rank-original="11" data-pos-corrected="12" data-pos-original="12">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">11</td>
+                    <td class="align-middle" data-cmp="rank">NCNU</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.708" data-corrected-rank="10" data-original="0.802" data-original-rank="10">0.708&nbsp;<span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.831" data-corrected-rank="12" data-original="0.831" data-original-rank="12">0.831&nbsp;<span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.458" data-corrected-rank="9" data-original="0.457" data-original-rank="9">0.458&nbsp;<span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="2.775" data-corrected-rank="13" data-original="2.776" data-original-rank="13">2.775&nbsp;<span class="metric-subrank">(13)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="11.00" data-original="11.00">11.00</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/NCNU-Track1.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">12</td>
-                    <td class="align-middle">Team-Fly</td>
-                    <td class="text-right align-middle">0.807&nbsp;<span class="metric-subrank">(12)</span></td>
-                    <td class="text-right align-middle">0.834&nbsp;<span class="metric-subrank">(11)</span></td>
-                    <td class="text-right align-middle">0.438&nbsp;<span class="metric-subrank">(13)</span></td>
-                    <td class="text-right align-middle">2.857&nbsp;<span class="metric-subrank">(10)</span></td>
-                    <td class="text-right align-middle font-weight-bold">11.50</td>
+                  <tr data-team="Team-Fly" data-rank-corrected="12" data-rank-original="12" data-pos-corrected="13" data-pos-original="13">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">12</td>
+                    <td class="align-middle" data-cmp="rank">Team-Fly</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.717" data-corrected-rank="12" data-original="0.807" data-original-rank="12">0.717&nbsp;<span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.834" data-corrected-rank="11" data-original="0.834" data-original-rank="11">0.834&nbsp;<span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.438" data-corrected-rank="13" data-original="0.438" data-original-rank="13">0.438&nbsp;<span class="metric-subrank">(13)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="2.855" data-corrected-rank="10" data-original="2.857" data-original-rank="10">2.855&nbsp;<span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="11.50" data-original="11.50">11.50</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/Team-Fly-Track1.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr class="rankings-baseline">
-                    <td class="text-center font-weight-bold align-middle">13</td>
-                    <td class="align-middle">BSRNN_EMB_CAUSAL <span class="badge badge-pill ml-1"
+                  <tr class="rankings-baseline" data-team="BSRNN_EMB_CAUSAL" data-rank-corrected="13" data-rank-original="13" data-pos-corrected="14" data-pos-original="14">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">13</td>
+                    <td class="align-middle" data-cmp="rank">BSRNN_EMB_CAUSAL <span class="badge badge-pill ml-1"
                         style="background:#f1f5f9;color:#64748b;font-size:0.62rem;font-weight:600;padding:0.3em 0.55em;vertical-align:middle;">Baseline</span></td>
-                    <td class="text-right align-middle">0.809&nbsp;<span class="metric-subrank">(13)</span></td>
-                    <td class="text-right align-middle">0.821&nbsp;<span class="metric-subrank">(13)</span></td>
-                    <td class="text-right align-middle">0.422&nbsp;<span class="metric-subrank">(14)</span></td>
-                    <td class="text-right align-middle">2.738&nbsp;<span class="metric-subrank">(14)</span></td>
-                    <td class="text-right align-middle font-weight-bold">13.50</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.734" data-corrected-rank="13" data-original="0.809" data-original-rank="13">0.734&nbsp;<span class="metric-subrank">(13)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.821" data-corrected-rank="13" data-original="0.821" data-original-rank="13">0.821&nbsp;<span class="metric-subrank">(13)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.422" data-corrected-rank="14" data-original="0.422" data-original-rank="14">0.422&nbsp;<span class="metric-subrank">(14)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="2.737" data-corrected-rank="14" data-original="2.738" data-original-rank="14">2.737&nbsp;<span class="metric-subrank">(14)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="13.50" data-original="13.50">13.50</td>
                     <td class="text-center align-middle">&mdash;</td>
                   </tr>
                 </tbody>
@@ -1489,10 +1921,26 @@
           </div>
 
           <div class="card border-0 p-4 mb-4" style="background: #f8fafc;">
-            <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-globe text-success mr-2"></i>Track 2 &mdash;
-              Offline Target Speaker Extraction</h5>
+            <div class="d-flex flex-wrap align-items-center justify-content-between mb-1">
+              <h5 class="font-weight-bold mb-2 mr-3 text-dark"><i class="fas fa-globe text-success mr-2"></i>Track 2
+                &mdash; Offline Target Speaker Extraction</h5>
+              <div class="btn-group btn-group-sm rankings-switch mb-2" role="group" aria-label="Ranking version">
+                <button type="button" class="btn active" data-ranking-version="corrected" aria-pressed="true">Corrected
+                  &middot; 4,930</button>
+                <button type="button" class="btn" data-ranking-version="original" aria-pressed="false">Original
+                  &middot; 5,000</button>
+              </div>
+            </div>
+            <p class="rankings-caption mb-3">
+              <span data-ranking-show="corrected">Corrected ranking: <a
+                  href="https://huggingface.co/datasets/REAL-TSE/REAL-T" target="_blank" rel="noopener noreferrer">REAL-T
+                  v1.0.0</a> without the 70 AMI IB4002 samples (4,930 samples). Hover over or tap a cell to compare with the Original ranking.</span>
+              <span data-ranking-show="original" hidden>Original ranking: challenge-period data and scoring (5,000
+                samples), as announced at the end of the challenge. Hover over or tap a cell to compare with the
+                Corrected ranking.</span>
+            </p>
             <div class="table-responsive">
-              <table class="table table-sm table-borderless mb-0 rankings-table" style="font-size: 0.9rem;">
+              <table class="table table-sm table-borderless mb-0 rankings-table" data-ranking-table>
                 <thead>
                   <tr style="background: #f1f5f9;">
                     <th style="border-bottom: 2px solid var(--rt-border);">#</th>
@@ -1505,159 +1953,159 @@
                     <th style="border-bottom: 2px solid var(--rt-border);">Report</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">🥇&nbsp;1</td>
-                    <td class="align-middle">MERL</td>
-                    <td class="text-right align-middle">0.613&nbsp;<span class="metric-subrank">(1)</span></td>
-                    <td class="text-right align-middle">0.861&nbsp;<span class="metric-subrank">(2)</span></td>
-                    <td class="text-right align-middle">0.538&nbsp;<span class="metric-subrank">(3)</span></td>
-                    <td class="text-right align-middle">3.371&nbsp;<span class="metric-subrank">(2)</span></td>
-                    <td class="text-right align-middle font-weight-bold">2.00</td>
+                <tbody data-ranking-body="track2">
+                  <tr data-team="MERL" data-rank-corrected="1" data-rank-original="1" data-pos-corrected="1" data-pos-original="1">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">🥇&nbsp;1</td>
+                    <td class="align-middle" data-cmp="rank">MERL</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.463" data-corrected-rank="1" data-original="0.613" data-original-rank="1">0.463&nbsp;<span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.864" data-corrected-rank="2" data-original="0.861" data-original-rank="2">0.864&nbsp;<span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.537" data-corrected-rank="3" data-original="0.538" data-original-rank="3">0.537&nbsp;<span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.373" data-corrected-rank="2" data-original="3.371" data-original-rank="2">3.373&nbsp;<span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="2.00" data-original="2.00">2.00</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/MERL-SA-Track2.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">🥈&nbsp;2</td>
-                    <td class="align-middle">YiJiaHe</td>
-                    <td class="text-right align-middle">0.639&nbsp;<span class="metric-subrank">(2)</span></td>
-                    <td class="text-right align-middle">0.871&nbsp;<span class="metric-subrank">(1)</span></td>
-                    <td class="text-right align-middle">0.565&nbsp;<span class="metric-subrank">(1)</span></td>
-                    <td class="text-right align-middle">3.128&nbsp;<span class="metric-subrank">(9)</span></td>
-                    <td class="text-right align-middle font-weight-bold">3.25</td>
+                  <tr data-team="YiJiaHe" data-rank-corrected="2" data-rank-original="2" data-pos-corrected="2" data-pos-original="2">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">🥈&nbsp;2</td>
+                    <td class="align-middle" data-cmp="rank">YiJiaHe</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.510" data-corrected-rank="2" data-original="0.639" data-original-rank="2">0.510&nbsp;<span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.872" data-corrected-rank="1" data-original="0.871" data-original-rank="1">0.872&nbsp;<span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.564" data-corrected-rank="1" data-original="0.565" data-original-rank="1">0.564&nbsp;<span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.128" data-corrected-rank="9" data-original="3.128" data-original-rank="9">3.128&nbsp;<span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="3.25" data-original="3.25">3.25</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/YiJiaHe-Track2.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">🥉&nbsp;3</td>
-                    <td class="align-middle">CARTSE</td>
-                    <td class="text-right align-middle">0.651&nbsp;<span class="metric-subrank">(3)</span></td>
-                    <td class="text-right align-middle">0.857&nbsp;<span class="metric-subrank">(4)</span></td>
-                    <td class="text-right align-middle">0.544&nbsp;<span class="metric-subrank">(2)</span></td>
-                    <td class="text-right align-middle">3.138&nbsp;<span class="metric-subrank">(8)</span></td>
-                    <td class="text-right align-middle font-weight-bold">4.25</td>
+                  <tr data-team="CARTSE" data-rank-corrected="3" data-rank-original="3" data-pos-corrected="3" data-pos-original="3">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">🥉&nbsp;3</td>
+                    <td class="align-middle" data-cmp="rank">CARTSE</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.526" data-corrected-rank="3" data-original="0.651" data-original-rank="3">0.526&nbsp;<span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.858" data-corrected-rank="4" data-original="0.857" data-original-rank="4">0.858&nbsp;<span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.544" data-corrected-rank="2" data-original="0.544" data-original-rank="2">0.544&nbsp;<span class="metric-subrank">(2)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.139" data-corrected-rank="8" data-original="3.138" data-original-rank="8">3.139&nbsp;<span class="metric-subrank">(8)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="4.25" data-original="4.25">4.25</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/CARTSE-Track2.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">4</td>
-                    <td class="align-middle">WasedaM</td>
-                    <td class="text-right align-middle">0.675&nbsp;<span class="metric-subrank">(5)</span></td>
-                    <td class="text-right align-middle">0.858&nbsp;<span class="metric-subrank">(3)</span></td>
-                    <td class="text-right align-middle">0.480&nbsp;<span class="metric-subrank">(6)</span></td>
-                    <td class="text-right align-middle">3.232&nbsp;<span class="metric-subrank">(6)</span></td>
-                    <td class="text-right align-middle font-weight-bold">5.00</td>
+                  <tr data-team="WasedaM" data-rank-corrected="4" data-rank-original="4" data-pos-corrected="4" data-pos-original="4">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">4</td>
+                    <td class="align-middle" data-cmp="rank">WasedaM</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.532" data-corrected-rank="4" data-original="0.675" data-original-rank="5">0.532&nbsp;<span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.859" data-corrected-rank="3" data-original="0.858" data-original-rank="3">0.859&nbsp;<span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.480" data-corrected-rank="6" data-original="0.480" data-original-rank="6">0.480&nbsp;<span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.231" data-corrected-rank="6" data-original="3.232" data-original-rank="6">3.231&nbsp;<span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="4.75" data-original="5.00">4.75</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/WasedaM-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">5</td>
-                    <td class="align-middle">SonicAGI</td>
-                    <td class="text-right align-middle">0.680&nbsp;<span class="metric-subrank">(6)</span></td>
-                    <td class="text-right align-middle">0.851&nbsp;<span class="metric-subrank">(6)</span></td>
-                    <td class="text-right align-middle">0.471&nbsp;<span class="metric-subrank">(7)</span></td>
-                    <td class="text-right align-middle">3.258&nbsp;<span class="metric-subrank">(5)</span></td>
-                    <td class="text-right align-middle font-weight-bold">6.00</td>
+                  <tr data-team="SonicAGI" data-rank-corrected="5" data-rank-original="5" data-pos-corrected="5" data-pos-original="5">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">5</td>
+                    <td class="align-middle" data-cmp="rank">SonicAGI</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.538" data-corrected-rank="5" data-original="0.680" data-original-rank="6">0.538&nbsp;<span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.851" data-corrected-rank="6" data-original="0.851" data-original-rank="6">0.851&nbsp;<span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.472" data-corrected-rank="7" data-original="0.471" data-original-rank="7">0.472&nbsp;<span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.256" data-corrected-rank="5" data-original="3.258" data-original-rank="5">3.256&nbsp;<span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="5.75" data-original="6.00">5.75</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/SonicAGI-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">6</td>
-                    <td class="align-middle">WAKA</td>
-                    <td class="text-right align-middle">0.670&nbsp;<span class="metric-subrank">(4)</span></td>
-                    <td class="text-right align-middle">0.847&nbsp;<span class="metric-subrank">(8)</span></td>
-                    <td class="text-right align-middle">0.471&nbsp;<span class="metric-subrank">(7)</span></td>
-                    <td class="text-right align-middle">3.150&nbsp;<span class="metric-subrank">(7)</span></td>
-                    <td class="text-right align-middle font-weight-bold">6.50</td>
-                    <td class="text-center align-middle"><a href="../assets/pdf/WAKA-Track2.pdf"
-                        class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">6</td>
-                    <td class="align-middle">SHNU-TSE</td>
-                    <td class="text-right align-middle">0.731&nbsp;<span class="metric-subrank">(9)</span></td>
-                    <td class="text-right align-middle">0.840&nbsp;<span class="metric-subrank">(9)</span></td>
-                    <td class="text-right align-middle">0.507&nbsp;<span class="metric-subrank">(5)</span></td>
-                    <td class="text-right align-middle">3.362&nbsp;<span class="metric-subrank">(3)</span></td>
-                    <td class="text-right align-middle font-weight-bold">6.50</td>
+                  <tr data-team="SHNU-TSE" data-rank-corrected="6" data-rank-original="6" data-pos-corrected="6" data-pos-original="7">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">6</td>
+                    <td class="align-middle" data-cmp="rank">SHNU-TSE</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.599" data-corrected-rank="8" data-original="0.731" data-original-rank="9">0.599&nbsp;<span class="metric-subrank">(8)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.841" data-corrected-rank="9" data-original="0.840" data-original-rank="9">0.841&nbsp;<span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.508" data-corrected-rank="5" data-original="0.507" data-original-rank="5">0.508&nbsp;<span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.360" data-corrected-rank="3" data-original="3.362" data-original-rank="3">3.360&nbsp;<span class="metric-subrank">(3)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="6.25" data-original="6.50">6.25</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/SHNU-TSE-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">7</td>
-                    <td class="align-middle">ChuEst</td>
-                    <td class="text-right align-middle">0.710&nbsp;<span class="metric-subrank">(7)</span></td>
-                    <td class="text-right align-middle">0.831&nbsp;<span class="metric-subrank">(11)</span></td>
-                    <td class="text-right align-middle">0.532&nbsp;<span class="metric-subrank">(4)</span></td>
-                    <td class="text-right align-middle">3.064&nbsp;<span class="metric-subrank">(10)</span></td>
-                    <td class="text-right align-middle font-weight-bold">8.00</td>
+                  <tr data-team="WAKA" data-rank-corrected="7" data-rank-original="6" data-pos-corrected="7" data-pos-original="6">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">7</td>
+                    <td class="align-middle" data-cmp="rank">WAKA</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.546" data-corrected-rank="6" data-original="0.670" data-original-rank="4">0.546&nbsp;<span class="metric-subrank">(6)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.849" data-corrected-rank="8" data-original="0.847" data-original-rank="8">0.849&nbsp;<span class="metric-subrank">(8)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.471" data-corrected-rank="8" data-original="0.471" data-original-rank="7">0.471&nbsp;<span class="metric-subrank">(8)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.150" data-corrected-rank="7" data-original="3.150" data-original-rank="7">3.150&nbsp;<span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="7.25" data-original="6.50">7.25</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/WAKA-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
+                  </tr>
+                  <tr data-team="ChuEst" data-rank-corrected="8" data-rank-original="7" data-pos-corrected="8" data-pos-original="8">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">8</td>
+                    <td class="align-middle" data-cmp="rank">ChuEst</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.596" data-corrected-rank="7" data-original="0.710" data-original-rank="7">0.596&nbsp;<span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.831" data-corrected-rank="11" data-original="0.831" data-original-rank="11">0.831&nbsp;<span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.533" data-corrected-rank="4" data-original="0.532" data-original-rank="4">0.533&nbsp;<span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.063" data-corrected-rank="10" data-original="3.064" data-original-rank="10">3.063&nbsp;<span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="8.00" data-original="8.00">8.00</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/ChuEst-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">8</td>
-                    <td class="align-middle">pyannoteAI</td>
-                    <td class="text-right align-middle">0.728&nbsp;<span class="metric-subrank">(8)</span></td>
-                    <td class="text-right align-middle">0.855&nbsp;<span class="metric-subrank">(5)</span></td>
-                    <td class="text-right align-middle">0.464&nbsp;<span class="metric-subrank">(9)</span></td>
-                    <td class="text-right align-middle">2.904&nbsp;<span class="metric-subrank">(12)</span></td>
-                    <td class="text-right align-middle font-weight-bold">8.50</td>
+                  <tr data-team="pyannoteAI" data-rank-corrected="9" data-rank-original="8" data-pos-corrected="9" data-pos-original="9">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">9</td>
+                    <td class="align-middle" data-cmp="rank">pyannoteAI</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.617" data-corrected-rank="9" data-original="0.728" data-original-rank="8">0.617&nbsp;<span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.855" data-corrected-rank="5" data-original="0.855" data-original-rank="5">0.855&nbsp;<span class="metric-subrank">(5)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.463" data-corrected-rank="10" data-original="0.464" data-original-rank="9">0.463&nbsp;<span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="2.904" data-corrected-rank="12" data-original="2.904" data-original-rank="12">2.904&nbsp;<span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="9.00" data-original="8.50">9.00</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/pyannoteAI-Track2.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">9</td>
-                    <td class="align-middle">AGH-JHU</td>
-                    <td class="text-right align-middle">0.743&nbsp;<span class="metric-subrank">(10)</span></td>
-                    <td class="text-right align-middle">0.837&nbsp;<span class="metric-subrank">(10)</span></td>
-                    <td class="text-right align-middle">0.434&nbsp;<span class="metric-subrank">(11)</span></td>
-                    <td class="text-right align-middle">3.335&nbsp;<span class="metric-subrank">(4)</span></td>
-                    <td class="text-right align-middle font-weight-bold">8.75</td>
-                    <td class="text-center align-middle"><a href="../assets/pdf/AGH-JHU-Track2.pdf"
-                        class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">10</td>
-                    <td class="align-middle">WHU_IASP</td>
-                    <td class="text-right align-middle">0.757&nbsp;<span class="metric-subrank">(11)</span></td>
-                    <td class="text-right align-middle">0.850&nbsp;<span class="metric-subrank">(7)</span></td>
-                    <td class="text-right align-middle">0.465&nbsp;<span class="metric-subrank">(8)</span></td>
-                    <td class="text-right align-middle">2.961&nbsp;<span class="metric-subrank">(11)</span></td>
-                    <td class="text-right align-middle font-weight-bold">9.25</td>
+                  <tr data-team="WHU_IASP" data-rank-corrected="10" data-rank-original="10" data-pos-corrected="10" data-pos-original="11">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">10</td>
+                    <td class="align-middle" data-cmp="rank">WHU_IASP</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.634" data-corrected-rank="10" data-original="0.757" data-original-rank="11">0.634&nbsp;<span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.850" data-corrected-rank="7" data-original="0.850" data-original-rank="7">0.850&nbsp;<span class="metric-subrank">(7)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.465" data-corrected-rank="9" data-original="0.465" data-original-rank="8">0.465&nbsp;<span class="metric-subrank">(9)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="2.961" data-corrected-rank="11" data-original="2.961" data-original-rank="11">2.961&nbsp;<span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="9.25" data-original="9.25">9.25</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/WHUIASP-Track1-Track2.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr>
-                    <td class="text-center font-weight-bold align-middle">11</td>
-                    <td class="align-middle">CUDA_OUT_OF_MEMORY</td>
-                    <td class="text-right align-middle">0.827&nbsp;<span class="metric-subrank">(12)</span></td>
-                    <td class="text-right align-middle">0.819&nbsp;<span class="metric-subrank">(13)</span></td>
-                    <td class="text-right align-middle">0.364&nbsp;<span class="metric-subrank">(13)</span></td>
-                    <td class="text-right align-middle">3.435&nbsp;<span class="metric-subrank">(1)</span></td>
-                    <td class="text-right align-middle font-weight-bold">9.75</td>
+                  <tr data-team="AGH-JHU" data-rank-corrected="10" data-rank-original="9" data-pos-corrected="11" data-pos-original="10">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">10</td>
+                    <td class="align-middle" data-cmp="rank">AGH-JHU</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.640" data-corrected-rank="11" data-original="0.743" data-original-rank="10">0.640&nbsp;<span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.838" data-corrected-rank="10" data-original="0.837" data-original-rank="10">0.838&nbsp;<span class="metric-subrank">(10)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.434" data-corrected-rank="12" data-original="0.434" data-original-rank="11">0.434&nbsp;<span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.333" data-corrected-rank="4" data-original="3.335" data-original-rank="4">3.333&nbsp;<span class="metric-subrank">(4)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="9.25" data-original="8.75">9.25</td>
+                    <td class="text-center align-middle"><a href="../assets/pdf/AGH-JHU-Track2.pdf"
+                        class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
+                  </tr>
+                  <tr data-team="CUDA_OUT_OF_MEMORY" data-rank-corrected="11" data-rank-original="11" data-pos-corrected="12" data-pos-original="12">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">11</td>
+                    <td class="align-middle" data-cmp="rank">CUDA_OUT_OF_MEMORY</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.743" data-corrected-rank="13" data-original="0.827" data-original-rank="12">0.743&nbsp;<span class="metric-subrank">(13)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.819" data-corrected-rank="13" data-original="0.819" data-original-rank="13">0.819&nbsp;<span class="metric-subrank">(13)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.363" data-corrected-rank="14" data-original="0.364" data-original-rank="13">0.363&nbsp;<span class="metric-subrank">(14)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="3.434" data-corrected-rank="1" data-original="3.435" data-original-rank="1">3.434&nbsp;<span class="metric-subrank">(1)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="10.25" data-original="9.75">10.25</td>
                     <td class="text-center align-middle"><a href="../assets/pdf/CUDA_OUT_OF_MEMORY-Track2.pdf"
                         class="btn btn-outline-primary btn-sm rankings-report-btn" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>Report</a></td>
                   </tr>
-                  <tr class="rankings-baseline">
-                    <td class="text-center font-weight-bold align-middle">12</td>
-                    <td class="align-middle">BSRNN_EMB <span class="badge badge-pill ml-1"
+                  <tr class="rankings-baseline" data-team="BSRNN_EMB" data-rank-corrected="12" data-rank-original="12" data-pos-corrected="13" data-pos-original="13">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">12</td>
+                    <td class="align-middle" data-cmp="rank">BSRNN_EMB <span class="badge badge-pill ml-1"
                         style="background:#f1f5f9;color:#64748b;font-size:0.62rem;font-weight:600;padding:0.3em 0.55em;vertical-align:middle;">Baseline</span></td>
-                    <td class="text-right align-middle">0.829&nbsp;<span class="metric-subrank">(13)</span></td>
-                    <td class="text-right align-middle">0.829&nbsp;<span class="metric-subrank">(12)</span></td>
-                    <td class="text-right align-middle">0.417&nbsp;<span class="metric-subrank">(12)</span></td>
-                    <td class="text-right align-middle">2.875&nbsp;<span class="metric-subrank">(13)</span></td>
-                    <td class="text-right align-middle font-weight-bold">12.50</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.739" data-corrected-rank="12" data-original="0.829" data-original-rank="13">0.739&nbsp;<span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.829" data-corrected-rank="12" data-original="0.829" data-original-rank="12">0.829&nbsp;<span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.418" data-corrected-rank="13" data-original="0.417" data-original-rank="12">0.418&nbsp;<span class="metric-subrank">(13)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="2.874" data-corrected-rank="13" data-original="2.875" data-original-rank="13">2.874&nbsp;<span class="metric-subrank">(13)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="12.50" data-original="12.50">12.50</td>
                     <td class="text-center align-middle">&mdash;</td>
                   </tr>
-                  <tr class="rankings-baseline">
-                    <td class="text-center font-weight-bold align-middle">12</td>
-                    <td class="align-middle">BSRNN_TFMAP <span class="badge badge-pill ml-1"
+                  <tr class="rankings-baseline" data-team="BSRNN_TFMAP" data-rank-corrected="13" data-rank-original="12" data-pos-corrected="14" data-pos-original="14">
+                    <td class="text-center font-weight-bold align-middle" data-cmp="rank">13</td>
+                    <td class="align-middle" data-cmp="rank">BSRNN_TFMAP <span class="badge badge-pill ml-1"
                         style="background:#f1f5f9;color:#64748b;font-size:0.62rem;font-weight:600;padding:0.3em 0.55em;vertical-align:middle;">Baseline</span></td>
-                    <td class="text-right align-middle">0.838&nbsp;<span class="metric-subrank">(14)</span></td>
-                    <td class="text-right align-middle">0.829&nbsp;<span class="metric-subrank">(12)</span></td>
-                    <td class="text-right align-middle">0.443&nbsp;<span class="metric-subrank">(10)</span></td>
-                    <td class="text-right align-middle">2.756&nbsp;<span class="metric-subrank">(14)</span></td>
-                    <td class="text-right align-middle font-weight-bold">12.50</td>
+                    <td class="text-right align-middle" data-cmp="TER" data-corrected="0.745" data-corrected-rank="14" data-original="0.838" data-original-rank="14">0.745&nbsp;<span class="metric-subrank">(14)</span></td>
+                    <td class="text-right align-middle" data-cmp="F1" data-corrected="0.829" data-corrected-rank="12" data-original="0.829" data-original-rank="12">0.829&nbsp;<span class="metric-subrank">(12)</span></td>
+                    <td class="text-right align-middle" data-cmp="SIM" data-corrected="0.444" data-corrected-rank="11" data-original="0.443" data-original-rank="10">0.444&nbsp;<span class="metric-subrank">(11)</span></td>
+                    <td class="text-right align-middle" data-cmp="P808" data-corrected="2.755" data-corrected-rank="14" data-original="2.756" data-original-rank="14">2.755&nbsp;<span class="metric-subrank">(14)</span></td>
+                    <td class="text-right align-middle font-weight-bold" data-cmp="Score" data-corrected="12.75" data-original="12.50">12.75</td>
                     <td class="text-center align-middle">&mdash;</td>
                   </tr>
                 </tbody>
@@ -1665,9 +2113,9 @@
             </div>
           </div>
 
-          <p class="text-muted small mb-0">See the live, continuously updated results on the public <a
-              href="https://leaderboard.real-tse.com" target="_blank" rel="noopener noreferrer"><strong>REAL-TSE
-                leaderboard</strong></a>.</p>
+          <p class="text-muted small mb-0">The public <a href="https://leaderboard.real-tse.com" target="_blank"
+              rel="noopener noreferrer"><strong>REAL-TSE leaderboard</strong></a> lists all submissions, scored with
+            the challenge-period data and normalization used for the Original ranking.</p>
         </div>
       </div>
     </div>
@@ -2102,6 +2550,160 @@
       target: '#mainNav',
       offset: 80
     });
+
+    // Rankings: switch between the Corrected and Original rankings; hover a cell to compare both
+    (function () {
+      var tables = Array.prototype.slice.call(document.querySelectorAll('[data-ranking-table]'));
+      if (!tables.length) return;
+
+      var VERSIONS = ['original', 'corrected'];
+      var LABELS = { original: 'Original', corrected: 'Corrected' };
+      var METRIC_LABELS = { TER: 'TER &darr;', F1: 'F1 &uarr;', SIM: 'SIM &uarr;', P808: 'P808 &uarr;', Score: 'Score &darr;' };
+      var MEDALS = { 1: '🥇', 2: '🥈', 3: '🥉' };
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var standings = new WeakMap();
+      var current = 'corrected';
+
+      function rowsOf(table) {
+        return Array.prototype.slice.call(table.tBodies[0].rows);
+      }
+
+      // A row's standing changed only if the teams ranked above it or tied with it differ between versions;
+      // with dense ranks, the rank number alone can shift while the order stays the same.
+      // Rows are highlighted on switch only when the standing changed and the rank number changed too.
+      tables.forEach(function (table) {
+        var rows = rowsOf(table);
+        rows.forEach(function (row) {
+          var info = { tied: {}, above: {} };
+          VERSIONS.forEach(function (v) {
+            var mine = +row.getAttribute('data-rank-' + v);
+            var above = [];
+            var tied = [];
+            rows.forEach(function (other) {
+              if (other === row) return;
+              var rank = +other.getAttribute('data-rank-' + v);
+              if (rank < mine) above.push(other.getAttribute('data-team'));
+              if (rank === mine) tied.push(other.getAttribute('data-team'));
+            });
+            info.above[v] = above.sort().join(',');
+            info.tied[v] = tied;
+          });
+          info.changed = info.above.original !== info.above.corrected ||
+            info.tied.original.slice().sort().join(',') !== info.tied.corrected.slice().sort().join(',');
+          info.highlight = info.changed &&
+            row.getAttribute('data-rank-original') !== row.getAttribute('data-rank-corrected');
+          standings.set(row, info);
+        });
+      });
+
+      function tipRow(version, text) {
+        return '<div class="rt-tip-row' + (version === current ? ' is-current' : '') + '"><span>' +
+          LABELS[version] + '</span><span>' + text + '</span></div>';
+      }
+
+      function formatChange(corrected, original, digits) {
+        var delta = parseFloat(corrected) - parseFloat(original);
+        var size = Math.abs(delta).toFixed(digits);
+        if (parseFloat(size) === 0) return 'no change';
+        return (delta > 0 ? '+' : '&minus;') + size;
+      }
+
+      function tipHtml(cell) {
+        var row = cell.parentNode;
+        var key = cell.getAttribute('data-cmp');
+        var html;
+        if (key === 'rank') {
+          var info = standings.get(row);
+          html = '<div class="rt-tip-title">' + row.getAttribute('data-team') + ' &middot; overall rank</div>';
+          VERSIONS.forEach(function (v) {
+            var tied = info.tied[v];
+            html += tipRow(v, '#' + row.getAttribute('data-rank-' + v) +
+              (tied.length ? ' (tied with ' + tied.join(', ') + ')' : ''));
+          });
+          if (!info.changed && row.getAttribute('data-rank-original') !== row.getAttribute('data-rank-corrected')) {
+            html += '<div class="rt-tip-note">Same order relative to every other team; the number differs only ' +
+              'because a tie above it changed (dense ranking).</div>';
+          }
+          return html;
+        }
+        html = '<div class="rt-tip-title">' + METRIC_LABELS[key] + '</div>';
+        VERSIONS.forEach(function (v) {
+          var rank = cell.getAttribute('data-' + v + '-rank');
+          html += tipRow(v, cell.getAttribute('data-' + v) + (rank ? ' (' + rank + ')' : ''));
+        });
+        return html + '<div class="rt-tip-delta">Change: ' + formatChange(cell.getAttribute('data-corrected'),
+          cell.getAttribute('data-original'), key === 'Score' ? 2 : 3) + '</div>';
+      }
+
+      function render(table, version) {
+        var tbody = table.tBodies[0];
+        var rows = rowsOf(table);
+        var before = rows.map(function (row) { return row.getBoundingClientRect().top; });
+
+        rows.forEach(function (row) {
+          var rank = +row.getAttribute('data-rank-' + version);
+          row.cells[0].innerHTML = (MEDALS[rank] ? MEDALS[rank] + '&nbsp;' : '') + rank;
+          Array.prototype.forEach.call(row.querySelectorAll('td[data-' + version + ']'), function (cell) {
+            var subrank = cell.getAttribute('data-' + version + '-rank');
+            cell.innerHTML = cell.getAttribute('data-' + version) +
+              (subrank ? '&nbsp;<span class="metric-subrank">(' + subrank + ')</span>' : '');
+          });
+        });
+        rows.slice().sort(function (a, b) {
+          return a.getAttribute('data-pos-' + version) - b.getAttribute('data-pos-' + version);
+        }).forEach(function (row) { tbody.appendChild(row); });
+        if (reduceMotion) return;
+
+        // FLIP: start each row at its old position, then let it slide to the new one.
+        rows.forEach(function (row, i) {
+          var dy = before[i] - row.getBoundingClientRect().top;
+          row.style.transition = 'none';
+          row.style.transform = dy ? 'translateY(' + dy + 'px)' : '';
+          row.classList.remove('is-changed');
+        });
+        void tbody.offsetHeight;
+        rows.forEach(function (row) {
+          row.style.transition = 'transform 0.45s ease';
+          row.style.transform = '';
+          if (standings.get(row).highlight) row.classList.add('is-changed');
+        });
+      }
+
+      function setVersion(version) {
+        if (version === current) return;
+        current = version;
+        $('.rankings-table [aria-describedby]').tooltip('hide');
+        $('[data-ranking-version]').each(function () {
+          var on = this.getAttribute('data-ranking-version') === version;
+          $(this).toggleClass('active', on).attr('aria-pressed', on ? 'true' : 'false');
+        });
+        $('[data-ranking-show]').each(function () {
+          this.hidden = this.getAttribute('data-ranking-show') !== version;
+        });
+        tables.forEach(function (table) { render(table, version); });
+      }
+
+      $('[data-ranking-version]').on('click', function () {
+        setVersion(this.getAttribute('data-ranking-version'));
+      });
+
+      var noHover = window.matchMedia && window.matchMedia('(hover: none)').matches;
+      $(tables).tooltip({
+        selector: '[data-cmp]',
+        trigger: noHover ? 'click' : 'hover focus',
+        html: true,
+        container: 'body',
+        placement: 'top',
+        boundary: 'window',
+        template: '<div class="tooltip rankings-tip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>',
+        title: function () { return tipHtml(this); }
+      });
+      if (noHover) {
+        $(document).on('click', function (event) {
+          $('.rankings-table [aria-describedby]').not($(event.target).closest('[data-cmp]')).tooltip('hide');
+        });
+      }
+    })();
   </script>
 
 </body>
