@@ -1721,11 +1721,8 @@
                 </div>
                 <ul class="text-muted small mb-0 pl-3">
                   <li class="mb-1">The 13 relabeled EVAL-2 samples are English speech that had been labeled Chinese, so the
-                    evaluation server transcribed them only with the Chinese Zipformer, which output Chinese characters
-                    or nothing. Scored as English, such transcripts give a TER of exactly 1 for every system. The
-                    Corrected ranking therefore scores them on transcripts of the same TSE outputs made with the English
-                    Zipformer, the model used for every other English sample. The Original ranking keeps the
-                    evaluation-server transcripts.</li>
+                    evaluation server transcribed them with the Chinese ASR. The Corrected ranking uses English-ASR
+                    transcripts of the same TSE outputs; the Original ranking keeps the evaluation-server transcripts.</li>
                   <li class="mb-1">Three EVAL-2 enrollment files were renamed in v1.0.0. Apart from these renames, the
                     mixture and enrollment audio is byte-identical in both versions.</li>
                   <li class="mb-1">Samples with an empty ASR transcript are scored as if every reference token were
